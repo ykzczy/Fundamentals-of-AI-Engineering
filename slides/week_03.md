@@ -53,8 +53,7 @@ Your app → Internet → cloud provider → large GPU cluster → response back
 
 # Local Inference with Ollama
 
-![bg right:40% h:320](images/concepts/cloud_computing.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Cloud computing.svg)</div>
+![bg right:50% h:380](images/concepts/local_inference_architecture.svg)
 
 Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud APIs, but everything runs on your hardware.
 
@@ -70,6 +69,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 | **Setup** | API key only | Install Ollama + pull model |
 | **Offline** | No | Yes |
 
+![h:350](images/concepts/cloud_vs_local_comparison.svg)
+
 ---
 
 <!-- _class: part -->
@@ -82,6 +83,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 ---
 
 # Setup Checklist
+
+![bg right:45% h:350](images/concepts/ollama_setup_workflow.svg)
 
 | Step | Command | Success looks like |
 |------|---------|-------------------|
@@ -123,6 +126,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 
 **Note**: These are total runtime estimates (weights + KV cache + activations). Weight-only memory is roughly half the 8-bit column. **Rule**: If it doesn't fit in memory, you can't run it.
 
+![h:320](images/concepts/memory_requirements_chart.svg)
+
 ---
 
 # Error Handling for Local Inference
@@ -135,6 +140,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 | OOM crash | Model exceeds RAM/VRAM | Use smaller model or quantization |
 
 **First request is always slow** (model loading) — subsequent requests are faster.
+
+![h:380](images/concepts/error_handling_flowchart.svg)
 
 ---
 
@@ -178,6 +185,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 
 **Latency-Quality tradeoff**: smaller models = lower latency but lower output quality.
 
+![h:360](images/concepts/latency_quality_tradeoff.svg)
+
 ---
 
 # When to Choose What
@@ -189,6 +198,8 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 | Privacy / offline required | Local inference |
 | High throughput batch processing | Small local model |
 | Rapid prototyping | Hosted API (easiest setup) |
+
+![h:400](images/concepts/model_selection_flowchart.svg)
 
 ---
 

@@ -1,10 +1,13 @@
-# Week 3 — Part 04: OpenAI Compatible API
+# Week 6 — Part 04: OpenAI Compatible API
 
 ## Overview
 
 The OpenAI API specification has become the industry standard for LLM interactions. This section introduces the compatibility ecosystem and shows how to use multiple providers with the same codebase.
 
 ---
+
+
+💻 **配套练习**: [04_openai_compatible_api.ipynb](./04_openai_compatible_api.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 

@@ -349,7 +349,7 @@ Upon completing this course, students will be able to:
 
 **Evaluation Criteria:**
 - LLM client code quality (40%):
-  - Supports local and cloud calling
+  - Supports local (Ollama) and cloud calling
   - Timeout and retry mechanisms implemented
   - Clear code structure
   - Includes basic comments

@@ -1,4 +1,4 @@
-# Week 4 — Part 05: A reusable `llm_client.py` skeleton
+# Week 3 — Part 08: A reusable `llm_client.py` skeleton
 
 ## Overview
 
@@ -14,6 +14,9 @@ This is a Foundations Course skeleton (provider-agnostic). You can adapt it to O
 
 ---
 
+
+💻 **配套练习**: [08_llm_client_skeleton.ipynb](./08_llm_client_skeleton.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on reliability/operations and debugging practices:
@@ -21,7 +24,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on re
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)
 
-Why it matters here (Week 4):
+Why it matters here (Week 3):
 
 - The client is the reliability boundary: timeouts/retries/logs/caching should be consistent across scripts.
 - Centralizing these behaviors prevents “every notebook reinvents reliability differently”.
@@ -120,8 +123,8 @@ In more robust clients, you often also add jitter to avoid “retry storms” (m
 ## Next steps
 
 - Implement `_provider_call()` using your chosen provider SDK.
-- Add structured output validation from Week 3.
-- Use this client in Week 6 capstone pipeline.
+- Add structured output validation from Week 6.
+- Use this client in Week 6 project pipeline.
 
 ---
 

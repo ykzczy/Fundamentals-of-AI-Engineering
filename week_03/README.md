@@ -1,4 +1,4 @@
-# Foundations Course — Week 5: Local Inference (Ollama) and Model Comparison
+# Foundations Course — Week 3: Local Inference (Ollama) and Model Comparison
 
 ## Pre-study (Self-learn)
 

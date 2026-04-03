@@ -1,4 +1,4 @@
-# Week 5 — Part 03: Benchmarking script (latency + quality artifacts)
+# Week 3 — Part 03: Benchmarking script (latency + quality artifacts)
 
 ## Overview
 
@@ -17,6 +17,9 @@ We will write `benchmark_local_llm.py` that:
 
 ---
 
+
+💻 **配套练习**: [03_benchmarking_script.ipynb](./03_benchmarking_script.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on local inference + practical evaluation:
@@ -24,7 +27,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on lo
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
 
-Why it matters here (Week 5):
+Why it matters here (Week 3):
 
 - Benchmarks only work if you control variables (same prompt set, same settings, same measurement method).
 - Treat latency as a distribution (average and tail) and keep artifacts so you can compare quality later.

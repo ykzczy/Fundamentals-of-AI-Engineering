@@ -1,4 +1,4 @@
-# Week 3 — Part 03: Structured outputs (JSON) — parse + validate + retry/repair
+# Week 6 — Part 03: Structured outputs (JSON) — parse + validate + retry/repair
 
 ## Overview
 
@@ -26,6 +26,9 @@ The important engineering point: downstream code should never need to “guess�
 
 ---
 
+
+💻 **配套练习**: [03_structured_outputs_validation.ipynb](./03_structured_outputs_validation.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on structured outputs, schemas, and validation mindset:
@@ -33,7 +36,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on st
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Structured outputs and schemas](../self_learn/Chapters/3/01_function_calling_structured_outputs.md)
 
-Why it matters here (Week 3):
+Why it matters here (Week 6):
 
 - Treat LLM output as untrusted text until it passes parse + schema validation.
 - Validation gives downstream code a deterministic pass/fail boundary.

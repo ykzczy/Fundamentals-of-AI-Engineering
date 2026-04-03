@@ -1,4 +1,4 @@
-# Week 2 — Part 02: Reproducibility package (seeds, configs, artifacts)
+# Week 5 — Part 02: Reproducibility package (seeds, configs, artifacts)
 
 ## Overview
 
@@ -11,6 +11,9 @@ In practice, reproducibility is a *package* of habits.
 
 ---
 
+
+💻 **配套练习**: [02_reproducibility_package.ipynb](./02_reproducibility_package.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on environments, dependency recording, and “what makes a run reproducible”:
@@ -18,7 +21,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on en
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
 
-Why it matters here (Week 2):
+Why it matters here (Week 5):
 
 - You will compare runs; without saved config + artifacts, you can’t explain why metrics changed.
 - “Reproducible” in Foundations Course mostly means **traceable**: same inputs/seed/command → you can recreate and debug the run.

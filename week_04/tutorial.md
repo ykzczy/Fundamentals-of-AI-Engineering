@@ -1,4 +1,4 @@
-# Foundations Course — Week 1 Tutorials
+# Foundations Course — Week 4 Tutorials
 
 ## Pre-study (Self-learn)
 
@@ -10,7 +10,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher:
 
 ## Overview
 
-These tutorials expand Week 1 into a step-by-step, chapter-style walkthrough.
+These tutorials expand Week 4 into a step-by-step, chapter-style walkthrough.
 
 ## Navigation
 

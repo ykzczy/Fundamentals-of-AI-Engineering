@@ -1,4 +1,4 @@
-# Week 4 — Part 04: Caching and observability (logging)
+# Week 3 — Part 07: Caching and observability (logging)
 
 ## Overview
 
@@ -13,6 +13,9 @@ Logging makes failures diagnosable.
 
 ---
 
+
+💻 **配套练习**: [07_caching_logging.ipynb](./07_caching_logging.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on production constraints, observability, and operational habits:
@@ -20,7 +23,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on pr
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)
 
-Why it matters here (Week 4):
+Why it matters here (Week 3):
 
 - Caching reduces cost/latency during iteration, but incorrect cache keys can create silent wrong answers.
 - Logging is how you debug failures without guessing.

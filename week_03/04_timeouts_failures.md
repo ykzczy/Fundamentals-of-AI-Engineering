@@ -1,4 +1,4 @@
-# Week 4 — Part 01: Timeouts and failure modes
+# Week 3 — Part 04: Timeouts and failure modes
 
 ## Overview
 
@@ -9,6 +9,9 @@ A timeout is the simplest reliability feature:
 
 ---
 
+
+💻 **配套练习**: [04_timeouts_failures.ipynb](./04_timeouts_failures.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on reliability/operations and debugging practices:
@@ -16,7 +19,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on re
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)
 
-Why it matters here (Week 4):
+Why it matters here (Week 3):
 
 - Timeouts are the simplest way to prevent a single bad request from freezing your whole script.
 - A timeout turns “unknown waiting” into a controlled, debuggable failure.

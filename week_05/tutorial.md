@@ -1,4 +1,4 @@
-# Foundations Course — Week 2 Tutorials
+# Foundations Course — Week 5 Tutorials
 
 ## Pre-study (Self-learn)
 
@@ -9,7 +9,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher:
 
 ## Overview
 
-These tutorials expand Week 2 into a step-by-step, reproducible baseline ML workflow.
+These tutorials expand Week 5 into a step-by-step, reproducible baseline ML workflow.
 
 ## Navigation
 

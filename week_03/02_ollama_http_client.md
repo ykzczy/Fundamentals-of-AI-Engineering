@@ -1,10 +1,13 @@
-# Week 5 — Part 02: Calling Ollama via HTTP (minimal client)
+# Week 3 — Part 02: Calling Ollama via HTTP (minimal client)
 
 ## Overview
 
 Ollama exposes a local HTTP API. This lets you treat local inference like a normal service call.
 
 ---
+
+
+💻 **配套练习**: [02_ollama_http_client.ipynb](./02_ollama_http_client.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 
@@ -13,7 +16,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on lo
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
 
-Why it matters here (Week 5):
+Why it matters here (Week 3):
 
 - Even “local” inference is still a client/server boundary (your script calls a local service).
 - Use timeouts and treat responses as untrusted input (parse/validate what you depend on).

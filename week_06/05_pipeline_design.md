@@ -1,4 +1,4 @@
-# Week 6 — Part 01: From scripts to pipelines (stages + artifacts)
+# Week 6 — Part 05: From scripts to pipelines (stages + artifacts)
 
 ## Overview
 
@@ -17,6 +17,9 @@ This structure improves:
 
 ---
 
+
+💻 **配套练习**: [05_pipeline_design.ipynb](./05_pipeline_design.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on pipeline structure, artifacts, and basic AI engineering workflow:
@@ -26,12 +29,12 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on pi
 
 Why it matters here (Week 6):
 
-- The capstone becomes debuggable when you can isolate stages and inspect intermediate artifacts.
+- The project becomes debuggable when you can isolate stages and inspect intermediate artifacts.
 - Explicit stage contracts make it easier to re-run only what changed (faster iteration).
 
 ---
 
-## Suggested capstone stages
+## Suggested project stages
 
 For each stage, aim to make the contract explicit.
 
@@ -83,7 +86,7 @@ import json
 import pandas as pd
 
 
-class CapstoneRunner:
+class ProjectRunner:
     """
     Pipeline coordinator with stage isolation.
     """
@@ -225,7 +228,7 @@ class CapstoneRunner:
 
 # Usage
 if __name__ == "__main__":
-    runner = CapstoneRunner(output_dir=Path("output"))
+    runner = ProjectRunner(output_dir=Path("output"))
     runner.run_all(input_csv=Path("data.csv"))
 ```
 

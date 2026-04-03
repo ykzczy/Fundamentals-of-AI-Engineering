@@ -1,4 +1,4 @@
-# Week 1 — Part 02: Data profiling script (CSV -> JSON/Markdown)
+# Week 4 — Part 02: Data profiling script (CSV -> JSON/Markdown)
 
 ## Overview
 
@@ -19,6 +19,9 @@ You will build `data_profile.py` that:
 - writes reproducible outputs to `output/`
 
 ---
+
+
+💻 **配套练习**: [02_data_profiling_script.ipynb](./02_data_profiling_script.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 

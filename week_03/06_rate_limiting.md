@@ -1,4 +1,4 @@
-# Week 4 — Part 03: Rate limiting + graceful degradation
+# Week 3 — Part 06: Rate limiting + graceful degradation
 
 ## Overview
 
@@ -11,6 +11,9 @@ Your client should behave gracefully:
 
 ---
 
+
+💻 **配套练习**: [06_rate_limiting.ipynb](./06_rate_limiting.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on production constraints and graceful failure handling:
@@ -18,10 +21,10 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on pr
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)
 
-Why it matters here (Week 4):
+Why it matters here (Week 3):
 
 - Treat 429s as normal: the client should recover predictably (wait/backoff) or degrade.
-- Your capstone will be more stable if rate limiting is handled centrally in the client.
+- Your project will be more stable if rate limiting is handled centrally in the client.
 
 ---
 

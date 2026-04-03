@@ -1,4 +1,4 @@
-# Foundations Course — Week 1: Environment Setup & Data Processing Basics
+# Foundations Course — Week 4: Environment Setup & Data Processing Basics
 
 ## Pre-study (Self-learn)
 

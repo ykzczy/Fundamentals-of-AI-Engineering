@@ -1,4 +1,4 @@
-# Foundations Course — Week 2: The ML Training Loop + Reproducible Baselines
+# Foundations Course — Week 5: The ML Training Loop + Reproducible Baselines
 
 ## Pre-study (Self-learn)
 

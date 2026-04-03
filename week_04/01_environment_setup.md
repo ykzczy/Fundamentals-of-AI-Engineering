@@ -1,4 +1,4 @@
-# Week 1 — Part 01: Environment setup + dependency management
+# Week 4 — Part 01: Environment setup + dependency management
 
 ## Overview
 
@@ -11,6 +11,9 @@ That means:
 - You can run your script with one command.
 
 ---
+
+
+💻 **配套练习**: [01_environment_setup.ipynb](./01_environment_setup.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 
@@ -29,7 +32,7 @@ Foundations Course assumes you do a lot self-study. Refer to self-study material
 2. Verify you are using the intended Python:
    - `python --version`
    - `which python` (Linux/macOS)
-3. Install the packages needed for Week 1 (at minimum `pandas`).
+3. Install the packages needed for Week 4 (at minimum `pandas`).
 4. Record dependencies for reproducibility:
    - `pip freeze > requirements.txt`
 

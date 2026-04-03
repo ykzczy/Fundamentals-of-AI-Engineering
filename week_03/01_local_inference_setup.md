@@ -1,4 +1,4 @@
-# Week 5 — Part 01: Local inference concepts + setup checklist
+# Week 3 — Part 01: Local inference concepts + setup checklist
 
 ## Overview
 
@@ -8,6 +8,9 @@
 
 ---
 
+
+💻 **配套练习**: [01_local_inference_setup.ipynb](./01_local_inference_setup.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on local inference and model/platform fundamentals:
@@ -15,7 +18,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on lo
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
 
-Why it matters here (Week 5):
+Why it matters here (Week 3):
 
 - When you run locally, hardware constraints (RAM/VRAM/CPU/GPU) become part of your system design.
 - The setup checklist below is the fastest way to prove the local runtime works before you debug client code.

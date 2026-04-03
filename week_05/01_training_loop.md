@@ -1,4 +1,4 @@
-# Week 2 — Part 01: The ML training loop (split → train → evaluate → save)
+# Week 5 — Part 01: The ML training loop (split → train → evaluate → save)
 
 ### The ML training process
 
@@ -80,6 +80,9 @@ Even if you later focus on LLMs, this disciplined loop is the basis for:
 
 ---
 
+
+💻 **配套练习**: [01_training_loop.ipynb](./01_training_loop.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on evaluation mindset and metrics:
@@ -87,7 +90,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on ev
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Evaluation metrics (accuracy/precision/recall/F1)](../self_learn/Chapters/4/02_core_concepts.md)
 
-Why it matters here (Week 2):
+Why it matters here (Week 5):
 
 - You will compare runs using saved artifacts; metrics must be computed on a hold-out split.
 - Small metric changes can come from split randomness; controlling seed + saving config makes results explainable.

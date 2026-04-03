@@ -1,4 +1,4 @@
-# Week 3 — Part 02: Structured Prompt Specification
+# Week 6 — Part 02: Structured Prompt Specification
 
 ## Overview
 
@@ -8,6 +8,9 @@ If you treat the model like a service, your prompt is the API contract.
 
 ---
 
+
+💻 **配套练习**: [02_prompt_contracts.ipynb](./02_prompt_contracts.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on prompt engineering fundamentals, guardrails, and evaluation mindset:
@@ -16,7 +19,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on pr
 - [Self-learn — Prompt engineering and evaluation](../self_learn/Chapters/3/02_prompt_engineering_evaluation.md)
 - [Self-learn — Structured outputs and schemas](../self_learn/Chapters/3/01_function_calling_structured_outputs.md)
 
-Why it matters here (Week 3):
+Why it matters here (Week 6):
 
 - Treat prompts as specs so you can write a deterministic parser/validator.
 - If you can’t validate the output shape, the contract is not concrete enough.

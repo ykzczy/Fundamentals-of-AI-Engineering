@@ -1,4 +1,4 @@
-# Week 6 — Part 02: Sampling and compression for tabular data
+# Week 6 — Part 06: Sampling and compression for tabular data
 
 ## Overview
 
@@ -12,6 +12,9 @@ Instead you send a compressed representation:
 - detected anomalies
 
 ---
+
+
+💻 **配套练习**: [06_sampling_compression.ipynb](./06_sampling_compression.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 

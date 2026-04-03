@@ -1,4 +1,4 @@
-# Week 2 — Part 03: Comparing runs + writing a short report
+# Week 5 — Part 03: Comparing runs + writing a short report
 
 ## Overview
 
@@ -8,6 +8,9 @@ This makes improvement explainable.
 
 ---
 
+
+💻 **配套练习**: [03_compare_runs_report.ipynb](./03_compare_runs_report.ipynb) - 交互式代码实践
+
 ## Pre-study (Self-learn)
 
 Foundations Course assumes Self-learn is complete. If you need a refresher on evaluation metrics (accuracy/precision/recall/F1):
@@ -15,7 +18,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher on ev
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Evaluation metrics](../self_learn/Chapters/4/02_core_concepts.md)
 
-Why it matters here (Week 2):
+Why it matters here (Week 5):
 
 - You will compare two runs; only change **one variable** so the comparison is explainable.
 - Use the saved artifacts (`metrics.json`, `val_report.txt`) as evidence in your report.
