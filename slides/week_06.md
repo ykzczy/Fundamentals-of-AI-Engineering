@@ -139,8 +139,8 @@ If too large: reduce sample size or remove verbose fields. Rule of thumb: ~4 cha
 
 # Text Chunking
 
-![bg right:40% h:320](images/concepts/train_test_split_new.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Machine learning nutshell -- Split into train-test set.svg)</div>
+![h:320](images/concepts/train_test_split_new.svg)
+<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons</div>
 
 When text exceeds the context window: **split → process each chunk → synthesize**.
 

@@ -28,35 +28,46 @@ By the end of this week, you should be able to:
 
 # What is Inference?
 
-![h:280](images/concepts/machine_learning.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of machine learning.png)</div>
+![bg right:35% h:300](images/concepts/machine_learning.png)
+<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons</div>
 
 - **Training**: learn from data (expensive, done once)
 - **Inference**: make predictions (fast, done many times)
 - GPT-4, Ollama = **inference**
 
+💡 **Key distinction**: Training creates the model; Inference uses it.
+
 ---
 
 # Cloud vs Local Inference
 
-![bg right:40% h:320](images/concepts/cloud_computing.svg)
+![bg right:35% h:280](images/concepts/cloud_computing.svg)
 <div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Cloud computing.svg)</div>
 
-### Cloud (Hosted API)
+### ☁️ Cloud (Hosted API)
 
 Your app → Internet → cloud provider → large GPU cluster → response back.
 
-**Pros**: best models, no hardware needed.
-**Cons**: cost per call, latency, data leaves your machine.
+| Pros | Cons |
+|------|------|
+| Best models (GPT-4, Claude) | Cost per API call |
+| No hardware investment | Network latency |
+| Easy to scale | Data leaves your machine |
 
 ---
 
 # Local Inference with Ollama
 
-![bg right:40% h:320](images/concepts/cloud_computing.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Cloud computing.svg)</div>
+![bg right:30% h:200](images/concepts/ollama_logo.png)
 
-Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud APIs, but everything runs on your hardware.
+### 🖥️ Local (Ollama)
+
+Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud APIs, but everything runs on **your hardware**.
+
+**Key benefits**:
+- Data stays local (privacy)
+- Works offline
+- Lower latency for simple tasks
 
 ---
 
@@ -104,15 +115,16 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 ---
 
 # Model Size, Context, and Quantization
-
-![bg right:30% h:280](images/concepts/quantization.png)
 <div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Quantization error.png)</div>
 
 - **Size (7B, 13B)**: more parameters = better quality, slower, more memory
-- **Context window**: how much text fits per request
-- **Quantization**: fewer bits = less memory, slightly lower quality (impact varies by task)
+- **Context window**: how much text fits per request (4K, 8K, 128K tokens)
+- **Quantization**: reducing precision to save memory
+  - FP32 (32-bit) → FP16 (16-bit) → INT8 (8-bit) → INT4 (4-bit)
+  - Fewer bits = smaller model, slightly lower quality
 
-### Memory Requirements (rough — total runtime, including KV cache & activations)
+---
+# Memory Requirements (rough — total runtime, including KV cache & activations)
 
 | Model Size | 4-bit | 8-bit | Full (FP32) |
 |------------|-------|-------|------|
@@ -149,13 +161,14 @@ Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud API
 
 # Benchmarking: Consistent Comparison
 
-![h:280](images/concepts/train_test_split_new.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Machine learning nutshell -- Split into train-test set.svg)</div>
+![bg right:40% h:400](https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3.5/Figures/qwen3.5_397b_a17b_score.png)
+<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Qwen3.5 Model Card</div>
 
 **Benchmarking best practices**:
-- Same prompt set for all models
-- Warmup run per model
-- Save all outputs to disk
+- 📋 Same prompt set for all models
+- 🔥 Warmup run per model (first load is slow)
+- 💾 Save all outputs to disk for analysis
+- ⏱️ Measure: latency, throughput, quality
 
 ---
 
