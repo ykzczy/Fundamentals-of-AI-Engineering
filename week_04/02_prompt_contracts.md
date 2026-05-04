@@ -19,7 +19,7 @@ Self-learn is optional. If you want a refresher on prompt engineering fundamenta
 - [Self-learn — Prompt engineering and evaluation](../self_learn/Chapters/3/02_prompt_engineering_evaluation.md)
 - [Self-learn — Structured outputs and schemas](../self_learn/Chapters/3/01_function_calling_structured_outputs.md)
 
-Why it matters here:
+Why it matters here (Week 6):
 
 - Treat prompts as specs so you can write a deterministic parser/validator.
 - If you can’t validate the output shape, the contract is not concrete enough.

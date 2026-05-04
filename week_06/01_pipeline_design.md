@@ -1,4 +1,4 @@
-# Week 6 — Part 05: From scripts to pipelines (stages + artifacts)
+# Week 6 — Part 01: From scripts to pipelines (stages + artifacts)
 
 ## Overview
 
@@ -18,7 +18,7 @@ This structure improves:
 ---
 
 
-💻 **配套练习**: [05_pipeline_design.ipynb](./05_pipeline_design.ipynb) - 交互式代码实践
+💻 **配套练习**: [01_pipeline_design.ipynb](./01_pipeline_design.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 
@@ -204,7 +204,7 @@ class ProjectRunner:
         }
         
         # JSON report
-        json_path = self.output_dir / "05_report.json"
+        json_path = self.output_dir / "report.json"
         json_path.write_text(json.dumps(report, indent=2))
         
         # Markdown report
@@ -219,7 +219,7 @@ class ProjectRunner:
             llm_output.get("analysis", ""),
         ]
         
-        md_path = self.output_dir / "05_report.md"
+        md_path = self.output_dir / "report.md"
         md_path.write_text("\n".join(md_lines))
         
         print(f"  → Saved: {json_path}")
@@ -281,8 +281,8 @@ output/
   03_compressed.json     # Stage 3 output
   04_llm_prompt.txt      # Stage 4 input
   04_llm_raw.json        # Stage 4 output
-  05_report.json         # Stage 5 output (final)
-  05_report.md           # Stage 5 output (final)
+  report.json         # Stage 5 output (final)
+  report.md           # Stage 5 output (final)
 ```
 
 **Why numbered prefixes help:**

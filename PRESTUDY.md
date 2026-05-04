@@ -1,6 +1,6 @@
 # Pre-Study Guide: Getting Ready for AI Engineering
 
-Welcome! This guide will help you prepare for the AI Engineering course. **Good news: you don't need any programming experience before the course starts.**
+Welcome! This guide will help you prepare for the AI Engineering course. **Good news: you don't need any programming experience for the first two weeks!**
 
 ---
 
@@ -10,9 +10,8 @@ Welcome! This guide will help you prepare for the AI Engineering course. **Good 
 
 This course is designed to be accessible to everyone, including non-technical students. We've structured it so that:
 
-- **Week 1 requires zero programming** — focus on concepts and using AI tools
-- **Week 2 introduces guided Python execution** — use AI tools to learn, run, and debug small examples
-- **Week 3 starts data processing** — use the Week 2 environment to profile CSV files
+- **Weeks 1-2 require zero programming** — focus on concepts and using AI tools
+- **Week 3 is when programming begins** — we'll teach you step by step
 - **"Learn AI with AI"** — AI tools will help bridge any knowledge gaps
 
 You'll be surprised how much you can accomplish with AI assistance, even as a beginner.
@@ -36,41 +35,29 @@ Week 1 is all about understanding AI concepts and learning to use AI tools. No c
 - Basic AI concepts and terminology
 - Using AI as a learning companion
 
-### Before Week 2 (AI Coding Tool Setup)
+### Before Week 2 (No Programming Required)
 
-Week 2 continues building your AI tool fluency and introduces guided Python execution. You do not need prior programming experience.
+Week 2 continues building your AI tool fluency inside an IDE. You will read and modify provided templates, but you are not expected to write a project independently.
 
 **What to do:**
 - [ ] Get comfortable with the AI tools from Week 1
 - [ ] Practice asking questions and following up with AI assistants
 - [ ] Install [VS Code](https://code.visualstudio.com) or [Cursor](https://www.cursor.com) if you haven't already
-- [ ] (Optional) Install Python 3.10+ or Anaconda if your instructor asks you to prepare early
 
 **What you'll learn in Week 2:**
 - Working with AI inside an IDE
-- Using AI tools to learn Python concepts
-- Creating a project virtual environment
-- Running and debugging simple Python templates
+- Reading and modifying simple Python templates
 - Preparing for the hands-on data work ahead
 
-### Before Week 3 (Data Processing Begins)
+### Before Week 3 (Programming Begins: Environment + Data)
 
-Week 3 is when we start data profiling through a guided workflow. Here's how to prepare:
+Week 3 is when we start coding through a guided data profiling workflow. Here's how to prepare:
 
 **What to do:**
-- [ ] Finish the Week 2 environment check
-- [ ] Confirm you can activate your `.venv`
-- [ ] Confirm `python -c "import pandas as pd; print(pd.__version__)"` works
-- [ ] Ask an AI assistant to explain any Python syntax from Week 2 that still feels unclear
-
-**Python minimum checklist for Week 3:**
-- Variables: store simple values such as file paths, counts, and strings.
-- Functions: recognize `def load_csv(...):` as a reusable step with inputs and outputs.
-- Lists and dictionaries: read simple structures like `["name", "age"]` and `{"rows": 100}`.
-- File paths: understand examples such as `data/sample.csv` and `output/profile.json`.
-- Command-line arguments: recognize flags such as `--input data.csv --output_dir output`.
-- Error messages: copy the full terminal output when asking for help.
-- Imports: understand that `import pandas as pd` loads a library used by the script.
+- [ ] Install [Anaconda](https://www.anaconda.com/download) (we'll also teach this in class)
+- [ ] Familiarize yourself with basic Python concepts (we'll use AI to help you learn)
+- [ ] Set up a comfortable workspace with your computer
+- [ ] (Optional) Ask an AI assistant to explain basic Python syntax
 
 **Remember:** You don't need to be a Python expert. We'll teach as we go, and AI will help fill in the gaps.
 
@@ -83,7 +70,7 @@ The following chapters are available for students who want to get ahead. These a
 | Self-Learn Chapter | What's Inside | When to Reference |
 |---|---|---|
 | [Chapter 1: Tool Preparation](self_learn/Chapters/1/Chapter1.md) | Setting up development tools | If you want to explore tools early |
-| [Chapter 2: Python and Environment Management](self_learn/Chapters/2/Chapter2.md) | Python basics, conda, virtual environments | Before or during Week 2 if you want a head start |
+| [Chapter 2: Python and Environment Management](self_learn/Chapters/2/Chapter2.md) | Python basics, conda, virtual environments | Before Week 3 if you want a head start |
 | [Chapter 3: AI Engineering Fundamentals](self_learn/Chapters/3/Chapter3.md) | Tokens, prompts, structured outputs | Week 4 if you want extra LLM background |
 | [Chapter 4: Hugging Face Platform and Local Inference](self_learn/Chapters/4/Chapter4.md) | Running models locally | Optional deeper dive after Week 4 |
 | [Chapter 5: Resource Monitoring and Containerization](self_learn/Chapters/5/Chapter5.md) | Docker, monitoring, best practices | Throughout the course as needed |
@@ -137,7 +124,6 @@ You can ask AI assistants like:
 > "How do I install Anaconda on Windows?"
 > "What's the difference between VS Code and Cursor?"
 > "Explain Python like I'm completely new to programming"
-> "I ran this Python command and got this error. What should I check first?"
 
 **Pro tip:** If the AI's explanation is too complex, just say "explain it simpler" or "explain like I'm 10 years old."
 

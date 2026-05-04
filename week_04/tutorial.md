@@ -15,8 +15,7 @@ Week 4 focuses on structured LLM workflows:
 - tokens and context windows
 - prompts as contracts
 - JSON parsing and validation
-- timeout, bounded repair/retry, raw response saving, and clear failure handling
-- Week 3 `profile.json` to structured data-quality insights
+- timeout, retry, logging, and clear failure handling
 
 ## Main Navigation
 
@@ -30,23 +29,21 @@ API reliability:
 
 - [Timeouts and failures](04_timeouts_failures.md)
 - [Retries and backoff](05_retries_backoff.md)
-- [Profile JSON to structured insights](09_profile_to_insights_demo.md)
-
-## Optional/Advanced Reference
-
 - [Rate limiting](06_rate_limiting.md)
 - [Caching and logging](07_caching_logging.md)
 - [LLM client skeleton](08_llm_client_skeleton.md)
-- [Local inference setup](opt_01_local_inference_setup.md)
-- [Ollama HTTP client](opt_02_ollama_http_client.md)
-- [Benchmarking script](opt_03_benchmarking_script.md)
-- [OpenAI compatible API](opt_04_openai_compatible_api.md)
+
+## Optional/Advanced Reference
+
+- [Local inference setup](optional_local_inference/01_local_inference_setup.md)
+- [Ollama HTTP client](optional_local_inference/02_ollama_http_client.md)
+- [Benchmarking script](optional_local_inference/03_benchmarking_script.md)
+- [OpenAI compatible API](09_openai_compatible_api.md)
 
 ## Recommended Order
 
 1. Learn the token/context mental model.
 2. Write a prompt contract with explicit JSON fields.
 3. Parse and validate outputs.
-4. Run the offline `profile.json` to `insights.json` demo.
-5. Add timeout, bounded retry/repair, and saved raw responses.
-6. Document one failure mode and how you handled it.
+4. Add timeout, bounded retry/repair, and saved raw responses.
+5. Document one failure mode and how you handled it.

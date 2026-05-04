@@ -19,15 +19,15 @@ CSV input -> data overview -> sampled/compressed summary -> LLM interpretation -
 ## Main Navigation
 
 - [Simplified project](simplified_project.md)
-- [Pipeline design](05_pipeline_design.md)
-- [Sampling and compression](06_sampling_compression.md)
+- [Pipeline design](01_pipeline_design.md)
+- [Sampling and compression](02_sampling_compression.md)
 - [Capstone requirements](../capstone.md)
 
 ## Useful References
 
-- [Tokens and context windows](01_tokens_context.md)
-- [Prompt contracts](02_prompt_contracts.md)
-- [Structured outputs and validation](03_structured_outputs_validation.md)
+- [Tokens and context windows](../week_04/01_tokens_context.md)
+- [Prompt contracts](../week_04/02_prompt_contracts.md)
+- [Structured outputs and validation](../week_04/03_structured_outputs_validation.md)
 
 ## Recommended Order
 

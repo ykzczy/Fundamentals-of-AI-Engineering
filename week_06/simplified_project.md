@@ -52,7 +52,7 @@ This is a simplified end-to-end project that integrates knowledge from Weeks 1-5
 
 ### Stage 5: Report
 - **Input**: Validated LLM output + Profile
-- **Output**: Final reports `output/05_report.json` and `output/05_report.md`
+- **Output**: Final reports `output/report.json` and `output/report.md`
 
 ## Prompt Template
 
@@ -176,9 +176,9 @@ For testing, use these sample datasets:
 
 ## References
 
-- Week 3: LLM client with retry/caching
-- Week 4: Data profiling techniques
-- Week 6: Tokens/context, prompt contracts, structured outputs, pipeline design, sampling/compression
+- Week 3: Data profiling techniques
+- Week 4: LLM client with retry/caching, tokens/context, prompt contracts, and structured outputs
+- Week 6: Pipeline design and sampling/compression
 
 ---
 

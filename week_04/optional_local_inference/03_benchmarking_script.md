@@ -24,8 +24,8 @@ We will write `benchmark_local_llm.py` that:
 
 Self-learn is optional. If you want a refresher on local inference + practical evaluation:
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
+- [Pre-study index (Foundations Course → Self-learn)](../../PRESTUDY.md)
+- [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../../self_learn/Chapters/4/Chapter4.md)
 
 Why it matters here:
 

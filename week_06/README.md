@@ -32,19 +32,19 @@ By the end of this week, you should be able to:
 Capstone-required materials:
 
 - [simplified_project.md](simplified_project.md)
-- [05_pipeline_design.md](05_pipeline_design.md)
-- [06_sampling_compression.md](06_sampling_compression.md)
+- [01_pipeline_design.md](01_pipeline_design.md)
+- [02_sampling_compression.md](02_sampling_compression.md)
 - [../capstone.md](../capstone.md)
 
 Useful Week 4 references:
 
-- [01_tokens_context.md](01_tokens_context.md)
-- [02_prompt_contracts.md](02_prompt_contracts.md)
-- [03_structured_outputs_validation.md](03_structured_outputs_validation.md)
+- [../week_04/01_tokens_context.md](../week_04/01_tokens_context.md)
+- [../week_04/02_prompt_contracts.md](../week_04/02_prompt_contracts.md)
+- [../week_04/03_structured_outputs_validation.md](../week_04/03_structured_outputs_validation.md)
 
 Optional/advanced:
 
-- [04_openai_compatible_api.md](04_openai_compatible_api.md)
+- [../week_04/09_openai_compatible_api.md](../week_04/09_openai_compatible_api.md)
 
 ## MVP Requirements
 

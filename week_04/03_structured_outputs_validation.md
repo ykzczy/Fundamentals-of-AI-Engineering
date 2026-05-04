@@ -36,7 +36,7 @@ Self-learn is optional. If you want a refresher on structured outputs, schemas, 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Structured outputs and schemas](../self_learn/Chapters/3/01_function_calling_structured_outputs.md)
 
-Why it matters here:
+Why it matters here (Week 6):
 
 - Treat LLM output as untrusted text until it passes parse + schema validation.
 - Validation gives downstream code a deterministic pass/fail boundary.

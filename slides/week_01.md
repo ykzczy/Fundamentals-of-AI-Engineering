@@ -280,7 +280,7 @@ Kilo is an AI coding assistant for the **terminal**.
   - Summarize or rewrite content
   - Explore a simple file or project folder
 - Save representative prompts and outputs
-- Write a short tool usage reflection
+- Write "Agent Tool Usage Reflection" report (800-1000 words)
 
 ---
 

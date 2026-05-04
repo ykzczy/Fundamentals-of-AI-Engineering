@@ -1,4 +1,4 @@
-# Week 4 — Part 04: OpenAI Compatible API
+# Week 4 — Part 09: OpenAI Compatible API
 
 ## Overview
 
@@ -7,7 +7,7 @@ The OpenAI API specification has become the industry standard for LLM interactio
 ---
 
 
-💻 **配套练习**: [04_openai_compatible_api.ipynb](./04_openai_compatible_api.ipynb) - 交互式代码实践
+💻 **配套练习**: [09_openai_compatible_api.ipynb](./09_openai_compatible_api.ipynb) - 交互式代码实践
 
 ## Pre-study (Self-learn)
 
@@ -190,7 +190,7 @@ except RateLimitError:
 
 ## Practical Exercise
 
-See the accompanying notebook `04_openai_compatible_api.ipynb` for:
+See the accompanying notebook `09_openai_compatible_api.ipynb` for:
 
 1. Listing models from different providers
 2. Making chat completions with multiple backends

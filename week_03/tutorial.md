@@ -1,29 +1,36 @@
-# Week 3 Tutorials: Data Processing + Reproducible Outputs
+# Week 3 Tutorials: Environment + Data Processing
+
+## Pre-study (Optional Refresher)
+
+Self-learn is optional. If you want extra background:
+
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 1: Tool Preparation](../self_learn/Chapters/1/Chapter1.md)
+- [Self-learn - Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
 
 ## Overview
 
-Week 3 focuses on CSV data profiling. You will activate the environment prepared in Week 2, verify that Jupyter is using the right Python kernel, load data with pandas, and produce stable JSON and Markdown outputs.
-
-The required background is introduced inside the Week 3 materials. External documentation appears only as optional reference links.
+Week 3 focuses on reproducible environments and CSV data profiling. You will create a clean Python environment, load data with pandas, and produce stable JSON/Markdown outputs.
 
 ## Main Navigation
 
-Use these tutorials in order:
+Required Week 3 path:
 
-- [Environment preflight](01_environment_setup.md)
+- [Environment setup + dependency management](01_environment_setup.md)
 - [Data profiling script (CSV -> JSON/Markdown outputs)](02_data_profiling_script.md)
 
 ## Recommended Order
 
-1. Activate the Week 2 environment.
-2. Verify `python`, `pip`, and the notebook kernel.
-3. Confirm `pandas` imports successfully.
-4. Run a small pandas example.
-5. Build or adapt the data profiling script.
-6. Confirm `output/profile.json` and `output/profile.md` are created.
-7. Confirm the profile includes duplicates, numeric summaries, and categorical top values.
-8. Write at least 3 data quality findings.
+1. Set up and verify your Python environment.
+2. Install dependencies.
+3. Run a small pandas example.
+4. Build or adapt the data profiling script.
+5. Confirm `output/profile.json` and `output/profile.md` are created.
 
 ## Optional/Advanced Reference
 
-For local inference and LLM reliability topics, see [Week 4](../week_04/tutorial.md).
+Local inference is retained for deeper study and is no longer required for Week 3:
+
+- [Local inference setup](../week_04/optional_local_inference/01_local_inference_setup.md)
+- [Ollama HTTP client](../week_04/optional_local_inference/02_ollama_http_client.md)
+- [Benchmarking script](../week_04/optional_local_inference/03_benchmarking_script.md)

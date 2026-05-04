@@ -22,7 +22,7 @@ Self-learn is optional. If you want a refresher on tokenization, prompts, and ev
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Prompt engineering and evaluation](../self_learn/Chapters/3/02_prompt_engineering_evaluation.md)
 
-Why it matters here:
+Why it matters here (Week 6):
 
 - Many “ignored instructions” and broken JSON outputs are caused by context budget pressure and truncation.
 - Treat output length as a resource you must reserve up front.
