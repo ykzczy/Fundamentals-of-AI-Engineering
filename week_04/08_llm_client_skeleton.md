@@ -15,7 +15,7 @@ This is a Foundations Course skeleton (provider-agnostic). You can adapt it to O
 ---
 
 
-💻 **配套练习**: [08_llm_client_skeleton.ipynb](./08_llm_client_skeleton.ipynb) - 交互式代码实践
+**Lab notebook**: [08_llm_client_skeleton.ipynb](./08_llm_client_skeleton.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

@@ -13,7 +13,7 @@ This section gives you a mental model to reason about:
 ---
 
 
-💻 **配套练习**: [01_tokens_context.ipynb](./01_tokens_context.ipynb) - 交互式代码实践
+**Lab notebook**: [01_tokens_context.ipynb](./01_tokens_context.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

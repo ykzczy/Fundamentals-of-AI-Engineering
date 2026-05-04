@@ -11,7 +11,7 @@ Idempotency ensures retries do not cause duplicate side effects.
 ---
 
 
-💻 **配套练习**: [05_retries_backoff.ipynb](./05_retries_backoff.ipynb) - 交互式代码实践
+**Lab notebook**: [05_retries_backoff.ipynb](./05_retries_backoff.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

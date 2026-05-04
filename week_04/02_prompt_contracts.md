@@ -9,7 +9,7 @@ If you treat the model like a service, your prompt is the API contract.
 ---
 
 
-💻 **配套练习**: [02_prompt_contracts.ipynb](./02_prompt_contracts.ipynb) - 交互式代码实践
+**Lab notebook**: [02_prompt_contracts.ipynb](./02_prompt_contracts.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

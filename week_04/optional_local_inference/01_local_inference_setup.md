@@ -9,7 +9,7 @@
 ---
 
 
-💻 **配套练习**: [01_local_inference_setup.ipynb](./01_local_inference_setup.ipynb) - 交互式代码实践
+**Lab notebook**: [01_local_inference_setup.ipynb](./01_local_inference_setup.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

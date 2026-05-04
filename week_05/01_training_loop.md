@@ -81,7 +81,7 @@ Even if you later focus on LLMs, this disciplined loop is the basis for:
 ---
 
 
-💻 **配套练习**: [01_training_loop.ipynb](./01_training_loop.ipynb) - 交互式代码实践
+**Lab notebook**: [01_training_loop.ipynb](./01_training_loop.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

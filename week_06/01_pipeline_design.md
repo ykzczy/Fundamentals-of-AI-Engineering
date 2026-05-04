@@ -18,7 +18,7 @@ This structure improves:
 ---
 
 
-💻 **配套练习**: [01_pipeline_design.ipynb](./01_pipeline_design.ipynb) - 交互式代码实践
+**Lab notebook**: [01_pipeline_design.ipynb](./01_pipeline_design.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

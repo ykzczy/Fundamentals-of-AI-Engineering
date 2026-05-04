@@ -7,7 +7,7 @@ Ollama exposes a local HTTP API. This lets you treat local inference like a norm
 ---
 
 
-💻 **配套练习**: [02_ollama_http_client.ipynb](./02_ollama_http_client.ipynb) - 交互式代码实践
+**Lab notebook**: [02_ollama_http_client.ipynb](./02_ollama_http_client.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

@@ -12,7 +12,7 @@ In practice, reproducibility is a *package* of habits.
 ---
 
 
-💻 **配套练习**: [02_reproducibility_package.ipynb](./02_reproducibility_package.ipynb) - 交互式代码实践
+**Lab notebook**: [02_reproducibility_package.ipynb](./02_reproducibility_package.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

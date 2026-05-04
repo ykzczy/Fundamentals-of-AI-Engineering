@@ -7,7 +7,7 @@ The OpenAI API specification has become the industry standard for LLM interactio
 ---
 
 
-💻 **配套练习**: [09_openai_compatible_api.ipynb](./09_openai_compatible_api.ipynb) - 交互式代码实践
+**Lab notebook**: [09_openai_compatible_api.ipynb](./09_openai_compatible_api.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

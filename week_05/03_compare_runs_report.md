@@ -9,7 +9,7 @@ This makes improvement explainable.
 ---
 
 
-💻 **配套练习**: [03_compare_runs_report.ipynb](./03_compare_runs_report.ipynb) - 交互式代码实践
+**Lab notebook**: [03_compare_runs_report.ipynb](./03_compare_runs_report.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

@@ -14,7 +14,7 @@ Instead you send a compressed representation:
 ---
 
 
-💻 **配套练习**: [02_sampling_compression.ipynb](./02_sampling_compression.ipynb) - 交互式代码实践
+**Lab notebook**: [02_sampling_compression.ipynb](./02_sampling_compression.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

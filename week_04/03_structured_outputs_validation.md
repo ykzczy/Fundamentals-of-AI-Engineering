@@ -27,7 +27,7 @@ The important engineering point: downstream code should never need to “guess�
 ---
 
 
-💻 **配套练习**: [03_structured_outputs_validation.ipynb](./03_structured_outputs_validation.ipynb) - 交互式代码实践
+**Lab notebook**: [03_structured_outputs_validation.ipynb](./03_structured_outputs_validation.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

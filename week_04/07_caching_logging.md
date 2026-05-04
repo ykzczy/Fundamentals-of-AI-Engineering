@@ -14,7 +14,7 @@ Logging makes failures diagnosable.
 ---
 
 
-💻 **配套练习**: [07_caching_logging.ipynb](./07_caching_logging.ipynb) - 交互式代码实践
+**Lab notebook**: [07_caching_logging.ipynb](./07_caching_logging.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

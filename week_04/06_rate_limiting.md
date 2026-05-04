@@ -12,7 +12,7 @@ Your client should behave gracefully:
 ---
 
 
-💻 **配套练习**: [06_rate_limiting.ipynb](./06_rate_limiting.ipynb) - 交互式代码实践
+**Lab notebook**: [06_rate_limiting.ipynb](./06_rate_limiting.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

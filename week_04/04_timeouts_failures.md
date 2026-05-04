@@ -10,7 +10,7 @@ A timeout is the simplest reliability feature:
 ---
 
 
-💻 **配套练习**: [04_timeouts_failures.ipynb](./04_timeouts_failures.ipynb) - 交互式代码实践
+**Lab notebook**: [04_timeouts_failures.ipynb](./04_timeouts_failures.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 

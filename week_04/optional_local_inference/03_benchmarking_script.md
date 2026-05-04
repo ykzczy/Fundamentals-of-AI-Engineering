@@ -18,7 +18,7 @@ We will write `benchmark_local_llm.py` that:
 ---
 
 
-💻 **配套练习**: [03_benchmarking_script.ipynb](./03_benchmarking_script.ipynb) - 交互式代码实践
+**Lab notebook**: [03_benchmarking_script.ipynb](./03_benchmarking_script.ipynb) - Interactive coding practice
 
 ## Pre-study (Self-learn)
 
