@@ -45,13 +45,13 @@ Week 2 continues building your AI tool fluency. Still no programming required!
 - [ ] Install [VS Code](https://code.visualstudio.com) or [Cursor](https://www.cursor.com) if you haven't already
 
 **What you'll learn in Week 2:**
-- Working with AI for research and analysis
-- Understanding AI capabilities and limitations
-- Preparing for the hands-on work ahead
+- Working with AI inside an IDE
+- Reading and modifying simple Python templates
+- Preparing for the hands-on data work ahead
 
-### Before Week 3 (Programming Begins)
+### Before Week 3 (Programming Begins: Environment + Data)
 
-Week 3 is when we start coding! Here's how to prepare:
+Week 3 is when we start coding through a guided data profiling workflow. Here's how to prepare:
 
 **What to do:**
 - [ ] Install [Anaconda](https://www.anaconda.com/download) (we'll also teach this in class)
@@ -71,8 +71,8 @@ The following chapters are available for students who want to get ahead. These a
 |---|---|---|
 | [Chapter 1: Tool Preparation](self_learn/Chapters/1/Chapter1.md) | Setting up development tools | If you want to explore tools early |
 | [Chapter 2: Python and Environment Management](self_learn/Chapters/2/Chapter2.md) | Python basics, conda, virtual environments | Before Week 3 if you want a head start |
-| [Chapter 3: AI Engineering Fundamentals](self_learn/Chapters/3/Chapter3.md) | Tokens, prompts, structured outputs | Weeks 3-4 if you're curious |
-| [Chapter 4: Hugging Face Platform and Local Inference](self_learn/Chapters/4/Chapter4.md) | Running models locally | Weeks 5-6 for deeper dive |
+| [Chapter 3: AI Engineering Fundamentals](self_learn/Chapters/3/Chapter3.md) | Tokens, prompts, structured outputs | Week 4 if you want extra LLM background |
+| [Chapter 4: Hugging Face Platform and Local Inference](self_learn/Chapters/4/Chapter4.md) | Running models locally | Optional deeper dive after Week 4 |
 | [Chapter 5: Resource Monitoring and Containerization](self_learn/Chapters/5/Chapter5.md) | Docker, monitoring, best practices | Throughout the course as needed |
 
 **Feel free to skip these entirely** — we'll guide you to the right resources at the right time.
@@ -136,7 +136,7 @@ Before the first class, aim to complete:
 - [ ] ChatGPT account created
 - [ ] Claude account created  
 - [ ] VS Code or Cursor installed (optional for Week 1)
-- [ ] Excitement level: high! 🚀
+- [ ] Excitement level: high!
 
 That's it! You're ready to start learning AI Engineering.
 

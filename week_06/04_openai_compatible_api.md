@@ -1,4 +1,4 @@
-# Week 6 — Part 04: OpenAI Compatible API
+# Week 4 — Part 04: OpenAI Compatible API
 
 ## Overview
 

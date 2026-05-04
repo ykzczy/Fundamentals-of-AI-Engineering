@@ -1,4 +1,4 @@
-# Week 6 — Part 03: Structured outputs (JSON) — parse + validate + retry/repair
+# Week 4 — Part 03: Structured outputs (JSON) — parse + validate + retry/repair
 
 ## Overview
 
@@ -31,7 +31,7 @@ The important engineering point: downstream code should never need to “guess�
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on structured outputs, schemas, and validation mindset:
+Self-learn is optional. If you want a refresher on structured outputs, schemas, and validation mindset:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Structured outputs and schemas](../self_learn/Chapters/3/01_function_calling_structured_outputs.md)

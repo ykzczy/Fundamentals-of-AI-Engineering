@@ -3,7 +3,7 @@ marp: true
 theme: default
 paginate: true
 header: "Fundamentals of AI Engineering"
-footer: "Week 4 — Environment Setup & Data Quality"
+footer: "Week 4 — LLM Fundamentals + API Reliability"
 style: |
   @import 'theme.css';
 ---
@@ -12,7 +12,7 @@ style: |
 
 # Week 4
 
-## Environment Setup & Data Quality Basics
+## LLM Fundamentals + API Reliability
 
 ---
 
@@ -20,228 +20,126 @@ style: |
 
 By the end of this week, you should be able to:
 
-- Create a clean Python environment and install dependencies reliably
-- Run a project from a README on a fresh machine (or fresh folder)
-- Build a data quality profiling script that reads a CSV and produces reproducible outputs
+- Explain tokens and context windows
+- Design prompts as contracts
+- Produce and validate structured outputs
+- Add basic timeout, retry, and logging practices
+- Use one working LLM path: hosted API or local inference
 
 ---
 
-# What is AI Engineering?
+# What is an LLM Call?
 
-![bg right:50% h:320](images/concepts/ai_ml_dl.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (AI-ML-DL.svg)</div>
+![bg right:40% h:380](images/concepts/api_diagram.svg)
 
-AI Engineering = building **reliable systems** that use AI models (including LLMs).
+Your code sends:
 
-It's not just about the model — it's about **data quality**, **reproducible pipelines**, and **stable infrastructure** around the model.
+- instructions
+- user input
+- optional context
 
----
-
-# What This Course Builds
-
-- **Week 4**: Environment + data profiling
-- **Weeks 5–6**: ML, LLM APIs, local inference
-- **Capstone**: Pipeline, testing, demo
+The model returns generated text. Your code must parse, validate, and handle failures.
 
 ---
 
-# Why This Matters for LLM Projects
+# Tokens and Context Windows
 
-LLMs are powerful, but **they don't fix bad engineering**:
+An LLM processes tokens, not "thoughts."
 
-| Without engineering discipline | With engineering discipline |
-|-------------------------------|---------------------------|
-| "Works on my laptop" | Reproducible on any machine |
-| Feeding garbage data to LLM | Profiled, validated data → better prompts |
-| Can't explain what changed | Artifact trail for every run |
-| Random failures | Controlled, debuggable pipeline |
+- Token count affects cost and latency
+- Context window limits how much input fits
+- Long inputs can cause ignored instructions or truncated JSON
 
-> Every skill this week — environments, data profiling, reproducibility — directly applies when you build LLM-powered systems in later weeks.
+**Capstone connection**: do not send the whole CSV to the LLM.
 
 ---
 
-# What is Data Quality Profiling?
+# Prompt as Contract
 
-**Data profiling** = systematically assessing data quality *before* using it (structure, completeness, consistency).
+A reliable prompt specifies:
 
-**Key checks**: row counts, column types, missing values (%), distributions, outliers, duplicates.
-
-![bg right:40% h:320](images/concepts/data_profiling.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Data Mining - The Noun Project.svg)</div>
-
-### Without profiling (bad path)
-
-Dirty data → model trained on noise → wrong predictions → hallucinations.
-
-Each arrow is a point where profiling could have caught the problem **early**.
+| Component | Purpose |
+|-----------|---------|
+| Role | What the model is doing |
+| Task | What to produce |
+| Input format | What data is provided |
+| Output schema | Exact JSON keys |
+| Constraints | No markdown, no extra prose |
+| Fallback | What to do when data is missing |
 
 ---
 
-# Data Quality → AI Quality
+# Structured Output Flow
 
-![bg right:40% h:320](images/concepts/machine_learning.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of machine learning.png)</div>
-
-### With profiling (good path)
-
-Profiled + cleaned data → model on quality data → reliable outputs → trustworthy results.
-
-**For LLM work**: bad data → bad prompts → hallucinations. Profile **early** to avoid expensive failures.
-
----
-
-# Without Isolation: Version Conflicts
-
-![h:280](images/concepts/traditional_programming.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of traditional computer applications.png)</div>
-
-LLM libraries change **fast** — `openai` had a breaking API change from v0.x to v1.x.
-
----
-
-# With Isolation: Each Project is Safe
-
-**Pinned versions + isolated venvs** = safety net. Each project has its own dependency versions.
-
----
-
-<!-- _class: part -->
-
-# Part 01
-## Environment Setup + Dependency Management
-
-`week_04/01_environment_setup.md` · `01_environment_setup.ipynb`
-
----
-
-# Environment Setup: venv
-
-System Python → create venv → activate → install deps → freeze `requirements.txt` → run script.
-
-**Key**: always activate before `pip install`, always freeze after installing.
-
----
-
-# Environment Setup: Conda
-
-![h:360 Anaconda Distribution](images/concepts/anaconda_distribution.png)
-
-Same pattern as venv — different tool, same discipline.
-
-Base conda → create env → activate → install deps → export `environment.yml` → run script.
-
----
-
-# The "Fresh Machine" Test
-
-The gold standard: can someone recreate your project from scratch?
-
-| Step | What to do | Success looks like |
-|------|-----------|-------------------|
-| 1. Create venv | `python -m venv .venv` | New `.venv/` directory |
-| 2. Activate | `source .venv/bin/activate` | `which python` → `.venv/bin/python` |
-| 3. Install | `pip install -r requirements.txt` | No errors |
-| 4. Verify | `python -c "import pandas"` | No ImportError |
-
-**Pin versions** in `requirements.txt`:
-```txt
-pandas==2.2.3
-scikit-learn==1.5.2
-openai==1.6.1
+```text
+raw input
+  -> prompt contract
+  -> LLM call
+  -> raw output
+  -> parse JSON
+  -> validate expected fields
+  -> save result
 ```
 
----
-
-# Common Pitfalls
-
-| Pitfall | Symptom | Fix |
-|---------|---------|-----|
-| Installing outside env | "Works on my machine" | Always activate before `pip install` |
-| Forgetting to record deps | Can't recreate env | `pip freeze > requirements.txt` after install |
-| Version drift | "Worked last week" | Pin versions explicitly |
-| Platform-specific deps | Fails on other OS | Document system deps separately |
-
-**Diagnosis**: Always check `which python` — should point to your `.venv/`, not `/usr/bin/python`.
+Each step can fail independently.
 
 ---
 
-<!-- _class: part -->
+# Common Failure Modes
 
-# Part 02
-## Data Quality Profiling Script
-
-`week_04/02_data_profiling_script.md` · `02_data_profiling_script.ipynb`
-
----
-
-# Data Quality Profiling Pipeline
-
-**Defensive programming**: validate early, fail fast.
-
-- If file is missing → clear `FileNotFoundError`
-- If file is empty → clear `ValueError`
-- If validation passes → compute stats and write reproducible outputs
+| Failure | Beginner-friendly fix |
+|---------|-----------------------|
+| Invalid JSON | Repair prompt + bounded retry |
+| Markdown around JSON | "Return only valid JSON" |
+| Missing fields | Validate required keys |
+| Timeout | Set max wait |
+| Rate limit | Retry after delay |
+| Unknown error | Save raw response + readable message |
 
 ---
 
-# Data Quality Profiling for LLM Pipelines
+# Reliability Minimum
 
-In later weeks, you will **compress** data and send it to an LLM for analysis.
+For Week 4, "reliable enough" means:
 
-| What profiling catches | What happens if you miss it |
-|----------------------|---------------------------|
-| Missing values (40% of a column) | LLM hallucinates values to fill gaps |
-| Wrong column types (dates as strings) | LLM misinterprets the data |
-| Unexpected encoding | Garbled text in the prompt |
-| Empty dataset | Wasted API call + confusing output |
+- timeout or max wait
+- retry limit or repair attempt
+- clear error message
+- saved raw responses or logs
+- no infinite retries
 
-**Rule**: Profile first, send to LLM second. The data quality profiling habit you build this week is the foundation for every LLM pipeline later.
-
----
-
-# Reproducibility: Why It Matters
-
-**Reproducibility** = run the same command twice → get **identical** outputs.
-
-| Concept | How we enforce it |
-|---------|------------------|
-| Deterministic outputs | `sort_keys=True` in JSON |
-| Stable environment | Pinned `requirements.txt` |
-| Controlled inputs | Explicit `--input` flag |
-| Traceable outputs | All artifacts in `output/` directory (audit trail) |
-
-**For LLM work**: When you later compare prompt strategies or model versions, reproducibility lets you **isolate what changed** — was it the data, the prompt, or the model?
+This is not production engineering yet; it is disciplined beginner practice.
 
 ---
 
-# Workshop / Deliverables
+# Main Tutorials
 
-Implement `data_profile.py`:
+- `week_06/01_tokens_context.md`
+- `week_06/02_prompt_contracts.md`
+- `week_06/03_structured_outputs_validation.md`
+- `week_03/04_timeouts_failures.md`
+- `week_03/05_retries_backoff.md`
+- `week_03/08_llm_client_skeleton.md`
 
-- **Input**: `--input path/to.csv`
-- **Output**: write files to `output/`
-- **Error handling**: clear errors for missing file / empty file / missing columns
-
-**Extensions** (recommended):
-- `--required_columns colA,colB` — fail if missing
-- Numeric summaries (min/max/mean)
-- Frequent values for categorical columns (top 5)
+Optional: Ollama/local-vs-cloud benchmarking.
 
 ---
 
-# Self-Check Questions
+# Deliverables
 
-- Can you recreate your environment from scratch using only `requirements.txt`?
-- Can you explain **why** environments prevent dependency conflicts?
-- If you delete `.venv`, can you recreate it and run the project?
-- If the input file is missing, do you get a clear error?
-- Can you explain how data profiling helps LLM-based analysis later?
+- Structured-output demo
+- At least 3 test inputs and outputs
+- Prompt contract
+- Simplified LLM client or reliability notes
+- Short reflection on one failure mode
+
+Hosted API or local inference is enough. Benchmarking both is optional.
 
 ---
 
-# References
+# Self-Check
 
-- Python `venv`: https://docs.python.org/3/library/venv.html
-- pip user guide: https://pip.pypa.io/en/stable/user_guide/
-- Conda environments: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
-- Pandas getting started: https://pandas.pydata.org/docs/getting_started/index.html
+- Why might strict JSON still fail?
+- What is your retry limit?
+- What raw output did you save for debugging?
+- What will your code do when the model call fails?

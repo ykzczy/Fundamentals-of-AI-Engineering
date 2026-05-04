@@ -3,7 +3,7 @@ marp: true
 theme: default
 paginate: true
 header: "Fundamentals of AI Engineering"
-footer: "Week 5 — ML Training Loop & Reproducible Baselines"
+footer: "Week 5 — ML Training Loop & Lightweight Baselines"
 style: |
   @import 'theme.css';
 ---
@@ -12,7 +12,7 @@ style: |
 
 # Week 5
 
-## The ML Training Loop + Reproducible Baselines
+## The ML Training Loop + Lightweight Baselines
 
 ---
 
@@ -22,7 +22,7 @@ By the end of this week, you should be able to:
 
 - Explain why we split data into train/validation
 - Train a baseline model, evaluate it, and save artifacts
-- Compare two runs and write a short failure analysis (post-mortem)
+- Compare two lightweight baseline runs and write a short reflection
 
 ---
 
@@ -230,7 +230,7 @@ A good report is short and structured:
 | **Change** | Exactly what you changed (one variable) |
 | **Result** | Metrics before/after |
 | **Interpretation** | Why you think it changed |
-| **Failure analysis** | One run that didn't work + what you learned |
+| **Reflection** | What changed, what you learned |
 | **Next experiment** | One clear idea |
 
 **Two rules**: always include exact commands, always point to artifact folders.
@@ -252,11 +252,13 @@ A good report is short and structured:
 # Workshop / Deliverables
 
 - Implement `train.py` (parameterized: `--input`, `--label_col`, `--seed`)
-- Run **2 experiments**: change one hyperparameter or switch models
+- Run **2 lightweight baseline experiments**: change one hyperparameter, switch models, or change one feature choice
 - Write `report.md`:
   - What you changed
   - What happened (metrics)
-  - One failure analysis + your next experiment idea
+  - One next experiment idea
+
+Advanced work such as cross-validation, statistical significance testing, or complex visualizations is optional.
 
 ---
 

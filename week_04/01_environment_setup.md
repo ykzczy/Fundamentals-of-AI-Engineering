@@ -1,4 +1,4 @@
-# Week 4 — Part 01: Environment setup + dependency management
+# Week 3 — Part 01: Environment setup + dependency management
 
 ## Overview
 
@@ -17,7 +17,7 @@ That means:
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes you do a lot self-study. Refer to self-study materials for refresher on environments or Jupyter:
+Self-learn is optional. Use self-study materials as a refresher on environments or Jupyter:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 2: Conda environment management](../self_learn/Chapters/2/03_conda_environments.md)
@@ -32,7 +32,7 @@ Foundations Course assumes you do a lot self-study. Refer to self-study material
 2. Verify you are using the intended Python:
    - `python --version`
    - `which python` (Linux/macOS)
-3. Install the packages needed for Week 4 (at minimum `pandas`).
+3. Install the packages needed for Week 3 (at minimum `pandas`).
 4. Record dependencies for reproducibility:
    - `pip freeze > requirements.txt`
 

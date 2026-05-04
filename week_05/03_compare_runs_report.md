@@ -13,7 +13,7 @@ This makes improvement explainable.
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on evaluation metrics (accuracy/precision/recall/F1):
+Self-learn is optional. If you want a refresher on evaluation metrics (accuracy/precision/recall/F1):
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Evaluation metrics](../self_learn/Chapters/4/02_core_concepts.md)

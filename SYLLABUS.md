@@ -5,56 +5,34 @@
 | Attribute | Details |
 |-----------|---------|
 | **Course Name** | AI Engineering Fundamentals |
-| **Version** | v2.0 (6-Week Program) |
+| **Version** | v2.1 (6-Week Beginner Program) |
 | **Duration** | 6 weeks |
-| **Weekly Hours** | 5 hours (1.5h lecture + 1.5h office hour + 2h homework) |
+| **Weekly Hours** | 5 hours recommended |
 | **Delivery Method** | In-person instruction + hands-on workshops |
-| **Target Students** | Non-technical backgrounds; no prior programming experience required |
-
----
+| **Target Students** | AI beginners; no programming background required for Weeks 1-2 |
 
 ## Course Introduction
 
-AI Engineering Fundamentals is specifically designed for students from non-technical backgrounds, employing an innovative three-stage progressive teaching model: **"Agent Tools Introduction → AI-Assisted Learning → Technical Hands-on Practice."**
+AI Engineering Fundamentals is designed for students who are new to AI tools, programming, and applied AI development. The course uses a staged learning path:
 
-The first two weeks require no programming background. Students will first learn to use AI Agent tools such as Cursor, ChatGPT, and Kilo, establishing an intuitive understanding of AI capabilities and developing effective methodologies for working with AI. Starting from Week 3, students will gradually learn core technical skills—including Python programming, local inference, API engineering, data processing, machine learning, and LLM applications—with the assistance of AI tools.
+**Agent Tools Introduction -> AI-Assisted Code Practice -> Data Processing -> LLM Workflows -> ML Baselines -> Capstone**
+
+The first two weeks require no independent programming. Students learn how to use AI tools, how to ask useful questions, and how to review AI-generated answers. Starting in Week 3, students gradually practice Python, data processing, LLM calls, and simple ML experiments with guided templates and AI assistance.
 
 ### Core Philosophy
 
-**"Learn AI with AI"** — Make AI an accelerator for learning, not a replacement for understanding.
-
----
+**"Learn AI with AI"** - AI tools should accelerate learning, but students still need to verify outputs, explain their work, and understand the workflow they submit.
 
 ## Learning Objectives
 
 Upon completing this course, students will be able to:
 
-### 1. Proficiently Use AI Agent Tools
-- Master mainstream AI tools including Cursor, ChatGPT, and Kilo
-- Select appropriate AI tools based on task requirements
-- Understand the capabilities and limitations of AI tools in various contexts
-
-### 2. Use AI to Assist Programming and Learn Python
-- Read, modify, and debug code with AI assistance
-- Adopt AI-collaborative programming methods without learning every detail from scratch
-- Develop foundational Python programming skills
-
-### 3. Understand and Practice Local Inference & API Engineering
-- Set up and run local models using Ollama
-- Understand the differences between local inference and cloud APIs and their appropriate use cases
-- Implement reliable LLM clients with timeout, retry, and rate-limiting mechanisms
-
-### 4. Master Data Processing Fundamentals
-- Use pandas for data loading, cleaning, and analysis
-- Generate structured data profiling reports
-- Understand how data quality impacts AI model performance
-
-### 5. Complete ML Training Experiments and LLM Application Projects
-- Train machine learning models and conduct experimental comparisons
-- Design effective prompt templates
-- Complete end-to-end AI application projects and present findings
-
----
+1. Use mainstream AI tools such as ChatGPT, Claude, Cursor, Kilo, or Copilot Chat for practical tasks.
+2. Read, modify, and debug simple Python code with AI assistance.
+3. Create a clean Python environment and generate reproducible CSV profiling reports.
+4. Design structured prompts, request JSON-like outputs, and add basic reliability controls to LLM calls.
+5. Train and compare two lightweight ML baseline runs.
+6. Build and demo an intelligent data analysis script that turns CSV input into JSON and Markdown reports.
 
 ## Weekly Schedule
 
@@ -63,324 +41,208 @@ Upon completing this course, students will be able to:
 **Theme:** Using AI Without Writing Code
 
 #### Learning Objectives
-- Understand the concept of AI Agents and mainstream tools
-- Master basic usage of Cursor, ChatGPT, Kilo, and similar tools
-- Develop intuition for AI capabilities and establish usage methodologies
 
-#### Session 1 (1.5h) - Agent Tools Overview and Demonstration
-- What are AI Agents? (Concept explanation + analogies)
-- Introduction to mainstream Agent tools:
-  - **Cursor:** Code editor + AI assistant
-  - **Kilo:** AI programming assistant
-  - **ChatGPT/Claude:** General-purpose conversational AI
-  - **GitHub Copilot Chat:** Code conversation assistant
-- Live demonstrations: Using natural language to accomplish simple tasks
-  - "Help me write a job application email"
-  - "Explain what this code does"
-  - "Organize this Excel data into a table"
+- Understand what AI agent tools are and what they can/cannot do.
+- Practice basic prompting and follow-up questions.
+- Compare chat tools and agent/editor tools for everyday tasks.
 
-#### Session 2 (1.5h) - Hands-on Experience
-- Student registration and tool installation
-- Practice tasks:
-  - Write an article using ChatGPT
-  - Open a project folder in Cursor and have AI explain the project structure
-  - Complete a simple instruction using Kilo
-- Sharing session: Most successful AI collaboration experiences
+#### Sessions
+
+- Agent tools overview: ChatGPT, Claude, Cursor, Kilo, Copilot Chat.
+- Hands-on tool practice: writing, summarizing, explaining, and planning tasks.
+- Reflection: when to trust AI, when to verify, and how to document AI usage.
 
 #### Deliverables
-- Complete 3 different types of Agent tool experience tasks
-- Write an "Agent Tools Usage Reflection" report (800-1000 words)
+
+- 3 AI tool experience cases.
+- Representative prompts or screenshots/interaction notes.
+- Short reflection report.
 
 #### Resources
+
 - [week_01/README.md](week_01/README.md)
 - [slides/week_01.md](slides/week_01.md)
 
----
+### Week 2: IDE + AI-Assisted Code Practice
 
-### Week 2: IDE + Agent Practice
-
-**Theme:** Starting to Work with Code
+**Theme:** Starting to Work With Code
 
 #### Learning Objectives
-- Use AI assistants within IDE environments
-- Learn to have AI help you read and modify code
-- Understand the "AI-assisted programming" workflow
-- Gain initial exposure to Python code
 
-#### Session 1 (1.5h) - IDE + AI Environment Setup
-- Install VS Code or Cursor
-- Configure GitHub Copilot / Cursor AI
-- Learn basic IDE operations:
-  - Opening files
-  - Running terminal commands
-  - Viewing output
-- AI-assisted programming workflow:
-  - Using AI to explain code
-  - Using AI to modify code
-  - Using AI to generate code
+- Open a project in VS Code or Cursor.
+- Use AI to explain simple Python files.
+- Make small guided code modifications.
+- Debug one provided error with AI assistance.
 
-#### Session 2 (1.5h) - Code Reading and Modification Practice
-- Use provided Python project templates
-- Task 1: Have AI explain what each code segment does (at least 5 functions)
-- Task 2: Request modifications and have AI help you change the code (at least 3 modifications)
-  - "Modify this function to accept user input"
-  - "Add comments to this function"
-- Task 3: Run the code and observe results
+#### Sessions
+
+- IDE setup and basic navigation.
+- Code reading with AI using `week_02/code_templates/`.
+- Small modifications and debugging workshop.
 
 #### Deliverables
-- Complete code explanation exercise (explain at least 5 functions)
-- Complete code modification tasks (at least 3 modifications)
-- Write an "AI-Assisted Programming Reflection" report (800-1000 words)
+
+- Explanation notes for at least 5 functions.
+- 2-3 small code modifications based on provided templates.
+- One debugging record: error, AI prompt, fix, and verification.
 
 #### Resources
+
 - [week_02/README.md](week_02/README.md)
 - [slides/week_02.md](slides/week_02.md)
 
----
+### Week 3: Environment + Data Processing
 
-### Week 3: Local Inference & API Engineering
-
-**Theme:** From Local to Cloud - Understanding LLM Invocation
+**Theme:** The Foundation of AI - Data and Reproducibility
 
 #### Learning Objectives
-- Set up local Python development environments
-- Install and run Ollama local models
-- Understand the differences between local inference and cloud APIs
-- Master reliability engineering for LLM APIs
-- Implement robust LLM clients
 
-#### Session 1 (1.5h) - Environment Setup and Local Inference
-- Python environment installation (using Anaconda for simplicity)
-- Virtual environment concepts and creation
-- Install Ollama
-- Download and run local models (llama3.2:1b)
-- Interact with models via command line
+- Create and activate a Python environment.
+- Install dependencies from a requirements file.
+- Load CSV files with pandas.
+- Generate stable data profiling outputs.
 
-#### Session 2 (1.5h) - API Calls and Reliability Engineering
-- Local inference vs. cloud API comparison
-- API failure modes: timeouts, rate limiting, errors
-- Implement timeout settings and retry strategies
-- Add caching and logging
-- Build a simple LLM client
+#### Sessions
+
+- Environment setup: Python, venv/conda, dependencies, and the "fresh machine" mindset.
+- Data profiling: row counts, column types, missing values, duplicates, simple statistics, and Markdown/JSON output.
+- Workshop: run the profiler on a provided or student-selected CSV.
 
 #### Deliverables
-- Successfully run Ollama local model
-- Implement a reliable LLM client (supporting local + cloud)
-- Complete model comparison experiment report (1000-1500 words)
+
+- A runnable data profiling script.
+- `profile.json` and `profile.md` sample outputs.
+- A short data quality note explaining at least 3 findings.
+- Manual test checklist is acceptable; automated tests are optional.
 
 #### Resources
+
 - [week_03/README.md](week_03/README.md)
 - [slides/week_03.md](slides/week_03.md)
 
----
+### Week 4: LLM Fundamentals + API Reliability
 
-### Week 4: Data Processing Fundamentals
-
-**Theme:** The Foundation of AI — Data
+**Theme:** Structured LLM Calls That Code Can Use
 
 #### Learning Objectives
-- Understand the importance of data for AI
-- Learn to use pandas for basic data processing
-- Generate data profiling reports
-- Master CSV data loading, cleaning, and analysis
 
-#### Session 1 (1.5h) - The Relationship Between Data and AI
-- Why data quality determines AI effectiveness
-- Pandas basics: reading CSV, viewing data
-- Data types and basic statistics
-- Practice: Load a dataset and view basic information
+- Explain tokens, context windows, and why long inputs fail.
+- Write prompts as contracts with explicit input and output expectations.
+- Parse and validate structured outputs.
+- Add beginner-friendly timeout, retry, and logging practices.
 
-#### Session 2 (1.5h) - Data Cleaning and Exploration
-- Handling missing values
-- Identifying outliers
-- Data distribution analysis
-- Generate data profiles (JSON/Markdown output)
+#### Sessions
+
+- LLM basics: tokens, context, prompt structure, JSON output.
+- Structured outputs: parsing, validation, and repair prompts.
+- API reliability: timeout, retry, logging, and optional local/cloud comparison.
 
 #### Deliverables
-- Complete a data profiling report (JSON + Markdown format)
-- Clean a real-world dataset
-- Write a data quality analysis report (800-1200 words)
+
+- A structured-output demo that returns parseable JSON for at least 3 inputs.
+- A simplified LLM client or wrapper with timeout/retry notes.
+- A short reliability reflection: one failure mode and how you handled it.
+- Hosted API or Ollama is sufficient; local-vs-cloud benchmark is optional.
 
 #### Resources
+
 - [week_04/README.md](week_04/README.md)
 - [slides/week_04.md](slides/week_04.md)
-
----
 
 ### Week 5: ML Training Loop
 
 **Theme:** Understanding the Machine Learning Workflow
 
 #### Learning Objectives
-- Understand the basic machine learning workflow
-- Master train/validation split concepts
-- Train a basic classification model
-- Learn to compare results from different experiments
 
-#### Session 1 (1.5h) - ML Fundamentals
-- What is training? What is inference?
-- Train/Validation/Test splits
-- Overfitting and underfitting (intuitive explanations)
-- Basic evaluation metrics: accuracy, F1 score
+- Explain train/validation splits and overfitting in plain language.
+- Train a simple baseline model.
+- Save metrics and compare two runs.
 
-#### Session 2 (1.5h) - Train Your First Model
-- Train classifiers using scikit-learn
-- Save models and experiment configurations
-- Evaluate model performance
-- Run multiple experiments and compare results
+#### Sessions
+
+- ML fundamentals: training, inference, validation, and metrics.
+- Guided scikit-learn baseline.
+- Run comparison and short report writing.
 
 #### Deliverables
-- Train at least 2 different models
-- Complete model comparison experiment report (1000-1500 words)
-- Explain experimental design decisions
+
+- Two lightweight baseline runs.
+- Saved configs/metrics or a simple comparison table.
+- Short report explaining what changed, what happened, and one next step.
 
 #### Resources
+
 - [week_05/README.md](week_05/README.md)
 - [slides/week_05.md](slides/week_05.md)
 
----
+### Week 6: Capstone - Intelligent Data Analysis Script
 
-### Week 6: LLM Application Practice
-
-**Theme:** Integrating Knowledge to Complete End-to-End Projects
+**Theme:** CSV In, AI-Assisted Report Out
 
 #### Learning Objectives
-- Understand tokens and context window concepts
-- Master basic prompt engineering techniques
-- Apply pipeline thinking to integrate knowledge from Weeks 1-5
-- Complete a simplified end-to-end project
-- Course review and future outlook
 
-#### Session 1 (1.5h) - LLM Basics and Prompt Engineering
-- Tokenization introduction and context window limitations
-- Prompt design best practices
-- Structured prompts and JSON output
-- Introduction to validation and retry mechanisms
+- Combine data profiling, sampling/compression, and LLM interpretation.
+- Produce stable JSON and Markdown reports.
+- Explain design decisions and demo a reproducible run.
 
-#### Session 2 (1.5h) - End-to-End Project Practice
-- Project introduction: Data Analysis Assistant (simplified version)
-- Use provided project templates
-- Data sampling and compression (using Week 4 skills)
-- Build prompts to call LLM (using Week 3 skills)
-- Generate reports (JSON + Markdown)
+#### Sessions
+
+- Capstone MVP walkthrough: CSV -> profile -> sampled summary -> LLM interpretation -> report.
+- Implementation workshop using provided templates and prior-week components.
+- Demo, reflection, and next learning path.
 
 #### Deliverables
-- Design 2-3 effective prompt templates
-- Complete simplified data analysis project
-- Project presentation (3-5 minutes)
-- Project reflection report (500-800 words)
+
+- A reproducible script or small project that accepts a CSV input.
+- `report.json` and `report.md` outputs.
+- Short demo or walkthrough.
+- `postmortem.md` or reflection documenting one issue and fix.
 
 #### Resources
+
 - [week_06/README.md](week_06/README.md)
 - [slides/week_06.md](slides/week_06.md)
+- [capstone.md](capstone.md)
 
----
+## Study Tips
 
-## Study Tips & FAQ
+- Treat AI as a collaborator: ask it to explain, but verify the result.
+- Keep every week runnable: commands, inputs, outputs, and environment notes matter.
+- Prefer small working examples over large unfinished projects.
+- Document prompts that changed your work meaningfully.
 
-### Time Management
+## FAQ
 
-- **Weekly Investment:** At least 5 hours of class time + 3-5 hours of after-class practice
-- **Practice First:** Implement concepts immediately after understanding them
-- **Use AI Assistance:** Fully utilize Cursor, ChatGPT, and other tools to accelerate learning
+**Q: I have no programming experience. Can I still take this course?**
+Yes. Weeks 1-2 require no programming. Starting in Week 3, programming is introduced through guided templates and AI-assisted workflows.
 
-### Study Methods
+**Q: Do I need to finish self_learn before Week 1?**
+No. `self_learn/` is optional reference material for students who want extra practice.
 
-#### 1. Pre-Class Preparation
-- Register required accounts in advance
-- Install necessary software
-- Browse materials for the upcoming week
+**Q: Do I need ChatGPT Plus or paid APIs?**
+No paid subscription is required for the course design. Week 4 can use either a hosted API, an instructor-provided setup, or local inference where available.
 
-#### 2. In-Class Participation
-- Ask questions and participate in discussions actively
-- Complete in-class exercises promptly
-- Pair up with classmates for collaborative learning
-
-#### 3. Post-Class Consolidation
-- Review class content
-- Complete homework assignments
-- Read recommended materials
-
-### Frequently Asked Questions
-
-**Q: I have absolutely no programming experience. Can I still learn this?**  
-**A:** Yes. The first two weeks of this course require no programming background. Through AI tool assistance, you can gradually learn Python through practice.
-
-**Q: What can I learn in Weeks 1-2 without writing code?**  
-**A:** Learning to use AI tools is a core skill. Even in technical roles, proficiency with AI tools is an important capability. The methodology established in these two weeks will run through the entire course.
-
-**Q: Do I need to purchase ChatGPT Plus?**  
-**A:** Not required. The free version of ChatGPT is sufficient for the course. Cursor has a free trial period that can be used during the course.
-
-**Q: What if I can't keep up starting Week 3?**  
-**A:** Provide timely feedback to the instructor, and we will offer additional tutoring. You can also use tools like Cursor to accelerate your learning of programming concepts.
-
-**Q: Is the course project very difficult?**  
-**A:** The Week 6 project is a simplified version with provided templates. The focus is on experiencing the end-to-end workflow rather than developing from scratch.
-
----
-
-## Resources and Support
-
-### Official Resources
-
-- **Course Repository:** https://github.com/inference-ai-course/Fundamentals-of-AI-Engineering.git
-- **Issue Reporting:** https://github.com/inference-ai-course/Fundamentals-of-AI-Engineering/issues
-- **Discussion Forum:** https://discord.gg/MkmUWv5v
-
-### Learning Resources
-
-#### Official Documentation
-- Python Official Tutorial
-- Pandas Documentation
-- OpenAI API Documentation
-- Ollama Documentation
-
-#### Recommended Reading
-- "Python Crash Course" by Eric Matthes
-- "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" by Aurélien Géron
-- Prompt Engineering Guide (promptingguide.ai)
-
-### Getting Help
-
-1. **In-Class Questions:** Make full use of class time to ask questions
-2. **AI Assistance:** Use Cursor, ChatGPT, and other tools to answer questions
-3. **Peer Learning:** Pair up with classmates and help each other
-4. **Office Hours:** Fixed Q&A time each week
-
----
+**Q: Is the final project open-ended?**
+The required MVP is fixed: CSV input -> `report.json` + `report.md`. Extra UI, Excel support, multi-backend LLM support, and caching are stretch goals.
 
 ## Course Changelog
 
+### v2.1 (2026-05-04)
+
+- Moved data processing to Week 3.
+- Moved LLM fundamentals and simplified API reliability to Week 4.
+- Kept Week 5 focused on lightweight ML baselines.
+- Unified Week 6 around the intelligent data analysis capstone.
+- Clarified that `self_learn/` and `old_v1/` are optional references.
+
 ### v2.0 (2026-04-01)
-- Compressed from 8 weeks to 6 weeks
-- Added Week 1-2 Agent Tools Introduction content
-- Lowered programming barrier, emphasizing AI-assisted learning
-- Combined original Week 5 (Local Inference) and Week 4 (API Engineering) into new Week 3
-- Combined original Week 3 (Prompt Engineering) and Week 6 (Project) into new Week 6
-- Removed original Weeks 7-8, simplified Capstone project
 
-### v1.0 (Original Version)
-- 8-week course structure
-- Traditional technical learning path
-- Complete Capstone project workflow
+- Compressed the original 8-week course to 6 weeks.
+- Added Week 1-2 AI agent tools introduction.
+- Lowered the programming barrier for beginners.
 
 ---
 
-## Course Team
-
-- **Lead Instructor:** [Instructor Name]
-- **Teaching Assistants:** [TA Names]
-- **Course Design:** AI Engineering Education Team
-
-### Contact Information
-
-- **Email:** [Course Email]
-- **WeChat Group:** [Course WeChat Group QR Code]
-- **Discord:** https://discord.gg/MkmUWv5v
-- **GitHub:** https://github.com/inference-ai-course/Fundamentals-of-AI-Engineering.git
-
----
-
-**Last Updated:** 2026-04-01  
-**Version:** v2.0
+**Last Updated:** 2026-05-04
+**Version:** v2.1

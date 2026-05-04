@@ -1,125 +1,82 @@
-# Foundations Course — Week 4: Environment Setup & Data Processing Basics
+# Week 4: LLM Fundamentals + API Reliability
 
-## Pre-study (Self-learn)
+Week 4 turns LLM usage into a workflow that code can depend on. You will learn how tokens and context windows shape model behavior, how to design prompts as contracts, and how to add simple reliability controls around API or local model calls.
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+## Pre-study (Optional Refresher)
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 1: Tool Preparation](../self_learn/Chapters/1/Chapter1.md)
-- [Self-learn — Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
+Self-learn is optional. Use these only if you want extra background:
 
-## What you should be able to do by the end of this week
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
+- [Self-learn - Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
 
-- Create a clean Python environment and install dependencies reliably.
-- Run a project from a README on a fresh machine (or a fresh folder).
-- Build a small “data profiling” script that reads a CSV and produces reproducible outputs.
+## What You Should Be Able to Do
 
-### Environment setup flow
+By the end of this week, you should be able to:
 
-Both approaches achieve isolation; choose based on your needs:
+- Explain tokens, context windows, and why long inputs fail.
+- Write a structured prompt with clear input and output expectations.
+- Produce JSON-like output and validate it programmatically.
+- Add beginner-friendly timeout, retry, logging, and readable error handling.
+- Use either a hosted API or local inference path for a small demo.
 
-```mermaid
-flowchart TD
-  subgraph venv["Python venv approach"]
-    A1[System Python] --> B1[Create: python -m venv .venv]
-    B1 --> C1[Activate venv: source .venv/bin/activate]
-    C1 --> D1[Upgrade pip]
-    D1 --> E1[Install deps]
-    E1 --> F1[Freeze: requirements.txt]
-    F1 --> G1[Run script]
-  end
+## Tutorials
 
-  subgraph conda["Conda approach"]
-    A2[Base conda] --> B2[Create: conda create -n myenv]
-    B2 --> C2[Activate: conda activate myenv]
-    C2 --> D2[Install deps via pip or conda]
-    D2 --> E2[Export: conda env export > environment.yml]
-    E2 --> F2[Run script]
-  end
-```
+Main Week 4 learning path:
 
-Tutorials:
- 
-- [tutorial.md](tutorial.md)
-- [01_environment_setup.md](01_environment_setup.md)
-- [02_data_profiling_script.md](02_data_profiling_script.md)
+- [../week_06/01_tokens_context.md](../week_06/01_tokens_context.md)
+- [../week_06/02_prompt_contracts.md](../week_06/02_prompt_contracts.md)
+- [../week_06/03_structured_outputs_validation.md](../week_06/03_structured_outputs_validation.md)
+- [../week_03/04_timeouts_failures.md](../week_03/04_timeouts_failures.md)
+- [../week_03/05_retries_backoff.md](../week_03/05_retries_backoff.md)
+- [../week_03/06_rate_limiting.md](../week_03/06_rate_limiting.md)
+- [../week_03/07_caching_logging.md](../week_03/07_caching_logging.md)
+- [../week_03/08_llm_client_skeleton.md](../week_03/08_llm_client_skeleton.md)
 
-Exercises are included at the end of each notebook.
+Optional/advanced:
 
-## Key Concepts (Self-learn refresher)
+- [../week_03/01_local_inference_setup.md](../week_03/01_local_inference_setup.md)
+- [../week_03/02_ollama_http_client.md](../week_03/02_ollama_http_client.md)
+- [../week_03/03_benchmarking_script.md](../week_03/03_benchmarking_script.md)
+- [../week_06/04_openai_compatible_api.md](../week_06/04_openai_compatible_api.md)
 
-Foundations Course assumes you already learned the fundamentals in Self-learn. If you need a refresher for this week:
+## Workshop Plan
 
-- Environment management (conda/venv):
-  - ../self_learn/Chapters/2/03_conda_environments.md
-  - ../self_learn/Chapters/1/04_conda_environment_management.md
-- Jupyter basics:
-  - ../self_learn/Chapters/1/05_jupyter_interactive_computing.md
-- Modules, exception handling, and JSON/file I/O patterns:
-  - ../self_learn/Chapters/2/02_modules_exceptions.md
+1. Write a prompt contract with:
+   - task
+   - input format
+   - output JSON keys
+   - fallback behavior for missing information
+2. Run the prompt on at least 3 test inputs.
+3. Parse the output as JSON or validate the expected fields.
+4. Add reliability controls:
+   - timeout or max wait
+   - retry limit or repair attempt
+   - readable error messages
+   - saved raw responses or basic logs
+5. Write a short note describing one failure mode you observed.
 
-## Common pitfalls
+## Deliverables
 
-- Running `pip install ...` outside your environment.
-- Not pinning dependencies (or not recording them anywhere).
-- Only sharing screenshots of errors instead of copy/paste logs.
-- Writing outputs to random locations (hard to reproduce).
+- Structured-output demo code or notebook.
+- At least 3 test inputs and outputs.
+- Saved raw and parsed outputs where possible.
+- Simplified LLM client or wrapper notes.
+- Prompt contract and AI usage documentation.
 
-## Workshop / Implementation Plan
+Hosted API, instructor-provided API, or Ollama/local inference are all acceptable. Local-vs-cloud benchmarking is optional.
 
-- Create environment and install dependencies.
-- Implement `data_profile.py`:
-  - input: `--input path/to.csv`
-  - output: write files to `output/`
-  - include clear errors for missing file / empty file / missing columns
+## Common Pitfalls
 
-### Data profiling pipeline
+- Asking for "JSON" without specifying exact keys.
+- Letting the model return Markdown around JSON.
+- Retrying forever instead of setting a retry limit.
+- Sending too much CSV data directly to the model.
+- Not saving raw responses, making debugging impossible.
 
-```mermaid
-flowchart TD
-  A[Input CSV] --> B[Load CSV]
-  B --> C{Validate}
-  C -->|missing file| E1[Fail: FileNotFoundError]
-  C -->|empty file| E2[Fail: ValueError]
-  C -->|ok| D[Compute stats]
-  D --> F[Write output/profile.json]
-  D --> G[Write output/profile.md]
-  F --> H[Done]
-  G --> H
-```
+## Self-check Questions
 
-## Why This Matters for Learning AI
-
-Environment setup and data processing may seem like "boring plumbing," but they are the foundation that every AI project is built on. Here's why mastering these skills early is critical:
-
-### Reproducibility is non-negotiable in AI/ML
-
-AI models are only as trustworthy as their ability to be reproduced. If you can't recreate the same results from the same data and code, your work has no scientific or business value. According to [AIMultiple (2026)](https://research.aimultiple.com/reproducible-ai/), *"Reproducibility is crucial for both AI research and AI applications in the enterprise — scientific progress depends on the ability of independent researchers to scrutinize and reproduce the results of a study."*
-
-Consistent environments — same Python version, same library versions, same OS — are the first line of defense. As [GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/reproducibility-in-machine-learning/) notes, *"Reproducibility depends on consistent environments... Tools like Docker or Conda help maintain this consistency."* This is exactly why Week 1 starts with `venv` and `conda`.
-
-### Data processing is the first step of every ML pipeline
-
-Before any model can learn, data must be loaded, validated, and profiled. Garbage in, garbage out — if your data has missing values, wrong types, or encoding issues, no model can save you. The data profiling script you build this week teaches you to inspect data systematically, which is a habit you'll use in every AI project going forward.
-
-### Dependency management prevents "works on my machine" disasters
-
-Pinning dependencies in `requirements.txt` or `environment.yml` ensures that your collaborators, your CI/CD pipeline, and your future self can all run the same code. In production AI systems, a single mismatched library version can cause silent numerical differences that corrupt model outputs. As [Neptune.ai](https://neptune.ai/blog/how-to-solve-reproducibility-in-ml) explains, *"ML reproducibility hinges on metadata — you can't recreate experiments if you don't record and store metadata"* about your environment and dependencies.
-
-### References
-
-- [Reproducible AI: Why it Matters & How to Improve it (AIMultiple, 2026)](https://research.aimultiple.com/reproducible-ai/)
-- [Reproducibility in Machine Learning (GeeksforGeeks)](https://www.geeksforgeeks.org/machine-learning/reproducibility-in-machine-learning/)
-- [How to Solve Reproducibility in ML (Neptune.ai)](https://neptune.ai/blog/how-to-solve-reproducibility-in-ml)
-
-## Self-check questions
-
-- Can you explain the difference between a virtual environment and the system Python?
-- Can you re-run your script and get the same output files from the same input?
-- If someone else runs your README steps, do they succeed without extra "secret" steps?
-
-
-
-- Can you explain the difference between a virtual environment and the system Python?
-- Can you re-run your script and get the same output files from the same input?
-- If someone else runs your README steps, do they succeed without extra "secret" steps?
+- Why can a model return invalid JSON even when asked not to?
+- What is your retry limit and why?
+- What happens when the input is too long?
+- Can your code fail with a readable error?

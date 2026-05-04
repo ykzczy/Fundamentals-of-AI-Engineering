@@ -16,7 +16,7 @@ In practice, reproducibility is a *package* of habits.
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on environments, dependency recording, and “what makes a run reproducible”:
+Self-learn is optional. If you want a refresher on environments, dependency recording, and “what makes a run reproducible”:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)

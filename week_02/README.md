@@ -18,7 +18,7 @@ By the end of this week, you will be able to:
 ## Prerequisites
 
 - **Week 1 completion**: Students must have completed Week 1 exercises and understand fundamental prompt engineering concepts
-- Basic familiarity with command line operations
+- Basic familiarity with command line operations is helpful, but the required commands are introduced in class
 - Access to a computer capable of running VS Code or Cursor
 
 ## Sessions
@@ -99,14 +99,20 @@ In this session, students will:
 
 ## Exercises
 
-All exercises use provided templates found in the `templates/` directory. Students will:
+All exercises use provided templates found in the `code_templates/` directory. Students will:
 
 1. **Code Exploration Exercise**: Use AI to understand a provided codebase and document its functionality
 2. **Code Modification Exercise**: Implement specific changes to existing code with AI guidance
 3. **Debugging Challenge**: Identify and fix bugs in provided code samples using AI assistance
 4. **IDE Proficiency Exercise**: Complete a series of IDE tasks incorporating AI features
 
-Complete exercise instructions are available in the `exercises/` directory.
+Complete exercise instructions are available in this week's tutorial files:
+
+- [01_ide_setup.md](01_ide_setup.md)
+- [02_ai_assisted_workflow.md](02_ai_assisted_workflow.md)
+- [03_reading_code_with_ai.md](03_reading_code_with_ai.md)
+- [04_modifying_code_with_ai.md](04_modifying_code_with_ai.md)
+- [05_debugging_with_ai.md](05_debugging_with_ai.md)
 
 ## Deliverables
 

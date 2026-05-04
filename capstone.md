@@ -1,6 +1,6 @@
-# Foundamental Course Capstone: Intelligent Data Analysis Script
+# Fundamentals Course Capstone: Intelligent Data Analysis Script
 
-Deliver a reproducible Python project that reads CSV data and produces a structured report via **traditional statistics + LLM explanations**. This Capstone should demonstrate **basic ML/data intuition + production-minded LLM calls + software engineering fundamentals**.
+Deliver a reproducible Python project that reads CSV data and produces a structured report via **traditional statistics + LLM explanations**. This is the required Week 6 MVP for the beginner program and should demonstrate **data profiling + structured LLM calls + reproducible project delivery**.
 
 Pick a topic that is interesting to you, but keep the same I/O contract: **CSV in -> `report.json` + `report.md` out**.
 
@@ -27,10 +27,10 @@ If you do not have access to real data, use public datasets or generate syntheti
 
 ## Non-Functional Requirements
 
-*   **Reliability**: timeouts, retries, and clear error messages
+*   **Reliability**: timeout or max wait setting, a bounded retry/repair attempt, and clear error messages
 *   **Reproducibility**: provide an environment file (`requirements.txt` or `pyproject.toml`) and a README
 *   **Maintainability**: organize code into modules (e.g., data/llm/report/utils)
-*   **Testability**: at least 3 test cases (normal input, empty/missing columns, oversized/invalid data). Automated tests are preferred, but a manual test checklist or a simple `smoke_test.py` is acceptable.
+*   **Testability**: at least 3 checks (normal input, empty/missing columns, oversized/invalid data). Automated tests are preferred, but a manual test checklist or a simple `smoke_test.py` is acceptable.
 
 ## Suggested Project Structure (Example)
 
@@ -53,9 +53,9 @@ If you do not have access to real data, use public datasets or generate syntheti
 
 ## Acceptance Criteria
 
-*   Runs reliably on CSV files up to 10MB; failures must have understandable error messages
+*   Runs reliably on small-to-medium CSV files; failures must have understandable error messages
 *   Stable LLM output schema: `report.json` fields should not drift across runs
-*   Includes retries/timeouts; logs can pinpoint which stage failed (data processing / model call / output writing)
+*   Includes beginner-friendly reliability controls; logs or saved notes can pinpoint which stage failed (data processing / model call / output writing)
 *   Report must include at least:
     *   Data overview
     *   Anomalies and risk notes
@@ -67,7 +67,7 @@ If you do not have access to real data, use public datasets or generate syntheti
 *   Reliability and failure handling (timeouts/retries/logging/edge cases): 30%
 *   Report quality (structure, reasonable insights, actionable recommendations): 30%
 
-## Stretch Goals
+## Stretch Goals (Optional)
 
 *   Add simple visualizations (charts + auto-embedded into the report)
 *   Support multiple data sources (CSV + Excel)

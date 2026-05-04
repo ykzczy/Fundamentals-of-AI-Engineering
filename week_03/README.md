@@ -1,105 +1,71 @@
-# Foundations Course — Week 3: Local Inference (Ollama) and Model Comparison
+# Week 3: Environment + Data Processing
 
-## Pre-study (Self-learn)
+Week 3 is the first technical practice week. The goal is not to become a Python expert; the goal is to learn how AI projects stay reproducible and how data is inspected before it is used by models or LLMs.
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+## Pre-study (Optional Refresher)
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
+Self-learn is optional. Use these only if you want extra background:
 
-## What you should be able to do by the end of this week
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 1: Tool Preparation](../self_learn/Chapters/1/Chapter1.md)
+- [Self-learn - Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
 
-- Run at least one model locally using Ollama.
-- Compare 2–3 models on the same task using a consistent benchmark script.
-- Explain the practical constraints: speed, memory (VRAM/RAM), context limits, and output quality.
+## What You Should Be Able to Do
 
-### Hosted API vs local inference
+By the end of this week, you should be able to:
 
-```mermaid
-flowchart LR
-  subgraph Hosted[Hosted API]
-    U1[Your app] --> N1[Internet]
-    N1 --> P1[Provider endpoint]
-    P1 --> M1[Large model cluster]
-    M1 --> P1
-    P1 --> N1
-    N1 --> U1
-  end
+- Create and activate a clean Python environment.
+- Install dependencies and record them in `requirements.txt`.
+- Load a CSV file with pandas.
+- Generate reproducible `profile.json` and `profile.md` outputs.
+- Explain at least 3 data quality findings in plain language.
 
-  subgraph Local[Local inference]
-    U2[Your app] --> O[Ollama local server]
-    O --> HW[CPU/GPU + RAM/VRAM]
-    HW --> O
-    O --> U2
-  end
-```
+## Tutorials
 
-Tutorials:
- 
-- [tutorial.md](tutorial.md)
+Main Week 3 learning path:
+
+- [../week_04/01_environment_setup.md](../week_04/01_environment_setup.md)
+- [../week_04/02_data_profiling_script.md](../week_04/02_data_profiling_script.md)
+
+These files currently live in `week_04/` because they were part of the previous course order. They are now the required Week 3 content. The old local inference materials in this folder are retained as optional reference and are no longer required for Week 3.
+
+Optional/advanced local inference reference:
+
 - [01_local_inference_setup.md](01_local_inference_setup.md)
 - [02_ollama_http_client.md](02_ollama_http_client.md)
 - [03_benchmarking_script.md](03_benchmarking_script.md)
 
-Exercises are included at the end of each notebook.
+## Workshop Plan
 
-## Key Concepts (Self-learn refresher)
+1. Create a fresh environment with venv or conda.
+2. Install pandas and any required dependencies.
+3. Run a small CSV loading example.
+4. Build or adapt a data profiling script:
+   - input: `--input path/to/data.csv`
+   - output directory: `output/`
+   - output files: `profile.json` and `profile.md`
+5. Run the script on a provided CSV or your own small dataset.
+6. Write a short data quality note.
 
-Foundations Course assumes you already learned the fundamentals in Self-learn. If you need a refresher for this week:
+## Deliverables
 
-- Local inference fundamentals and model/platform concepts:
-  - ../self_learn/Chapters/4/Chapter4.md
+- A runnable data profiling script.
+- `output/profile.json`.
+- `output/profile.md`.
+- A short report with at least 3 findings.
+- A README with setup and run commands.
+- Manual test checklist or automated tests.
 
-## Workshop / Implementation Plan
+## Common Pitfalls
 
-- Install Ollama and run one model successfully.
-- Implement `benchmark_local_llm.py`:
-  - define a small prompt set (5–20 items)
-  - run each prompt on each model
-  - record latency and store outputs
-- Write a short conclusion:
-  - best model for quality
-  - best model for speed
-  - “best-fit scenarios” (when you would choose each)
+- Running `pip install` outside the active environment.
+- Sharing screenshots of errors without the full text output.
+- Writing output files to unclear locations.
+- Treating data as "ready" before checking missing values, types, and duplicates.
 
-### Benchmark summary flow
+## Self-check Questions
 
-```mermaid
-flowchart TD
-  M[Models] -->|loop| R[Run prompt set]
-  P[Prompt set] -->|loop| R
-  R --> L[Record latency_s]
-  R --> Q[Save output artifacts]
-  L --> S[summary.json]
-  Q --> S
-```
-
-## Why This Matters for Learning AI
-
-Cloud APIs are convenient, but they're not the only way to run AI models — and in many real-world scenarios, they're not even the best way. Learning to run models locally and benchmark them critically is an essential skill for any AI engineer.
-
-### Local inference gives you control, privacy, and independence
-
-When you run a model locally with tools like Ollama, your data never leaves your machine. This matters enormously in industries like healthcare, law, and finance where data privacy is non-negotiable. As [Inference.net](https://inference.net/content/ollama) explains, *"Ollama keeps sensitive data on local machines, reducing the risk of exposure through third-party cloud providers."* Local inference also means no recurring cloud costs and no dependency on internet connectivity — you can work offline, in air-gapped environments, or in regions with poor connectivity.
-
-### Benchmarking teaches you to think critically about models
-
-Marketing claims and leaderboard scores don't tell the whole story. A model that tops a benchmark might be too slow for your use case, too large for your hardware, or too expensive for your budget. By building your own benchmark script and measuring latency, memory usage, and output quality on *your* tasks, you learn to evaluate models based on what actually matters for your application.
-
-As [Dev.to](https://dev.to/worldlinetech/the-ultimate-llm-inference-battle-vllm-vs-ollama-vs-zml-m97) notes in their comparison of inference engines, *"Ollama is the king of usability... unbeaten for local testing and rapid prototyping"* — but different tools excel in different scenarios. The ability to run fair comparisons and draw justified conclusions is a core data science skill.
-
-### Understanding hardware constraints is part of AI literacy
-
-AI models consume real resources: RAM, VRAM, CPU/GPU cycles. A 7B-parameter model might run fine on a laptop; a 70B model might not fit at all. Understanding these constraints helps you make practical decisions: Which model fits my hardware? Should I use a smaller model locally or pay for a larger one via API? These trade-offs come up in every real AI project.
-
-### References
-
-- [Scaling AI with Ollama and the Power of Local Inference (Inference.net)](https://inference.net/content/ollama)
-- [The Ultimate LLM Inference Battle: vLLM vs. Ollama vs. ZML (Dev.to)](https://dev.to/worldlinetech/the-ultimate-llm-inference-battle-vllm-vs-ollama-vs-zml-m97)
-- [Running Local LLMs with Ollama: 3 Levels (BentoML)](https://www.bentoml.com/blog/running-local-llms-with-ollama-3-levels-from-local-to-distributed-inference)
-
-## Self-check questions
-
-- Can you run the same benchmark twice and get comparable latency distributions?
-- Can you justify why one model is "best" for a specific use case?
-- What is the biggest limiting factor on your machine (RAM, VRAM, CPU/GPU)?
+- Can someone follow your README and reproduce your output files?
+- Can you explain the difference between system Python and a virtual environment?
+- Can you point to the exact CSV input that produced your report?
+- What is the most important data quality issue you found?

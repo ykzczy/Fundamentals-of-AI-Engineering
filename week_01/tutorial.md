@@ -1,4 +1,4 @@
-# Foundations Course — Week 1 Tutorials
+# Week 1 Tutorials: Agent Tools Introduction
 
 ## Overview
 

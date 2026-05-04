@@ -1,104 +1,108 @@
-# Foundations Course — Week 6: LLM Fundamentals + Prompt Engineering
+# Week 6: Capstone - Intelligent Data Analysis Script
 
-## Pre-study (Self-learn)
+Week 6 integrates the course into one small project: read a CSV file, profile the data, compress or sample what matters, ask an LLM for structured insights, and write both JSON and Markdown reports.
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+The required MVP is intentionally fixed:
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
-
-## What you should be able to do by the end of this week
-
-- Explain tokens, context windows, and why long inputs fail.
-- Design prompts as contracts: clear inputs, clear output schema.
-- Produce valid JSON outputs and validate them programmatically.
-
-### Context window budget
-
-```mermaid
-flowchart LR
-  C[Context window C tokens]
-  C --> S[System instructions]
-  C --> P[Prompt/user input]
-  C --> R[Retrieved context]
-  C --> T[Tool outputs]
-  C --> O[Model output]
-
-  style C fill:#f3f4f6,stroke:#111827
+```text
+CSV input -> data overview -> sampled/compressed summary -> LLM interpretation -> report.json + report.md
 ```
 
-Tutorials:
- 
-- [tutorial.md](tutorial.md)
+## Pre-study (Optional Refresher)
+
+Self-learn is optional. Use these only if you want extra background:
+
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
+- [Self-learn - Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
+
+## What You Should Be Able to Do
+
+By the end of this week, you should be able to:
+
+- Build a reproducible CSV analysis workflow.
+- Reuse Week 3 data profiling ideas.
+- Reuse Week 4 structured prompt and reliability ideas.
+- Use Week 5 ML/data intuition to explain patterns and risks.
+- Produce stable `report.json` and readable `report.md` outputs.
+- Demo the project and explain one design decision.
+
+## Tutorials
+
+Capstone-required materials:
+
+- [simplified_project.md](simplified_project.md)
+- [05_pipeline_design.md](05_pipeline_design.md)
+- [06_sampling_compression.md](06_sampling_compression.md)
+- [../capstone.md](../capstone.md)
+
+Useful Week 4 references:
+
 - [01_tokens_context.md](01_tokens_context.md)
 - [02_prompt_contracts.md](02_prompt_contracts.md)
 - [03_structured_outputs_validation.md](03_structured_outputs_validation.md)
+
+Optional/advanced:
+
 - [04_openai_compatible_api.md](04_openai_compatible_api.md)
 
-Exercises are included at the end of each notebook.
+## MVP Requirements
 
-## Key Concepts (Self-learn refresher)
+Your project should:
 
-Foundations Course assumes you already learned the fundamentals in Self-learn. If you need a refresher for this week:
+- Accept a CSV file path.
+- Compute data overview statistics:
+  - column types
+  - missing values
+  - duplicate rows
+  - basic numeric/categorical summaries
+  - simple anomaly hints
+- Avoid sending the full dataset to the LLM.
+- Use a structured prompt for insights, recommendations, and risk notes.
+- Write `report.json` with stable fields.
+- Write `report.md` for human readers.
+- Include setup and one-command run instructions.
 
-- Prompt engineering fundamentals and evaluation mindset:
-  - ../self_learn/Chapters/3/02_prompt_engineering_evaluation.md
-- Structured outputs and validation mindset:
-  - ../self_learn/Chapters/3/01_function_calling_structured_outputs.md
+## Suggested Project Structure
 
-## Workshop / Implementation Plan
-
-- Implement `extract.py`:
-  - prompt for strict JSON
-  - validate output
-  - retry/repair on invalid JSON
-- Create a small test set with at least 3 edge inputs
-
-### Prompt as contract flow
-
-```mermaid
-flowchart TD
-  A[Inputs: raw text] --> B[Prompt contract]
-  B --> C[LLM call]
-  C --> D[Raw output text]
-  D --> E{Parse JSON}
-  E -->|fail| R1[Repair prompt + retry]
-  R1 --> C
-  E -->|ok| F{Validate schema}
-  F -->|fail| R2[Repair prompt + retry]
-  R2 --> C
-  F -->|ok| G[Typed object / dict]
-  G --> H[Downstream code]
+```text
+analyze.py
+src/
+  data_profile.py
+  sampling.py
+  llm_client.py
+  report_builder.py
+tests/ or smoke_test.py
+output/
+README.md
+requirements.txt
+postmortem.md
+prompts.md
 ```
 
-## Why This Matters for Learning AI
+## Deliverables
 
-Large Language Models (LLMs) like GPT-4, Claude, and Llama are the most transformative AI technology of this era. But using them effectively requires understanding how they actually work under the hood — not just typing questions into a chatbox. This week's content gives you that understanding.
+- Source code or notebook/script.
+- `output/report.json`.
+- `output/report.md`.
+- README with one-command run instructions.
+- Sample input or link to dataset.
+- `postmortem.md` documenting one issue and how it was handled.
+- AI usage and prompt documentation.
 
-### Tokens and context windows are the physics of LLMs
+## Stretch Goals
 
-LLMs don't see words — they see *tokens* (chunks of text, roughly 3–4 characters each). Every model has a finite *context window*: the maximum number of tokens it can process in a single request. As [OpenAI's Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering) explains, *"Models can only handle so much data within the context they consider during a generation request. This memory limit is called a context window, which is defined in terms of tokens."*
+These are optional:
 
-If you don't understand tokens and context limits, you'll hit mysterious failures when your inputs are too long — and you won't know why. This knowledge is essential for designing systems that work reliably at scale.
+- Add charts to the Markdown report.
+- Support Excel input.
+- Support both hosted API and Ollama.
+- Add caching based on input file hash.
+- Add a CLI flag for different report styles.
 
-### Prompt engineering is how you program LLMs
+## Self-check Questions
 
-Unlike traditional software where you write explicit code, with LLMs you write *prompts* — natural language instructions that guide the model's behavior. [Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) describes this shift: *"Context engineering represents a fundamental shift in how we build with LLMs... it's thoughtfully curating what information enters the model's limited attention budget at each step."*
-
-Treating prompts as *contracts* — with clear input specifications and output schemas — is what makes the difference between a flaky demo and a production-ready system. This is a core skill for any AI engineer.
-
-### Structured outputs bridge LLMs and code
-
-LLMs produce free-form text, but your downstream code needs structured data (JSON, typed objects). Learning to constrain LLM outputs into valid, parseable formats — and handling failures with retry/repair logic — is one of the most practical skills in modern AI engineering. Without it, you can't build reliable pipelines that connect LLMs to databases, APIs, or user interfaces.
-
-### References
-
-- [Prompt Engineering Guide (OpenAI)](https://platform.openai.com/docs/guides/prompt-engineering)
-- [Effective Context Engineering for AI Agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
-- [Prompt Engineering (Wikipedia)](https://en.wikipedia.org/wiki/Prompt_engineering)
-
-## Self-check questions
-
-- Why can the model still output invalid JSON even when instructed?
-- What are 3 LLM failure modes you observed?
-- What's your retry limit and why?
+- Can someone run your project from the README without hidden steps?
+- Does `report.json` keep the same shape across runs?
+- What data did you send to the LLM, and what did you intentionally not send?
+- What is one failure case your project handles clearly?

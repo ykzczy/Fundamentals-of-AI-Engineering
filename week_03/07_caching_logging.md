@@ -1,4 +1,4 @@
-# Week 3 — Part 07: Caching and observability (logging)
+# Week 4 — Part 07: Caching and observability (logging)
 
 ## Overview
 
@@ -18,7 +18,7 @@ Logging makes failures diagnosable.
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on production constraints, observability, and operational habits:
+Self-learn is optional. If you want a refresher on production constraints, observability, and operational habits:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)

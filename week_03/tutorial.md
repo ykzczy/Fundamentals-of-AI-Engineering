@@ -1,47 +1,36 @@
-# Foundations Course — Week 3 Tutorials
+# Week 3 Tutorials: Environment + Data Processing
 
-## Pre-study (Self-learn)
+## Pre-study (Optional Refresher)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+Self-learn is optional. If you want extra background:
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 1: Tool Preparation](../self_learn/Chapters/1/Chapter1.md)
+- [Self-learn - Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
 
 ## Overview
 
-This week you run LLMs locally (Ollama) and compare models with a consistent benchmark.
+Week 3 focuses on reproducible environments and CSV data profiling. You will create a clean Python environment, load data with pandas, and produce stable JSON/Markdown outputs.
 
-You will practice:
+## Main Navigation
 
-- installing + running a local model
-- sending prompts via HTTP
-- measuring latency
-- saving outputs for comparison
+These tutorials are reused from the previous course order and are now the required Week 3 path:
 
-## Navigation
+- [Environment setup + dependency management](../week_04/01_environment_setup.md)
+- [Data profiling script (CSV -> JSON/Markdown outputs)](../week_04/02_data_profiling_script.md)
 
-- [01 — Local inference: concepts + setup checklist](01_local_inference_setup.md)
-- [02 — Calling Ollama via HTTP (minimal client)](02_ollama_http_client.md)
-- [03 — Benchmarking script: latency + quality artifacts](03_benchmarking_script.md)
+## Recommended Order
 
-## Recommended order
+1. Set up and verify your Python environment.
+2. Install dependencies.
+3. Run a small pandas example.
+4. Build or adapt the data profiling script.
+5. Confirm `output/profile.json` and `output/profile.md` are created.
 
-1. Read 01 and confirm Ollama runs.
-2. Read 02 and run a single prompt end-to-end.
-3. Read 03 and build a benchmark harness.
+## Optional/Advanced Reference
 
-Exercises are included at the end of each notebook.
+The local inference files in this folder are retained for deeper study and are no longer required for Week 3:
 
-Why this order works:
-
-1. **Confirm the local runtime first**
-    - Until the local server runs, any “client bug” is actually an environment/runtime issue.
-    - What to verify: `ollama serve` works and you can run one model once.
-
-2. **Single prompt end-to-end second**
-    - Prove the HTTP contract: request → response → basic validation.
-    - What to verify: you can send a prompt, get a response, and handle timeouts/errors cleanly.
-
-3. **Benchmark harness last**
-    - Once one request works, scale to many requests and measure latency distribution.
-    - What to verify: your benchmark saves outputs and latency metrics so you can compare models later.
+- [01_local_inference_setup.md](01_local_inference_setup.md)
+- [02_ollama_http_client.md](02_ollama_http_client.md)
+- [03_benchmarking_script.md](03_benchmarking_script.md)

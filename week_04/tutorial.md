@@ -1,35 +1,49 @@
-# Foundations Course — Week 4 Tutorials
+# Week 4 Tutorials: LLM Fundamentals + API Reliability
 
-## Pre-study (Self-learn)
+## Pre-study (Optional Refresher)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+Self-learn is optional. If you want extra background:
 
-- [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
-- [Self-learn — Chapter 1: Tool Preparation](../self_learn/Chapters/1/Chapter1.md)
-- [Self-learn — Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
+- [Pre-study guide](../PRESTUDY.md)
+- [Self-learn - Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
+- [Self-learn - Chapter 4: Hugging Face Platform and Local Inference](../self_learn/Chapters/4/Chapter4.md)
 
 ## Overview
 
-These tutorials expand Week 4 into a step-by-step, chapter-style walkthrough.
+Week 4 focuses on structured LLM workflows:
 
-## Navigation
+- tokens and context windows
+- prompts as contracts
+- JSON parsing and validation
+- timeout, retry, logging, and clear failure handling
 
-- [01 — Environment setup + dependency management](01_environment_setup.md)
-- [02 — Data profiling script (CSV -> JSON/Markdown outputs)](02_data_profiling_script.md)
+## Main Navigation
 
-## Recommended order
+LLM fundamentals:
 
-1. Read 01, set up your environment.
-2. Read 02, implement and run the profiling script.
+- [Tokens and context windows](../week_06/01_tokens_context.md)
+- [Prompt contracts](../week_06/02_prompt_contracts.md)
+- [Structured outputs and validation](../week_06/03_structured_outputs_validation.md)
 
-Why this order works:
+API reliability:
 
-1. **Environment first**
-    - If your environment is unstable, every later step becomes “mystery debugging”.
-    - What to verify: you can run `python --version`, activate your venv, and run a small script twice with the same output.
+- [Timeouts and failures](../week_03/04_timeouts_failures.md)
+- [Retries and backoff](../week_03/05_retries_backoff.md)
+- [Rate limiting](../week_03/06_rate_limiting.md)
+- [Caching and logging](../week_03/07_caching_logging.md)
+- [LLM client skeleton](../week_03/08_llm_client_skeleton.md)
 
-2. **Profiling script second**
-    - This is your first “reproducible artifact” workflow: input file → deterministic outputs.
-    - What to verify: running the script creates `output/` files in the same place, with predictable names.
-    - Example: your script should fail clearly on missing input and succeed on a small sample CSV.
-    - Exercises (required-columns check, numeric summaries) are included at the end of the notebook.
+## Optional/Advanced Reference
+
+- [Local inference setup](../week_03/01_local_inference_setup.md)
+- [Ollama HTTP client](../week_03/02_ollama_http_client.md)
+- [Benchmarking script](../week_03/03_benchmarking_script.md)
+- [OpenAI compatible API](../week_06/04_openai_compatible_api.md)
+
+## Recommended Order
+
+1. Learn the token/context mental model.
+2. Write a prompt contract with explicit JSON fields.
+3. Parse and validate outputs.
+4. Add timeout, bounded retry/repair, and saved raw responses.
+5. Document one failure mode and how you handled it.

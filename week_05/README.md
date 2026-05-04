@@ -1,8 +1,8 @@
-# Foundations Course — Week 5: The ML Training Loop + Reproducible Baselines
+# Week 5: The ML Training Loop + Lightweight Baselines
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher:
+Self-learn is optional. If you want a refresher:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 2: Python and Environment Management](../self_learn/Chapters/2/Chapter2.md)
@@ -11,7 +11,7 @@ Foundations Course assumes Self-learn is complete. If you need a refresher:
 
 - Explain why we split data into train/validation.
 - Train a baseline model, evaluate it, and save artifacts.
-- Compare two runs and write a short failure analysis (post-mortem).
+- Compare two lightweight baseline runs and write a short reflection.
 
 ### The ML training loop
 
@@ -41,7 +41,7 @@ Exercises are included at the end of each notebook.
 
 ## Key Concepts (Self-learn refresher)
 
-Foundations Course assumes you already learned the fundamentals in Self-learn. If you need a refresher for this week:
+Self-learn is optional. If you want a refresher for this week:
 
 - Reproducible environments, dependencies, and basic Python project habits:
   - ../self_learn/Chapters/2/Chapter2.md
@@ -75,12 +75,14 @@ flowchart TD
   - train a baseline classifier
   - print metrics
   - save artifacts
-- Run 2 experiments:
-  - change one hyperparameter OR switch models
+- Run 2 lightweight baseline experiments:
+  - change one hyperparameter OR switch models OR change one feature choice
 - Write `report.md`:
   - what you changed
   - what happened
-  - one failed run + your next experiment idea
+  - one next experiment idea
+
+Cross-validation, statistical significance testing, complex visualization, and multi-model systems are optional advanced work, not required for Week 5.
 
 ## Why This Matters for Learning AI
 

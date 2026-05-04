@@ -1,4 +1,4 @@
-# Week 6 — Part 01: Tokens and context windows (practical intuition)
+# Week 4 — Part 01: Tokens and context windows (practical intuition)
 
 ## Overview
 
@@ -17,7 +17,7 @@ This section gives you a mental model to reason about:
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on tokenization, prompts, and evaluation mindset:
+Self-learn is optional. If you want a refresher on tokenization, prompts, and evaluation mindset:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Prompt engineering and evaluation](../self_learn/Chapters/3/02_prompt_engineering_evaluation.md)

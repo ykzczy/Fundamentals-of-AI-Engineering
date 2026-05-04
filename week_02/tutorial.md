@@ -1,4 +1,4 @@
-# Foundations Course — Week 2 Tutorials
+# Week 2 Tutorials: IDE + AI-Assisted Code Practice
 
 ## Overview
 

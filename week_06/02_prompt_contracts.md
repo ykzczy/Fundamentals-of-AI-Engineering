@@ -1,4 +1,4 @@
-# Week 6 — Part 02: Structured Prompt Specification
+# Week 4 — Part 02: Structured Prompt Specification
 
 ## Overview
 
@@ -13,7 +13,7 @@ If you treat the model like a service, your prompt is the API contract.
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on prompt engineering fundamentals, guardrails, and evaluation mindset:
+Self-learn is optional. If you want a refresher on prompt engineering fundamentals, guardrails, and evaluation mindset:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Prompt engineering and evaluation](../self_learn/Chapters/3/02_prompt_engineering_evaluation.md)

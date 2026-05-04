@@ -1,4 +1,4 @@
-# Week 4 — Part 02: Data profiling script (CSV -> JSON/Markdown)
+# Week 3 — Part 02: Data profiling script (CSV -> JSON/Markdown)
 
 ## Overview
 
@@ -25,7 +25,7 @@ You will build `data_profile.py` that:
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on modules, file I/O, exceptions, or JSON:
+Self-learn is optional. If you want a refresher on modules, file I/O, exceptions, or JSON:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Modules and exception handling](../self_learn/Chapters/2/02_modules_exceptions.md)

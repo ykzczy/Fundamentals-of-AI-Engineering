@@ -3,7 +3,7 @@ marp: true
 theme: default
 paginate: true
 header: "Fundamentals of AI Engineering"
-footer: "Week 3 — Local Inference (Ollama) & Model Comparison"
+footer: "Week 3 — Environment + Data Processing"
 style: |
   @import 'theme.css';
 ---
@@ -12,7 +12,7 @@ style: |
 
 # Week 3
 
-## Local Inference (Ollama) & Model Comparison
+## Environment + Data Processing
 
 ---
 
@@ -20,210 +20,109 @@ style: |
 
 By the end of this week, you should be able to:
 
-- Run at least one model locally using Ollama
-- Compare 2–3 models on the same task using a consistent benchmark script
-- Explain the practical constraints: speed, memory (VRAM/RAM), context limits, and output quality
+- Create a clean Python environment
+- Install and record dependencies
+- Load CSV data with pandas
+- Generate `profile.json` and `profile.md`
+- Explain data quality findings in plain language
 
 ---
 
-# What is Inference?
+# Why Data Comes First
 
-![h:280](images/concepts/machine_learning.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of machine learning.png)</div>
+![bg right:40% h:320](images/concepts/data_profiling.svg)
 
-- **Training**: learn from data (expensive, done once)
-- **Inference**: make predictions (fast, done many times)
-- GPT-4, Ollama = **inference**
+AI systems are only as useful as the data they receive.
 
----
+- Bad data -> unreliable model or LLM output
+- Unknown missing values -> misleading conclusions
+- Unclear inputs -> impossible debugging
 
-# Cloud vs Local Inference
-
-![bg right:40% h:320](images/concepts/cloud_computing.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Cloud computing.svg)</div>
-
-### Cloud (Hosted API)
-
-Your app → Internet → cloud provider → large GPU cluster → response back.
-
-**Pros**: best models, no hardware needed.
-**Cons**: cost per call, latency, data leaves your machine.
+**Week 3 habit**: profile first, model second.
 
 ---
 
-# Local Inference with Ollama
+# Environment Setup
 
-![bg right:50% h:380](images/concepts/local_inference_architecture.svg)
+Reproducible projects start with isolated environments.
 
-Your app talks to Ollama on `localhost:11434` — same HTTP pattern as cloud APIs, but everything runs on your hardware.
-
----
-
-# Cloud vs Local: Comparison
-
-| | Cloud API | Local Inference |
-|---|----------|-----------------|
-| **Privacy** | Data leaves your machine | Data stays local |
-| **Cost** | Pay per token | Free (your hardware) |
-| **Model size** | Large (GPT-4, Claude) | Smaller (1B–13B) |
-| **Setup** | API key only | Install Ollama + pull model |
-| **Offline** | No | Yes |
-
-![h:350](images/concepts/cloud_vs_local_comparison.svg)
+| Step | Example |
+|------|---------|
+| Create | `python -m venv .venv` |
+| Activate | `source .venv/bin/activate` |
+| Install | `pip install -r requirements.txt` |
+| Record | `pip freeze > requirements.txt` |
+| Verify | `python -c "import pandas"` |
 
 ---
 
-<!-- _class: part -->
+# Fresh Machine Test
 
-# Part 01
-## Local Inference Concepts + Setup
+Can another student reproduce your work from the README?
 
-`week_03/01_local_inference_setup.md` · `01_local_inference_setup.ipynb`
+They should know:
 
----
-
-# Setup Checklist
-
-![bg right:45% h:350](images/concepts/ollama_setup_workflow.svg)
-
-| Step | Command | Success looks like |
-|------|---------|-------------------|
-| 1. Install Ollama | `curl -fsSL https://ollama.com/install.sh \| sh` | `ollama --version` prints version |
-| 2. Start service | `ollama serve` | Running on `http://localhost:11434` |
-| 3. Pull a model | `ollama pull llama3.2:1b` | `ollama list` shows model |
-| 4. Test prompt | `ollama run llama3.2:1b "Say hello"` | Produces output |
-
-**Tip**: Start with a small model (1B–3B) to avoid memory issues.
+- Python version
+- Dependencies
+- Exact command to run
+- Input CSV path
+- Expected output files
 
 ---
 
-<!-- _class: part -->
+# Data Profiling Checks
 
-# Part 02
-## Calling Ollama via HTTP
+Your profiler should report:
 
-`week_03/02_ollama_http_client.md` · `02_ollama_http_client.ipynb`
-
----
-
-# Model Size, Context, and Quantization
-
-![bg right:30% h:280](images/concepts/quantization.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Quantization error.png)</div>
-
-- **Size (7B, 13B)**: more parameters = better quality, slower, more memory
-- **Context window**: how much text fits per request
-- **Quantization**: fewer bits = less memory, slightly lower quality (impact varies by task)
-
-### Memory Requirements (rough — total runtime, including KV cache & activations)
-
-| Model Size | 4-bit | 8-bit | Full (FP32) |
-|------------|-------|-------|------|
-| 1B params  | ~1 GB | ~2 GB | ~4 GB |
-| 3B params  | ~2 GB | ~4 GB | ~12 GB |
-| 7B params  | ~4 GB | ~8 GB | ~28 GB |
-| 13B params | ~8 GB | ~16 GB | ~52 GB |
-
-**Note**: These are total runtime estimates (weights + KV cache + activations). Weight-only memory is roughly half the 8-bit column. **Rule**: If it doesn't fit in memory, you can't run it.
-
-![h:320](images/concepts/memory_requirements_chart.svg)
+- Row and column counts
+- Column names and inferred types
+- Missing value counts
+- Duplicate row count
+- Basic numeric statistics
+- Basic categorical counts
 
 ---
 
-# Error Handling for Local Inference
+# Output Contract
 
-| Error | Cause | Fix |
-|-------|-------|-----|
-| `ConnectionError` | Ollama not running | Run `ollama serve` |
-| `404` | Model not pulled | `ollama pull <model>` |
-| `Timeout` | Model too large / slow HW | Use smaller model or increase timeout |
-| OOM crash | Model exceeds RAM/VRAM | Use smaller model or quantization |
+The Week 3 output is intentionally simple:
 
-**First request is always slow** (model loading) — subsequent requests are faster.
+```text
+input.csv
+  -> output/profile.json
+  -> output/profile.md
+```
 
-![h:380](images/concepts/error_handling_flowchart.svg)
-
----
-
-<!-- _class: part -->
-
-# Part 03
-## Benchmarking Script
-
-`week_03/03_benchmarking_script.md` · `03_benchmarking_script.ipynb`
+`profile.json` is for code.
+`profile.md` is for humans.
 
 ---
 
-# Benchmarking: Consistent Comparison
+# Workshop
 
-![h:280](images/concepts/train_test_split_new.svg)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Machine learning nutshell -- Split into train-test set.svg)</div>
+Use the Week 3 main path:
 
-**Benchmarking best practices**:
-- Same prompt set for all models
-- Warmup run per model
-- Save all outputs to disk
+- `week_04/01_environment_setup.md`
+- `week_04/02_data_profiling_script.md`
 
----
-
-# Analyzing Results
-
-### Speed comparison
-
-| Model | Mean (s) | P95 (s) | Max (s) |
-|-------|----------|---------|---------|
-| llama3.2:1b | 0.8 | 1.2 | 1.5 |
-| llama3.1:8b | 3.2 | 4.5 | 5.1 |
-
-### Quality evaluation criteria
-
-| Task type | What to check |
-|-----------|--------------|
-| **JSON prompts** | Valid JSON? Required keys present? |
-| **Extraction** | Correct values? Hallucinated placeholders? |
-| **Summaries** | Within length limit? Key facts mentioned? |
-
-**Latency-Quality tradeoff**: smaller models = lower latency but lower output quality.
-
-![h:360](images/concepts/latency_quality_tradeoff.svg)
+These files are reused from the previous course order and are now the required Week 3 content.
 
 ---
 
-# When to Choose What
+# Deliverables
 
-| Scenario | Recommendation |
-|----------|---------------|
-| Latency critical, simple task | Small local model (1B–3B) |
-| Quality critical, complex reasoning | Large model or hosted API |
-| Privacy / offline required | Local inference |
-| High throughput batch processing | Small local model |
-| Rapid prototyping | Hosted API (easiest setup) |
-
-![h:400](images/concepts/model_selection_flowchart.svg)
+- Runnable data profiling script
+- `output/profile.json`
+- `output/profile.md`
+- Short report with at least 3 findings
+- README with setup and run commands
+- Manual test checklist or automated tests
 
 ---
 
-# Workshop / Deliverables
+# Self-Check
 
-- Install Ollama and run one model successfully
-- Implement `benchmark_local_llm.py`:
-  - Define a prompt set (5–20 items), run on each model, record latency + outputs
-- Write a short conclusion:
-  - Best model for quality / speed / "best-fit scenarios"
-
----
-
-# Self-Check Questions
-
-- Can you run the same benchmark twice and get comparable latency distributions?
-- Can you justify why one model is "best" for a specific use case?
-- What is the biggest limiting factor on your machine (RAM, VRAM, CPU/GPU)?
-
----
-
-# References
-
-- Ollama: https://ollama.com/
-- Ollama API docs: https://github.com/ollama/ollama/blob/main/docs/api.md
-- Scaling AI with Ollama: https://inference.net/content/ollama
-- LLM Inference Battle: https://dev.to/worldlinetech/the-ultimate-llm-inference-battle-vllm-vs-ollama-vs-zml-m97
+- Can someone reproduce your outputs from your README?
+- What input file produced the report?
+- What is your most important data quality finding?
+- Did you verify the output instead of trusting AI blindly?

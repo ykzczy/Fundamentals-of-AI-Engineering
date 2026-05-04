@@ -1,4 +1,4 @@
-# Week 3 — Part 05: Retries, backoff, and idempotency
+# Week 4 — Part 05: Retries, backoff, and idempotency
 
 ## Overview
 
@@ -15,7 +15,7 @@ Idempotency ensures retries do not cause duplicate side effects.
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on reliability/operations and failure handling:
+Self-learn is optional. If you want a refresher on reliability/operations and failure handling:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)

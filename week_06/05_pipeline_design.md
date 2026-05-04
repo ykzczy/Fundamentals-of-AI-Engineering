@@ -22,7 +22,7 @@ This structure improves:
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on pipeline structure, artifacts, and basic AI engineering workflow:
+Self-learn is optional. If you want a refresher on pipeline structure, artifacts, and basic AI engineering workflow:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)

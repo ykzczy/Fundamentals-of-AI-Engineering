@@ -2,531 +2,340 @@
 
 ## Overview
 
-This 6-week course uses a progressive assessment structure that builds from tool exploration to hands-on programming practice, culminating in a complete LLM application project.
+This 6-week beginner course assesses steady progress from AI tool fluency to a small end-to-end AI engineering project. The grading focus is:
+
+- Can the student run the work?
+- Can the student explain the work?
+- Are inputs, outputs, and AI assistance documented?
+- Did the student verify the result instead of blindly trusting AI?
 
 | Component | Weight | Week Due |
 |-----------|--------|----------|
 | Week 1: Agent Tools Experience Report | 10% | Week 1 |
-| Week 2: AI-Assisted Programming Practice Report | 10% | Week 2 |
-| Week 3: Local Inference & API Engineering Report | 15% | Week 3 |
-| Week 4: Data Profiling Report | 10% | Week 4 |
-| Week 5: ML Experiment Comparison Report | 10% | Week 5 |
-| Week 6: LLM Application Project | 25% | Week 6 |
-| Participation | 20% | Ongoing |
+| Week 2: AI-Assisted Code Practice | 10% | Week 2 |
+| Week 3: Data Profiling Report | 15% | Week 3 |
+| Week 4: LLM Structured Output + Reliability Practice | 15% | Week 4 |
+| Week 5: ML Baseline Comparison | 10% | Week 5 |
+| Week 6: Intelligent Data Analysis Capstone | 25% | Week 6 |
+| Participation | 15% | Ongoing |
 | **Total** | **100%** | |
 
----
+## General Submission Guidelines
 
-## Submission Guidelines
+Weeks 1-2 may be submitted as reports plus screenshots/prompts. Weeks 3-6 should include runnable files when code is required.
 
-All submissions must follow this structure for consistency and ease of grading:
+Recommended structure for technical weeks:
 
-### Required Submission Structure
-
-```
+```text
 submission-weekN/
-├── README.md                 # How to run, what to expect
-├── requirements.txt          # Python dependencies
-├── src/                      # Source code
-├── tests/                    # Unit tests (even if minimal)
-├── output/                   # Sample outputs
-└── report.md                 # Your written report
+├── README.md
+├── requirements.txt
+├── src/ or scripts/
+├── output/
+├── report.md
+└── prompts.md or ai_usage.md
 ```
 
-### README.md Requirements
+### README Requirements
 
-Your README must include:
+Your README should include:
 
-*   **Environment setup**: Python version, how to install dependencies
-*   **How to run**: Exact commands to reproduce your work
-*   **Expected outputs**: What the reader should see
-*   **Failure case notes**: At least one pitfall you encountered and how you fixed it
-
-### Definition of Done Checklist
-
-Before submitting, verify:
-
-*   [ ] A clean run works on a new machine after following your README
-*   [ ] Inputs/outputs are explicit (paths, formats, schemas documented)
-*   [ ] Errors are readable (not just stack traces without context)
-*   [ ] At least one failure case is documented with the fix
-*   [ ] All code runs without modification on instructor's test environment
-
-### Submission Format
-
-*   **Preferred**: GitHub repository link
-*   **Alternative**: Zipped folder uploaded to the course LMS
-*   **Naming**: `submission-weekN-[your-name].zip` or repository named `ai-eng-weekN-[your-name]`
-
----
-
-## Academic Integrity & AI Tool Usage Policy
+- Environment setup: Python version and dependencies.
+- How to run: exact commands.
+- Expected outputs: filenames and examples.
+- Failure notes: at least one issue you saw or tested.
 
 ### AI Tool Usage Declaration
 
-This course explicitly encourages the use of AI tools (LLMs, code assistants, etc.) as part of the learning process. However, **full transparency is required**:
+AI tools are encouraged, but transparency is required. Each assignment should include:
 
-*   **You must declare** which AI tools you used for each assignment
-*   **Document prompts**: Include representative prompts that were key to your solution
-*   **Annotate AI-generated sections**: Clearly mark which parts of your code/report were AI-assisted
-*   **Explain your understanding**: For AI-generated code, add comments explaining how it works
+- Tools used.
+- Representative prompts.
+- Which parts were AI-assisted.
+- What you personally verified or changed.
 
-**Example declaration format:**
+Example:
 
 ```markdown
 ## AI Tool Declaration
 
-*   **Tool used**: Claude (Anthropic) via web interface
-*   **Key prompts**:
-    *   "Explain how to implement retry logic with exponential backoff in Python"
-    *   "Review this function for error handling issues: [code]"
-*   **AI-assisted sections**:
-    *   Lines 15-30 in `client.py`: retry logic implementation
-    *   Section 3 of report.md: summary of inference approaches
-*   **My contributions**: Problem decomposition, testing strategy, integration, debugging
+- Tool used: ChatGPT and Cursor
+- Key prompts:
+  - "Explain this function line by line."
+  - "Help me debug this pandas FileNotFoundError."
+- AI-assisted sections:
+  - First draft of README troubleshooting notes
+  - Suggested fix for one parsing bug
+- My contribution:
+  - Tested the command, checked the output files, and rewrote the explanation in my own words
 ```
 
-### Academic Integrity Guidelines
+## Week 1: Agent Tools Experience Report (10%)
 
-*   **Allowed**: Using AI tools to learn, generate starting points, debug, and explain concepts
-*   **Allowed**: Collaborating with classmates on concepts and approaches
-*   **Not allowed**: Submitting work you do not understand
-*   **Not allowed**: Copying solutions from classmates without attribution
-*   **Not allowed**: Using solutions from previous course offerings
+### Goal
 
-Violations will be handled according to institutional academic integrity policies.
+Explore AI tools and learn how to ask, refine, verify, and reflect. No code submission is required.
 
----
+### Requirements
 
-## Late Submission Policy
+1. Try at least 2 AI tools, such as ChatGPT, Claude, Cursor, Kilo, or Copilot Chat.
+2. Complete 3 tasks, for example:
+   - Ask an AI to explain a concept.
+   - Ask an AI to summarize or rewrite content.
+   - Ask an AI editor/agent to explain a project folder or simple file.
+3. Document what worked, what failed, and what you learned about prompting.
 
-| Submission Time | Penalty |
-|-----------------|---------|
-| On time | No penalty |
-| Up to 24 hours late | -10% |
-| 24-48 hours late | -20% |
-| 48-72 hours late | -30% |
-| More than 72 hours late | Not accepted without prior arrangement |
-
-**Extensions**: Requests for extensions must be made at least 48 hours before the deadline and require documentation (illness, family emergency, etc.).
-
----
-
-## How to Get Help
-
-### Before Asking
-
-1.  Check the course [README.md](README.md) for common issues
-2.  Review your error message carefully—often the solution is in the output
-3.  Search the course discussion forum for similar questions
-
-### Required Information for Help Requests
-
-When requesting help (via office hours, discussion forum, or email), include:
-
-*   **The exact command you ran** + **full output** (as text, not screenshots)
-*   **Your OS and Python version**: `python --version` and `uname -a` or `ver`
-*   **A minimal code snippet** that reproduces the problem
-*   **What you already tried** and what happened
-
-### Help Channels
-
-*   **Discussion Forum**: Post questions here first (allows peer learning)
-*   **Office Hours**: Schedule via course calendar
-*   **Email**: For private matters only; include "[AI-ENG]" in subject
-
----
-
-## Assignment Details
-
----
-
-### Week 1: Agent Tools Experience Report (10%)
-
-**Deadline**: End of Week 1 (Sunday 11:59 PM)
-
-#### Goal/Objective
-
-Explore and evaluate AI agent tools (such as Kilo, Cursor, Claude Code, or similar) to understand their capabilities, limitations, and effective usage patterns for software engineering tasks.
-
-#### Requirements
-
-1.  **Select and install** one or more AI agent tools
-2.  **Complete at least 3 hands-on tasks** using the tool:
-    *   Task 1: Code generation (e.g., write a utility function)
-    *   Task 2: Code review/debugging (e.g., fix a provided buggy script)
-    *   Task 3: Refactoring or documentation (e.g., improve code structure)
-3.  **Document your experience** including successes, failures, and surprises
-4.  **Compare**: How does this tool differ from simple chat interfaces?
-
-#### Deliverables
+### Deliverables
 
 | File | Description |
 |------|-------------|
-| `report.md` | 2-3 page experience report with structured sections |
-| `src/` | Code files created or modified during your exploration |
-| `output/screenshots/` | Screenshots demonstrating tool interactions |
-| `README.md` | Setup instructions for anyone wanting to reproduce |
+| `report.md` | 800-1000 word reflection |
+| `prompts.md` | Representative prompts and short notes |
+| `output/` | Screenshots, copied outputs, or interaction notes |
+| `README.md` | Brief overview of what you submitted |
 
-#### Assessment Criteria
+### Assessment Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Tool exploration depth | 25% | Demonstrated thorough exploration of capabilities |
-| Task completion | 25% | All 3 tasks completed with evidence |
-| Critical analysis | 30% | Thoughtful evaluation of strengths/weaknesses |
-| Documentation quality | 15% | Clear, well-organized report |
-| AI declaration | 5% | Proper attribution of AI assistance |
+| Criterion | Weight |
+|-----------|--------|
+| Completion of 3 meaningful tasks | 30% |
+| Prompt documentation | 20% |
+| Reflection on strengths and limits | 30% |
+| Organization and clarity | 15% |
+| AI declaration | 5% |
 
-#### Report Structure
+## Week 2: AI-Assisted Code Practice (10%)
 
-Your `report.md` should include:
+### Goal
 
-1.  **Tool Overview**: What you chose and why
-2.  **Setup Experience**: Installation and configuration notes
-3.  **Task Descriptions**: What you attempted and how
-4.  **Results**: What worked, what didn't
-5.  **Reflection**: Key learnings about effective AI collaboration
-6.  **Comparison**: How agent tools differ from other AI interfaces
+Use AI to read, modify, and debug simple Python code from `week_02/code_templates/`. This is guided practice, not a full programming project.
 
----
+### Requirements
 
-### Week 2: AI-Assisted Programming Practice Report (10%)
+1. Use the provided templates in `week_02/code_templates/`.
+2. Ask AI to explain at least 5 functions or code blocks.
+3. Make 2-3 small modifications, such as changing a message, adding an input option, or adjusting a data transformation.
+4. Complete one debugging record using `debugging_practice.py` or another provided exercise.
 
-**Deadline**: End of Week 2 (Sunday 11:59 PM)
-
-#### Goal/Objective
-
-Develop practical skills in AI-assisted programming by completing a non-trivial coding task using LLM assistance strategically, while maintaining code quality and understanding.
-
-#### Requirements
-
-1.  **Select a programming challenge** from the provided list or propose your own (requires approval)
-2.  **Implement the solution** using AI assistance throughout the process
-3.  **Document your workflow**: How you structured prompts, iterated, and validated
-4.  **Include tests**: Unit tests for your implementation
-5.  **Reflect on the process**: What patterns made AI assistance effective or ineffective
-
-**Suggested Challenge Options**:
-
-*   Build a CLI tool that processes CSV files with configurable transformations
-*   Create a web scraper with rate limiting and error handling
-*   Implement a simple API client with authentication and retry logic
-*   Build a data pipeline that reads, transforms, and validates data
-
-#### Deliverables
+### Deliverables
 
 | File | Description |
 |------|-------------|
-| `report.md` | 2-3 page report on your AI-assisted development process |
-| `src/` | Complete, working implementation |
-| `tests/` | Unit tests with reasonable coverage |
-| `README.md` | Usage instructions |
-| `prompts.md` | Log of key prompts used (for transparency) |
+| `report.md` | Code reading, modification, and debugging reflection |
+| `modified_code/` | Copies of modified template files |
+| `debugging_record.md` | Error, prompt, fix, and verification |
+| `prompts.md` | Key prompts used |
+| `README.md` | What to run and what changed |
 
-#### Assessment Criteria
+### Assessment Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Code functionality | 25% | Solution works correctly for intended use case |
-| Code quality | 20% | Clean, readable, well-structured code |
-| Test coverage | 15% | Tests exist and verify key functionality |
-| Process documentation | 25% | Clear explanation of AI collaboration approach |
-| Reflection quality | 10% | Thoughtful insights on effective patterns |
-| AI declaration | 5% | Proper attribution and prompt documentation |
+| Criterion | Weight |
+|-----------|--------|
+| Code explanation quality | 25% |
+| Small modifications completed | 25% |
+| Debugging record and verification | 25% |
+| Reflection on AI-assisted workflow | 15% |
+| AI declaration | 10% |
 
----
+## Week 3: Data Profiling Report (15%)
 
-### Week 3: Local Inference & API Engineering Report (15%)
+### Goal
 
-**Deadline**: End of Week 3 (Sunday 11:59 PM)
+Create a reproducible data profiling workflow that reads a CSV and produces JSON and Markdown outputs.
 
-#### Goal/Objective
+### Requirements
 
-Build practical skills in setting up local inference (Ollama) and designing robust API clients for LLM services, understanding trade-offs between local and cloud-based approaches.
+1. Create or use a clean Python environment.
+2. Load a CSV dataset with pandas.
+3. Generate a profiling report that includes:
+   - Row and column counts.
+   - Column names and inferred types.
+   - Missing value counts.
+   - Duplicate row count.
+   - Basic numeric statistics where applicable.
+   - Basic categorical value counts where applicable.
+4. Output both `profile.json` and `profile.md`.
+5. Include a manual test checklist or automated tests.
 
-#### Requirements
-
-1.  **Set up Ollama** locally and run at least 2 different models
-2.  **Build an LLM client module** (`llm_client.py`) with:
-    *   Timeout handling
-    *   Retry logic with exponential backoff
-    *   Error handling and graceful degradation
-    *   Basic caching mechanism
-    *   Logging of requests/responses
-3.  **Compare local vs. API inference**:
-    *   Test the same prompts on local (Ollama) and cloud (OpenAI/Anthropic) models
-    *   Measure and document latency differences
-    *   Evaluate output quality on a small benchmark
-4.  **Write a comparison report** analyzing trade-offs
-
-#### Deliverables
+### Deliverables
 
 | File | Description |
 |------|-------------|
-| `src/llm_client.py` | Production-minded LLM client implementation |
-| `src/benchmark.py` | Script to run comparison tests |
-| `report.md` | Detailed comparison report (3-4 pages) |
-| `output/benchmark_results.json` | Structured results from your tests |
-| `tests/test_llm_client.py` | Unit tests for client functionality |
-| `README.md` | Setup and usage instructions |
-
-#### Assessment Criteria
-
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Client implementation | 25% | Robust, well-engineered client with all required features |
-| Test quality | 15% | Comprehensive tests including failure simulation |
-| Comparison methodology | 15% | Systematic approach to comparing local vs. cloud |
-| Analysis depth | 25% | Thoughtful analysis of trade-offs and use cases |
-| Documentation | 10% | Clear setup instructions and findings |
-| AI declaration | 5% | Proper attribution of AI assistance |
-| Code quality | 5% | Clean, maintainable code |
-
-#### Report Requirements
-
-Your comparison report must address:
-
-1.  **Setup complexity**: What was required for each approach
-2.  **Performance**: Latency, throughput, resource usage
-3.  **Quality**: Output comparison on your test tasks
-4.  **Cost**: Direct and indirect costs
-5.  **Best-fit scenarios**: When to use each approach
-6.  **Risks and limitations**: What can go wrong with each
-
----
-
-### Week 4: Data Profiling Report (10%)
-
-**Deadline**: End of Week 4 (Sunday 11:59 PM)
-
-#### Goal/Objective
-
-Apply data profiling techniques using both traditional tools (Pandas) and AI-assisted approaches to understand datasets and communicate findings effectively.
-
-#### Requirements
-
-1.  **Select a dataset** (minimum 1000 rows, 5 columns) or use the provided dataset
-2.  **Implement a data profiling script** that generates:
-    *   Missing value statistics
-    *   Numeric column distributions (mean, median, std, percentiles)
-    *   Categorical column value counts
-    *   Anomaly detection (your own rules or statistical methods)
-    *   Correlation analysis for numeric columns
-3.  **Use AI assistance** strategically for:
-    *   Generating profiling code structure
-    *   Interpreting results
-    *   Suggesting visualizations
-4.  **Produce a summary report** with key findings and recommendations
-
-#### Deliverables
-
-| File | Description |
-|------|-------------|
-| `src/profiler.py` | Data profiling script |
-| `output/profile_report.html` or `.md` | Generated profiling report |
-| `report.md` | Written analysis and recommendations (2 pages) |
-| `data/` | Dataset used (or link if too large) |
-| `README.md` | How to run the profiler |
+| `src/profiler.py` or `data_profile.py` | Data profiling script |
+| `output/profile.json` | Machine-readable profile |
+| `output/profile.md` | Human-readable profile |
+| `report.md` | Short data quality analysis with at least 3 findings |
+| `README.md` | Setup and run instructions |
 | `requirements.txt` | Dependencies |
 
-#### Assessment Criteria
+### Assessment Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Profiler functionality | 25% | Script runs successfully, produces all required outputs |
-| Analysis completeness | 25% | All required statistics and metrics included |
-| Insight quality | 20% | Meaningful observations and recommendations |
-| Report clarity | 15% | Clear, well-structured findings |
-| Code quality | 10% | Clean, documented code |
-| AI declaration | 5% | Proper attribution |
+| Criterion | Weight |
+|-----------|--------|
+| Script runs and produces expected outputs | 30% |
+| Data profiling completeness | 25% |
+| Reproducibility and README clarity | 20% |
+| Data quality interpretation | 15% |
+| Test checklist or tests | 5% |
+| AI declaration | 5% |
 
----
+## Week 4: LLM Structured Output + Reliability Practice (15%)
 
-### Week 5: ML Experiment Comparison Report (10%)
+### Goal
 
-**Deadline**: End of Week 5 (Sunday 11:59 PM)
+Build a small LLM workflow that produces structured output and handles common API/local inference failures in a beginner-friendly way.
 
-#### Goal/Objective
+### Requirements
 
-Design, execute, and compare machine learning experiments to understand how different approaches affect model performance, using both traditional ML and AI-assisted analysis.
+1. Explain tokens, context windows, and prompt contracts in your own words.
+2. Design a structured prompt with an explicit JSON output shape.
+3. Run the prompt on at least 3 test inputs.
+4. Parse and validate the output.
+5. Add basic reliability practices:
+   - Timeout or max wait setting.
+   - Retry limit or repair attempt.
+   - Clear error message.
+   - Simple logging or saved raw responses.
+6. Use either a hosted API or Ollama/local inference. Local-vs-cloud comparison is optional.
 
-#### Requirements
-
-1.  **Select a dataset** suitable for classification or regression
-2.  **Design at least 2 comparative experiments**:
-    *   Experiment 1: Compare two different model types (e.g., Random Forest vs. Logistic Regression)
-    *   Experiment 2: Compare two hyperparameter configurations or feature engineering approaches
-3.  **Implement reproducible training pipeline** with:
-    *   Train/validation/test split
-    *   Cross-validation
-    *   Metric tracking
-    *   Model artifact saving
-4.  **Run experiments** and collect results
-5.  **Analyze results** including:
-    *   Statistical significance of differences
-    *   Failure case analysis (where did models fail?)
-    *   Iteration suggestions
-
-#### Deliverables
+### Deliverables
 
 | File | Description |
 |------|-------------|
-| `src/train.py` | Parameterized training script |
-| `src/compare.py` | Experiment comparison and visualization |
-| `output/experiments/` | Results, metrics, and model artifacts |
-| `report.md` | Experiment report with findings (3-4 pages) |
+| `src/` or `scripts/` | Structured-output demo and/or simplified LLM client |
+| `output/` | Test inputs, raw responses, parsed JSON outputs |
+| `report.md` | Explanation of prompt design and one reliability failure mode |
+| `README.md` | Setup and run instructions |
+| `prompts.md` | Prompt contract and repair prompt if used |
+
+### Assessment Criteria
+
+| Criterion | Weight |
+|-----------|--------|
+| Structured prompt design | 25% |
+| Parseable/validated outputs | 25% |
+| Basic reliability handling | 20% |
+| Clear failure-mode reflection | 15% |
+| Reproducibility and documentation | 10% |
+| AI declaration | 5% |
+
+## Week 5: ML Baseline Comparison (10%)
+
+### Goal
+
+Understand the ML training loop by running two lightweight baseline experiments and comparing the results.
+
+### Requirements
+
+1. Use the provided Week 5 examples or a simple tabular dataset.
+2. Run two baseline experiments:
+   - Change one model type, parameter, seed, or feature choice.
+   - Keep the comparison simple and explainable.
+3. Save or record the config and metrics for each run.
+4. Write a short comparison: what changed, what happened, and what you would try next.
+
+Cross-validation, statistical significance, complex visualizations, and multi-model systems are not required.
+
+### Deliverables
+
+| File | Description |
+|------|-------------|
+| `train.py` or notebook/script | Training workflow |
+| `output/` | Metrics, configs, or comparison table |
+| `report.md` | Short experiment comparison |
 | `README.md` | Reproduction instructions |
-| `requirements.txt` | Dependencies |
+| `requirements.txt` or `pyproject.toml` | Dependencies |
 
-#### Assessment Criteria
+### Assessment Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Experiment design | 20% | Well-structured, meaningful comparisons |
-| Reproducibility | 20% | Clear instructions, consistent results |
-| Implementation | 20% | Clean, working training pipeline |
-| Analysis depth | 25% | Thoughtful interpretation of results |
-| Documentation | 10% | Clear report and README |
-| AI declaration | 5% | Proper attribution |
+| Criterion | Weight |
+|-----------|--------|
+| Two runs completed | 25% |
+| Metrics/configs saved or clearly recorded | 25% |
+| Comparison explanation | 25% |
+| Reproducibility | 15% |
+| AI declaration | 10% |
 
-#### Report Structure
+## Week 6: Intelligent Data Analysis Capstone (25%)
 
-Your report should include:
+### Goal
 
-1.  **Experiment Design**: What you compared and why
-2.  **Methodology**: Data splits, metrics, validation approach
-3.  **Results**: Tables, charts, and key findings
-4.  **Analysis**: Interpretation of what the results mean
-5.  **Failure Retrospective**: One failed experiment or unexpected result and what you learned
-6.  **Next Steps**: What you would try next
+Build a small reproducible project that reads CSV data and produces an AI-assisted analysis report.
 
----
+Required MVP:
 
-### Week 6: LLM Application Project (25%)
+```text
+CSV input -> data overview/statistics -> sampled/compressed summary -> LLM interpretation -> report.json + report.md
+```
 
-**Deadline**: End of Week 6 (Sunday 11:59 PM)
+### Requirements
 
-#### Goal/Objective
+1. Accept a CSV file path as input.
+2. Generate traditional data statistics:
+   - Column types.
+   - Missing values.
+   - Duplicate rows.
+   - Basic numeric/categorical summaries.
+   - Simple anomaly hints.
+3. Avoid sending the full dataset to the LLM; use sampling or compression.
+4. Ask an LLM for insights, recommendations, and risk notes using a structured prompt.
+5. Write:
+   - `report.json` with a stable schema.
+   - `report.md` for human readers.
+6. Include a README, dependencies, sample output, and one postmortem/reflection.
 
-Design and build a complete LLM-powered application that demonstrates integration of concepts learned throughout the course, including structured outputs, error handling, and user interaction.
-
-#### Requirements
-
-1.  **Build a complete application** that:
-    *   Takes user input (text, file, or API)
-    *   Processes it using an LLM (local or cloud)
-    *   Produces structured output (JSON schema validation)
-    *   Has error handling and retry logic
-    *   Includes a user interface (CLI, web, or API)
-
-2.  **Suggested Project Ideas**:
-    *   Document analyzer: Extract structured information from PDFs/documents
-    *   Code review assistant: Analyze code for common issues
-    *   Data transformation tool: Convert unstructured data to structured format
-    *   Question-answering system: Answer questions from a knowledge base
-    *   Content generator: Generate structured content from prompts
-
-3.  **Technical Requirements**:
-    *   Structured output with JSON schema
-    *   Retry/repair for invalid outputs
-    *   Timeout and error handling
-    *   Logging for debugging
-    *   Unit tests
-    *   Documentation
-
-4.  **Final Report** including:
-    *   Architecture overview
-    *   Design decisions and trade-offs
-    *   Testing strategy
-    *   Deployment considerations
-
-#### Deliverables
+### Deliverables
 
 | File | Description |
 |------|-------------|
-| `src/` | Complete application source code |
-| `tests/` | Comprehensive test suite |
-| `report.md` | Project report (4-6 pages) |
-| `README.md` | Setup, usage, and architecture documentation |
+| Source code | CLI script or small modular project |
+| `output/report.json` | Machine-readable final report |
+| `output/report.md` | Human-readable final report |
+| `README.md` | One-command run instructions |
 | `requirements.txt` or `pyproject.toml` | Dependencies |
-| `output/demo/` | Screenshots, demo video, or sample outputs |
-| `ARCHITECTURE.md` | (Optional) Detailed design documentation |
+| `postmortem.md` | One issue encountered and how it was handled |
+| `prompts.md` or `ai_usage.md` | Prompt and AI usage notes |
 
-#### Assessment Criteria
+### Assessment Criteria
 
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Functionality | 25% | Application works as specified, handles edge cases |
-| Code quality | 20% | Clean, maintainable, well-organized code |
-| Structured output handling | 15% | Proper JSON schema, validation, retry logic |
-| Error handling | 10% | Graceful failure modes, informative errors |
-| Testing | 10% | Comprehensive test coverage |
-| Documentation | 10% | Clear README, architecture explanation |
-| Innovation/scope | 5% | Appropriate complexity and creativity |
-| AI declaration | 5% | Proper attribution |
+| Criterion | Weight |
+|-----------|--------|
+| End-to-end functionality | 30% |
+| Data profiling and sampling quality | 20% |
+| LLM interpretation and structured output | 20% |
+| Reproducibility and documentation | 15% |
+| Reflection/postmortem | 10% |
+| AI declaration | 5% |
 
-#### Project Report Structure
+### Stretch Goals
 
-Your final report should include:
+These are optional and should not replace the MVP:
 
-1.  **Executive Summary**: What you built and why
-2.  **Problem Statement**: The problem your application solves
-3.  **Architecture**: High-level design and component interactions
-4.  **Implementation Details**: Key technical decisions
-5.  **Testing Strategy**: How you verified correctness
-6.  **Challenges & Solutions**: Obstacles encountered and how you resolved them
-7.  **Future Work**: What you would add with more time
-8.  **Reflection**: Key learnings from the project
+- Add charts to the Markdown report.
+- Support Excel input.
+- Support both hosted API and Ollama backends.
+- Add caching based on input file hash.
+- Add a CLI flag for different report styles.
 
----
+## Participation (15%)
 
-## Participation (20%)
+Participation includes:
 
-Participation is assessed throughout the course and includes:
-
-| Component | Weight | Description |
-|-----------|--------|-------------|
-| In-class activities | 8% | Engagement in discussions, exercises, code reviews |
-| Discussion forum | 6% | Asking questions, answering peers, sharing resources |
-| Peer feedback | 4% | Providing constructive feedback on classmates' work |
-| Progress check-ins | 2% | Regular updates and communication |
-
-### In-Class Activities
-
-*   Code walkthroughs: Explaining your approach to exercises
-*   Pair programming: Collaborative problem-solving sessions
-*   Discussion: Contributing to technical discussions
-
-### Discussion Forum Expectations
-
-*   Ask questions when stuck (after trying yourself)
-*   Answer peers' questions when you can help
-*   Share interesting resources or discoveries
-*   Provide constructive feedback on others' project ideas
-
----
+| Component | Weight |
+|-----------|--------|
+| In-class activities | 6% |
+| Discussion and questions | 4% |
+| Peer feedback | 3% |
+| Progress check-ins | 2% |
 
 ## Summary Timeline
 
 | Week | Assignment | Due | Weight |
 |------|------------|-----|--------|
 | 1 | Agent Tools Experience Report | Sunday Week 1 | 10% |
-| 2 | AI-Assisted Programming Practice Report | Sunday Week 2 | 10% |
-| 3 | Local Inference & API Engineering Report | Sunday Week 3 | 15% |
-| 4 | Data Profiling Report | Sunday Week 4 | 10% |
-| 5 | ML Experiment Comparison Report | Sunday Week 5 | 10% |
-| 6 | LLM Application Project | Sunday Week 6 | 25% |
-| 1-6 | Participation | Ongoing | 20% |
-
----
-
-## Questions?
-
-If you have questions about assignments, grading, or need clarification:
-
-1.  Check this document and the course README first
-2.  Search the discussion forum for similar questions
-3.  Post in the discussion forum for general questions
-4.  Attend office hours for detailed discussions
-5.  Email for private matters (include "[AI-ENG]" in subject)
+| 2 | AI-Assisted Code Practice | Sunday Week 2 | 10% |
+| 3 | Data Profiling Report | Sunday Week 3 | 15% |
+| 4 | LLM Structured Output + Reliability Practice | Sunday Week 4 | 15% |
+| 5 | ML Baseline Comparison | Sunday Week 5 | 10% |
+| 6 | Intelligent Data Analysis Capstone | Sunday Week 6 | 25% |
+| 1-6 | Participation | Ongoing | 15% |

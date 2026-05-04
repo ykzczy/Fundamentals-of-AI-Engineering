@@ -1,4 +1,4 @@
-# Week 3 — Part 08: A reusable `llm_client.py` skeleton
+# Week 4 — Part 08: A reusable `llm_client.py` skeleton
 
 ## Overview
 
@@ -19,7 +19,7 @@ This is a Foundations Course skeleton (provider-agnostic). You can adapt it to O
 
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on reliability/operations and debugging practices:
+Self-learn is optional. If you want a refresher on reliability/operations and debugging practices:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 5: Resource Monitoring and Containerization](../self_learn/Chapters/5/Chapter5.md)
