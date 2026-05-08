@@ -35,12 +35,10 @@ Main Week 4 learning path:
 
 Optional/advanced:
 
-- [01_local_inference_setup.md](01_local_inference_setup.md)
-- [02_ollama_http_client.md](02_ollama_http_client.md)
-- [03_benchmarking_script.md](03_benchmarking_script.md)
-- [04_openai_compatible_api.md](04_openai_compatible_api.md)
-
-The older environment and data profiling files that remain in this folder are legacy references. For the required data processing workflow, use the Week 3 materials.
+- [opt_01_local_inference_setup.md](opt_01_local_inference_setup.md)
+- [opt_02_ollama_http_client.md](opt_02_ollama_http_client.md)
+- [opt_03_benchmarking_script.md](opt_03_benchmarking_script.md)
+- [opt_04_openai_compatible_api.md](opt_04_openai_compatible_api.md)
 
 ## Workshop Plan
 

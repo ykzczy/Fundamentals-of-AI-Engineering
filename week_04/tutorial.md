@@ -35,10 +35,10 @@ API reliability:
 
 ## Optional/Advanced Reference
 
-- [Local inference setup](01_local_inference_setup.md)
-- [Ollama HTTP client](02_ollama_http_client.md)
-- [Benchmarking script](03_benchmarking_script.md)
-- [OpenAI compatible API](04_openai_compatible_api.md)
+- [Local inference setup](opt_01_local_inference_setup.md)
+- [Ollama HTTP client](opt_02_ollama_http_client.md)
+- [Benchmarking script](opt_03_benchmarking_script.md)
+- [OpenAI compatible API](opt_04_openai_compatible_api.md)
 
 ## Recommended Order
 

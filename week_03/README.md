@@ -41,13 +41,7 @@ Main Week 3 learning path:
 - [01_environment_setup.md](01_environment_setup.md)
 - [02_data_profiling_script.md](02_data_profiling_script.md)
 
-Optional/advanced local inference reference:
-
-- [01_local_inference_setup.md](01_local_inference_setup.md)
-- [02_ollama_http_client.md](02_ollama_http_client.md)
-- [03_benchmarking_script.md](03_benchmarking_script.md)
-
-Other LLM reliability files that remain in this folder are legacy references. For the required LLM workflow, use the Week 4 materials.
+For local inference and LLM reliability topics, see the optional files in [Week 4](../week_04/README.md).
 
 ## Workshop Plan
 

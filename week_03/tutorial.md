@@ -29,8 +29,4 @@ Use these tutorials as the required Week 3 path:
 
 ## Optional/Advanced Reference
 
-The local inference files in this folder are retained for deeper study and are no longer required for Week 3:
-
-- [01_local_inference_setup.md](01_local_inference_setup.md)
-- [02_ollama_http_client.md](02_ollama_http_client.md)
-- [03_benchmarking_script.md](03_benchmarking_script.md)
+For local inference and LLM reliability topics, see the optional files in [Week 4](../week_04/tutorial.md).
