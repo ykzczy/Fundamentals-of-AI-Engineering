@@ -12,7 +12,7 @@ This 6-week beginner course assesses steady progress from AI tool fluency to a s
 | Component | Weight | Week Due |
 |-----------|--------|----------|
 | Week 1: Agent Tools Experience Report | 10% | Week 1 |
-| Week 2: AI-Assisted Code Practice | 10% | Week 2 |
+| Week 2: AI-Assisted Python Setup + Code Practice | 10% | Week 2 |
 | Week 3: Data Profiling Report | 15% | Week 3 |
 | Week 4: LLM Structured Output + Reliability Practice | 15% | Week 4 |
 | Week 5: ML Baseline Comparison | 10% | Week 5 |
@@ -22,7 +22,7 @@ This 6-week beginner course assesses steady progress from AI tool fluency to a s
 
 ## General Submission Guidelines
 
-Weeks 1-2 may be submitted as reports plus screenshots/prompts. Weeks 3-6 should include runnable files when code is required.
+Week 1 may be submitted as reports plus screenshots/prompts. Week 2 should include prompt logs, environment verification, and evidence that code was run. Weeks 3-6 should include runnable files when code is required.
 
 Recommended structure for technical weeks:
 
@@ -104,23 +104,30 @@ Explore AI tools and learn how to ask, refine, verify, and reflect. No code subm
 | Organization and clarity | 15% |
 | AI declaration | 5% |
 
-## Week 2: AI-Assisted Code Practice (10%)
+## Week 2: AI-Assisted Python Setup + Code Practice (10%)
 
 ### Goal
 
-Use AI to read, modify, and debug simple Python code from `week_02/code_templates/`. This is guided practice, not a full programming project.
+Use AI tools fluently to learn Python, set up a project environment, run simple code, read and modify template functions, and debug errors. This is guided practice, not a full programming project.
 
 ### Requirements
 
-1. Use the provided templates in `week_02/code_templates/`.
-2. Ask AI to explain at least 5 functions or code blocks.
-3. Make 2-3 small modifications, such as changing a message, adding an input option, or adjusting a data transformation.
-4. Complete one debugging record using `debugging_practice.py` or another provided exercise.
+1. Use at least 2 AI tools or AI interfaces from the course, such as ChatGPT, Claude, Cursor, Copilot Chat, Claude Code, or Kilo.
+2. Save at least 5 Python-learning prompts derived from Week 1 prompt patterns.
+3. Create and activate a project virtual environment.
+4. Install dependencies from `week_02/requirements.txt`.
+5. Run sample Python code using `run_template_examples.py` or the Week 2 notebooks.
+6. Ask AI to explain at least 5 functions or code blocks from `week_02/code_templates/`.
+7. Make 2-3 small modifications, such as changing a message, adding an input option, or adjusting a data transformation.
+8. Complete one debugging record using `debugging_practice.py`, `02_debugging_with_ai_lab.ipynb`, or another provided exercise.
 
 ### Deliverables
 
 | File | Description |
 |------|-------------|
+| `ai_python_learning_log.md` | At least 5 prompts, tools used, AI help received, and personal verification |
+| `environment_check.md` | Output from `python --version`, `which python`/`where python`, `pip --version`, and pandas import check |
+| `run_code_evidence.md` | Commands or notebook cells used, with at least 3 successful function outputs |
 | `report.md` | Code reading, modification, and debugging reflection |
 | `modified_code/` | Copies of modified template files |
 | `debugging_record.md` | Error, prompt, fix, and verification |
@@ -131,11 +138,12 @@ Use AI to read, modify, and debug simple Python code from `week_02/code_template
 
 | Criterion | Weight |
 |-----------|--------|
-| Code explanation quality | 25% |
-| Small modifications completed | 25% |
-| Debugging record and verification | 25% |
-| Reflection on AI-assisted workflow | 15% |
-| AI declaration | 10% |
+| AI Python learning prompt log | 20% |
+| Environment verification and code run evidence | 20% |
+| Code explanation quality | 20% |
+| Small modifications completed | 15% |
+| Debugging record and verification | 20% |
+| AI declaration | 5% |
 
 ## Week 3: Data Profiling Report (15%)
 
@@ -145,7 +153,7 @@ Create a reproducible data profiling workflow that reads a CSV and produces JSON
 
 ### Requirements
 
-1. Create or use a clean Python environment.
+1. Activate and verify the Week 2 Python environment.
 2. Load a CSV dataset with pandas.
 3. Generate a profiling report that includes:
    - Row and column counts.
@@ -166,7 +174,7 @@ Create a reproducible data profiling workflow that reads a CSV and produces JSON
 | `output/profile.md` | Human-readable profile |
 | `report.md` | Short data quality analysis with at least 3 findings |
 | `README.md` | Setup and run instructions |
-| `requirements.txt` | Dependencies |
+| `requirements.txt` | Dependencies, usually matching the Week 3 minimal requirement |
 
 ### Assessment Criteria
 
@@ -174,7 +182,7 @@ Create a reproducible data profiling workflow that reads a CSV and produces JSON
 |-----------|--------|
 | Script runs and produces expected outputs | 30% |
 | Data profiling completeness | 25% |
-| Reproducibility and README clarity | 20% |
+| Reproducibility, environment use, and README clarity | 20% |
 | Data quality interpretation | 15% |
 | Test checklist or tests | 5% |
 | AI declaration | 5% |
@@ -183,20 +191,20 @@ Create a reproducible data profiling workflow that reads a CSV and produces JSON
 
 ### Goal
 
-Build a small LLM workflow that produces structured output and handles common API/local inference failures in a beginner-friendly way.
+Build a small LLM-style workflow that produces structured output and handles common model-output and request failures in a beginner-friendly way.
 
 ### Requirements
 
 1. Explain tokens, context windows, and prompt contracts in your own words.
 2. Design a structured prompt with an explicit JSON output shape.
-3. Run the prompt on at least 3 test inputs.
+3. Use Week 3 `profile.json` as one input and run at least 2 additional small test inputs or simulated responses.
 4. Parse and validate the output.
 5. Add basic reliability practices:
    - Timeout or max wait setting.
    - Retry limit or repair attempt.
    - Clear error message.
    - Simple logging or saved raw responses.
-6. Use either a hosted API or Ollama/local inference. Local-vs-cloud comparison is optional.
+6. Complete the offline/mock path. Hosted API or Ollama/local inference is optional.
 
 ### Deliverables
 
@@ -333,7 +341,7 @@ Participation includes:
 | Week | Assignment | Due | Weight |
 |------|------------|-----|--------|
 | 1 | Agent Tools Experience Report | Sunday Week 1 | 10% |
-| 2 | AI-Assisted Code Practice | Sunday Week 2 | 10% |
+| 2 | AI-Assisted Python Setup + Code Practice | Sunday Week 2 | 10% |
 | 3 | Data Profiling Report | Sunday Week 3 | 15% |
 | 4 | LLM Structured Output + Reliability Practice | Sunday Week 4 | 15% |
 | 5 | ML Baseline Comparison | Sunday Week 5 | 10% |

@@ -15,7 +15,7 @@ You will build `data_profile.py` that:
 
 - reads a CSV
 - validates basic assumptions
-- computes a few useful stats
+- computes the required data quality stats
 - writes reproducible outputs to `output/`
 
 ---
@@ -63,7 +63,7 @@ import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import pandas as pd
 
@@ -75,6 +75,9 @@ class Profile:
     columns: List[str]
     dtypes: Dict[str, str]
     missing_by_column: Dict[str, int]
+    duplicate_rows: int
+    numeric_summary: Dict[str, Dict[str, Optional[float]]]
+    categorical_top_values: Dict[str, Dict[str, int]]
 
 
 def load_csv(path: Path) -> pd.DataFrame:
@@ -86,9 +89,28 @@ def load_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path)
 
 
+def clean_number(value) -> Optional[float]:
+    if pd.isna(value):
+        return None
+    return float(value)
+
+
 def make_profile(df: pd.DataFrame) -> Profile:
     missing = df.isna().sum().to_dict()
     dtypes = {col: str(dtype) for col, dtype in df.dtypes.to_dict().items()}
+    numeric_summary = (
+        df.select_dtypes(include="number")
+        .agg(["min", "max", "mean"])
+        .round(4)
+        .to_dict()
+    )
+    categorical_top_values = {
+        col: {
+            str(k): int(v)
+            for k, v in df[col].fillna("<MISSING>").value_counts().head(5).items()
+        }
+        for col in df.select_dtypes(exclude="number").columns
+    }
 
     return Profile(
         rows=int(df.shape[0]),
@@ -96,6 +118,12 @@ def make_profile(df: pd.DataFrame) -> Profile:
         columns=list(df.columns),
         dtypes=dtypes,
         missing_by_column={k: int(v) for k, v in missing.items()},
+        duplicate_rows=int(df.duplicated().sum()),
+        numeric_summary={
+            col: {stat: clean_number(value) for stat, value in stats.items()}
+            for col, stats in numeric_summary.items()
+        },
+        categorical_top_values=categorical_top_values,
     )
 
 
@@ -105,6 +133,7 @@ def profile_to_markdown(p: Profile) -> str:
     lines.append("")
     lines.append(f"- Rows: {p.rows}")
     lines.append(f"- Columns: {p.cols}")
+    lines.append(f"- Duplicate rows: {p.duplicate_rows}")
     lines.append("")
     lines.append("## Columns")
     lines.append("")
@@ -113,6 +142,22 @@ def profile_to_markdown(p: Profile) -> str:
     for col in p.columns:
         lines.append(f"| {col} | {p.dtypes.get(col, '')} | {p.missing_by_column.get(col, 0)} |")
     lines.append("")
+    if p.numeric_summary:
+        lines.append("## Numeric Summary")
+        lines.append("")
+        lines.append("| column | min | max | mean |")
+        lines.append("|---|---:|---:|---:|")
+        for col, stats in p.numeric_summary.items():
+            lines.append(f"| {col} | {stats.get('min', '')} | {stats.get('max', '')} | {stats.get('mean', '')} |")
+        lines.append("")
+    if p.categorical_top_values:
+        lines.append("## Top Categorical Values")
+        lines.append("")
+        for col, values in p.categorical_top_values.items():
+            lines.append(f"### {col}")
+            for value, count in values.items():
+                lines.append(f"- {value}: {count}")
+            lines.append("")
     return "\n".join(lines)
 
 
@@ -171,7 +216,22 @@ If you later add timestamps, random samples, or “top N” operations, be caref
 
 ---
 
-## Extensions (recommended)
+## Required Data Quality Note
+
+After generating the profile, write at least 3 findings in `report.md`.
+
+Examples:
+
+- Missing values: which column has the most missing data?
+- Duplicates: are duplicate rows present?
+- Numeric ranges: do min/max values look reasonable?
+- Frequent values: are there suspicious categories such as `unknown`, `N/A`, or blank values?
+
+Keep each finding short and evidence-based. Point to the exact field in `profile.json` or section in `profile.md` that supports the finding.
+
+---
+
+## Extensions (optional)
 
 ### 1) Required columns
 
@@ -182,27 +242,6 @@ Add a flag like:
 Then fail with a clear message if any are missing.
 
 Why this matters: you are turning vague assumptions into explicit *preconditions*. If the preconditions do not hold, everything downstream is unreliable.
-
-### 2) Numeric summaries
-
-For numeric columns compute:
-
-- min/max/mean
-
-Interpretation (light intuition):
-
-- mean estimates the “typical” value: $\mu = \frac{1}{n}\sum_{i=1}^n x_i$
-- min/max catch obvious outliers or wrong units
-
-### 3) Frequent values
-
-For categorical columns compute:
-
-- top 5 values
-
-Practical implication: frequent-value tables often reveal data quality bugs (e.g., “N/A”, “unknown”, “-”, whitespace-only strings).
-
----
 
 ## Common pitfalls
 

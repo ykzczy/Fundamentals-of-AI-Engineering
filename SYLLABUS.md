@@ -5,19 +5,19 @@
 | Attribute | Details |
 |-----------|---------|
 | **Course Name** | AI Engineering Fundamentals |
-| **Version** | v2.1 (6-Week Beginner Program) |
+| **Version** | v2.2 (6-Week Beginner Program) |
 | **Duration** | 6 weeks |
 | **Weekly Hours** | 5 hours recommended |
 | **Delivery Method** | In-person instruction + hands-on workshops |
-| **Target Students** | AI beginners; no programming background required for Weeks 1-2 |
+| **Target Students** | AI beginners; no programming background required before the course |
 
 ## Course Introduction
 
 AI Engineering Fundamentals is designed for students who are new to AI tools, programming, and applied AI development. The course uses a staged learning path:
 
-**Agent Tools Introduction -> AI-Assisted Code Practice -> Data Processing -> LLM Workflows -> ML Baselines -> Capstone**
+**Agent Tools Introduction -> AI-Assisted Python Setup and Code Practice -> Data Processing -> LLM Workflows -> ML Baselines -> Capstone**
 
-The first two weeks require no independent programming. Students learn how to use AI tools, how to ask useful questions, and how to review AI-generated answers. Starting in Week 3, students gradually practice Python, data processing, LLM calls, and simple ML experiments with guided templates and AI assistance.
+Week 1 requires no programming. Students learn how to use AI tools, ask useful questions, and review AI-generated answers. In Week 2, students begin guided Python execution with AI assistance: environment setup, running code, reading code, small edits, and debugging. Starting in Week 3, students use that prepared environment for data processing, LLM calls, simple ML experiments, and a capstone.
 
 ### Core Philosophy
 
@@ -28,8 +28,8 @@ The first two weeks require no independent programming. Students learn how to us
 Upon completing this course, students will be able to:
 
 1. Use mainstream AI tools such as ChatGPT, Claude, Cursor, Kilo, or Copilot Chat for practical tasks.
-2. Read, modify, and debug simple Python code with AI assistance.
-3. Create a clean Python environment and generate reproducible CSV profiling reports.
+2. Use AI tools to learn Python, create a clean environment, run code, modify small scripts, and debug errors.
+3. Generate reproducible CSV profiling reports with pandas.
 4. Design structured prompts, request JSON-like outputs, and add basic reliability controls to LLM calls.
 5. Train and compare two lightweight ML baseline runs.
 6. Build and demo an intelligent data analysis script that turns CSV input into JSON and Markdown reports.
@@ -63,13 +63,17 @@ Upon completing this course, students will be able to:
 - [week_01/README.md](week_01/README.md)
 - [slides/week_01.md](slides/week_01.md)
 
-### Week 2: IDE + AI-Assisted Code Practice
+### Week 2: AI-Assisted Python Setup + Code Practice
 
-**Theme:** Starting to Work With Code
+**Theme:** Learning Python With AI, Then Running and Debugging Code
 
 #### Learning Objectives
 
 - Open a project in VS Code or Cursor.
+- Reuse Week 1 prompt patterns for Python learning.
+- Create and activate a Python virtual environment.
+- Install dependencies and verify `pandas`.
+- Run simple Python scripts or notebooks.
 - Use AI to explain simple Python files.
 - Make small guided code modifications.
 - Debug one provided error with AI assistance.
@@ -77,11 +81,17 @@ Upon completing this course, students will be able to:
 #### Sessions
 
 - IDE setup and basic navigation.
+- AI tutor workflows: ChatGPT, Claude, Cursor, Copilot Chat, and optional Claude Code Learning style.
+- Python environment setup: `.venv`, `pip`, `requirements.txt`, and notebook kernels.
+- Run-code lab using template functions and optional notebooks.
 - Code reading with AI using `week_02/code_templates/`.
 - Small modifications and debugging workshop.
 
 #### Deliverables
 
+- AI Python learning prompt log.
+- Environment verification output.
+- Code run evidence from scripts or notebooks.
 - Explanation notes for at least 5 functions.
 - 2-3 small code modifications based on provided templates.
 - One debugging record: error, AI prompt, fix, and verification.
@@ -91,20 +101,19 @@ Upon completing this course, students will be able to:
 - [week_02/README.md](week_02/README.md)
 - [slides/week_02.md](slides/week_02.md)
 
-### Week 3: Environment + Data Processing
+### Week 3: Data Processing + Reproducible Outputs
 
 **Theme:** The Foundation of AI - Data and Reproducibility
 
 #### Learning Objectives
 
-- Create and activate a Python environment.
-- Install dependencies from a requirements file.
+- Activate and verify the Week 2 Python environment.
 - Load CSV files with pandas.
 - Generate stable data profiling outputs.
 
 #### Sessions
 
-- Environment setup: Python, venv/conda, dependencies, and the "fresh machine" mindset.
+- Week 2 environment preflight: active Python, `pandas`, and output location.
 - Data profiling: row counts, column types, missing values, duplicates, simple statistics, and Markdown/JSON output.
 - Workshop: run the profiler on a provided or student-selected CSV.
 
@@ -130,19 +139,21 @@ Upon completing this course, students will be able to:
 - Write prompts as contracts with explicit input and output expectations.
 - Parse and validate structured outputs.
 - Add beginner-friendly timeout, retry, and logging practices.
+- Turn a Week 3 data profile into structured insight JSON without requiring an API key.
 
 #### Sessions
 
 - LLM basics: tokens, context, prompt structure, JSON output.
 - Structured outputs: parsing, validation, and repair prompts.
-- API reliability: timeout, retry, logging, and optional local/cloud comparison.
+- API reliability: timeout, bounded retry/repair, saved raw responses, and basic logging.
+- Offline profile-to-insights demo using Week 3 `profile.json`.
 
 #### Deliverables
 
-- A structured-output demo that returns parseable JSON for at least 3 inputs.
-- A simplified LLM client or wrapper with timeout/retry notes.
+- A structured-output demo that returns parseable JSON for Week 3 `profile.json` and at least 2 additional small test inputs or simulated responses.
+- Reliability notes covering timeout/max wait, bounded retry/repair, and saved raw responses.
 - A short reliability reflection: one failure mode and how you handled it.
-- Hosted API or Ollama is sufficient; local-vs-cloud benchmark is optional.
+- Hosted API, Ollama, provider setup, rate limiting, caching, and full client skeletons are optional extensions.
 
 #### Resources
 
@@ -215,18 +226,24 @@ Upon completing this course, students will be able to:
 ## FAQ
 
 **Q: I have no programming experience. Can I still take this course?**
-Yes. Weeks 1-2 require no programming. Starting in Week 3, programming is introduced through guided templates and AI-assisted workflows.
+Yes. Week 1 requires no programming. Week 2 introduces guided Python execution with AI assistance, and students are not expected to write independent programs from scratch.
 
 **Q: Do I need to finish self_learn before Week 1?**
 No. `self_learn/` is optional reference material for students who want extra practice.
 
 **Q: Do I need ChatGPT Plus or paid APIs?**
-No paid subscription is required for the course design. Week 4 can use either a hosted API, an instructor-provided setup, or local inference where available.
+No paid subscription is required for the course design. Week 4's required demo runs offline with mock responses; hosted APIs, instructor-provided APIs, and local inference are optional extensions.
 
 **Q: Is the final project open-ended?**
 The required MVP is fixed: CSV input -> `report.json` + `report.md`. Extra UI, Excel support, multi-backend LLM support, and caching are stretch goals.
 
 ## Course Changelog
+
+### v2.2 (2026-05-11)
+
+- Moved Python environment setup and first code-running practice into Week 2.
+- Added Week 2 AI Python tutor prompts, code-running evidence, and debugging evidence.
+- Changed Week 3 to assume the Week 2 environment and focus on data profiling.
 
 ### v2.1 (2026-05-04)
 
@@ -244,5 +261,5 @@ The required MVP is fixed: CSV input -> `report.json` + `report.md`. Extra UI, E
 
 ---
 
-**Last Updated:** 2026-05-04
-**Version:** v2.1
+**Last Updated:** 2026-05-11
+**Version:** v2.2

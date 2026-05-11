@@ -4,6 +4,8 @@
 
 Your first step is setting up an IDE (Integrated Development Environment) with AI integration. We recommend Cursor, but VS Code with Copilot is also an option.
 
+If terms like IDE, extension, command-line coding tool, or AI editor are unfamiliar, start with [00_ai_coding_tools_landscape.md](00_ai_coding_tools_landscape.md) before installing anything.
+
 ---
 
 ## Why an IDE with AI?

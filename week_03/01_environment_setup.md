@@ -1,4 +1,8 @@
-# Week 3 — Part 01: Environment setup + dependency management
+# Optional Reference — Python Environment Setup + Dependency Management
+
+> This content has moved into the required Week 2 path: [Week 2 — Part 06: Python Environment Setup](../week_02/06_python_environment_setup.md).
+>
+> Week 3 now begins with a short preflight check and then focuses on CSV data profiling. Keep this file as optional reference for students who need a deeper environment refresher.
 
 ## Overview
 

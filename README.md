@@ -4,7 +4,7 @@
 
 The **Fundamentals of AI Engineering** course is designed for AI beginners, including learners with non-technical backgrounds. It follows a progressive model:
 
-**Agent Tools Introduction -> AI-Assisted Code Practice -> Technical Practice -> Capstone Delivery**
+**Agent Tools Introduction -> AI-Assisted Python Setup and Code Practice -> Technical Practice -> Capstone Delivery**
 
 The course emphasizes practical confidence, conceptual intuition, AI-assisted learning, and reproducible project delivery. Students first learn how to collaborate with AI tools, then gradually use those tools to understand code, process data, call LLMs, run basic ML experiments, and complete a small end-to-end AI project.
 
@@ -16,13 +16,19 @@ The course emphasizes practical confidence, conceptual intuition, AI-assisted le
 
 ## Prerequisites
 
-### Weeks 1-2: No Programming Required
+### Week 1: No Programming Required
 
 - Ability to use a browser and create online accounts.
 - Ability to install and open desktop software.
 - Basic computer operation skills.
 
-### Weeks 3-6: Introductory Programming With AI Assistance
+### Week 2: Guided Python With AI Assistance
+
+- No prior Python experience is required.
+- Students will run guided Python commands, create a virtual environment, and debug small examples with AI support.
+- The focus is fluency with AI learning workflows, not independent programming from scratch.
+
+### Weeks 3-6: Introductory Technical Practice With AI Assistance
 
 - Basic terminal operations will be introduced in class.
 - Python concepts are taught through guided examples and AI-assisted practice.
@@ -32,8 +38,9 @@ The course emphasizes practical confidence, conceptual intuition, AI-assisted le
 
 The core philosophy is **"Learn AI with AI"**:
 
-1. **Weeks 1-2**: Learn to use AI tools such as ChatGPT, Claude, Cursor, Kilo, and GitHub Copilot Chat.
-2. **Weeks 3-6**: Use AI tools to help read code, debug errors, explain concepts, generate first drafts, and validate results.
+1. **Week 1**: Learn to use AI tools such as ChatGPT, Claude, Cursor, Kilo, and GitHub Copilot Chat for general tasks.
+2. **Week 2**: Use those AI tools to learn Python, set up an environment, run code, and debug errors.
+3. **Weeks 3-6**: Use AI tools to process data, build LLM workflows, run simple experiments, and deliver a capstone.
 
 AI is a learning accelerator, not a replacement for understanding. Students are expected to explain what they submitted, document how AI helped, and verify outputs before trusting them.
 
@@ -71,9 +78,9 @@ The [old_v1/](old_v1/) directory contains the previous 8-week course and is kept
 | Week | Theme | Main Deliverable |
 |------|-------|------------------|
 | Week 1 | Agent Tools Introduction | AI tool experience report, representative prompts, and reflection |
-| Week 2 | IDE + AI-Assisted Code Practice | Code reading notes, 2-3 small modifications, and one debugging record |
-| Week 3 | Environment + Data Processing | CSV data profiling script with `profile.json` and `profile.md` |
-| Week 4 | LLM Fundamentals + API Reliability | Structured-output demo and simplified reliable LLM client notes |
+| Week 2 | AI-Assisted Python Setup + Code Practice | AI Python prompt log, environment check, code run evidence, modifications, and debugging record |
+| Week 3 | Data Processing + Reproducible Outputs | CSV data profiling script with `profile.json` and `profile.md` |
+| Week 4 | LLM Fundamentals + API Reliability | `profile.json` -> structured insights demo with validation and reliability notes |
 | Week 5 | ML Training Loop | Two lightweight baseline runs and a short comparison report |
 | Week 6 | Capstone: Intelligent Data Analysis Script | CSV -> `report.json` + `report.md` + short demo |
 
@@ -91,7 +98,7 @@ By the end of the course, students will be able to:
    - Use error messages and AI feedback to debug.
 
 3. **Process data reproducibly**
-   - Create a clean Python environment.
+   - Create and verify a clean Python environment before data work.
    - Load and inspect CSV data with pandas.
    - Generate stable JSON and Markdown profiling reports.
 
@@ -99,6 +106,7 @@ By the end of the course, students will be able to:
    - Explain tokens, context windows, and structured prompts.
    - Request JSON-like outputs and validate them.
    - Add beginner-friendly timeout, retry, and logging practices.
+   - Convert a data profile into structured AI-style insights without requiring API access.
 
 5. **Understand the ML training loop**
    - Train a basic baseline model.
@@ -115,7 +123,7 @@ By the end of the course, students will be able to:
 | Component | Weight |
 |-----------|--------|
 | Week 1: Agent Tools Experience Report | 10% |
-| Week 2: AI-Assisted Code Practice | 10% |
+| Week 2: AI-Assisted Python Setup + Code Practice | 10% |
 | Week 3: Data Profiling Report | 15% |
 | Week 4: LLM Structured Output + Reliability Practice | 15% |
 | Week 5: ML Baseline Comparison | 10% |
@@ -125,24 +133,29 @@ By the end of the course, students will be able to:
 
 ## Technology Stack
 
-### Weeks 1-2: Tool Usage Phase
+### Week 1: Tool Usage Phase
+
+- **AI Chat Tools**: ChatGPT / Claude
+
+### Week 2: AI-Assisted Python Setup and Code Practice
 
 - **AI Chat Tools**: ChatGPT / Claude
 - **AI Editor**: Cursor or VS Code with AI assistant
 - **AI Programming Assistants**: Kilo, GitHub Copilot Chat, or equivalents
+- **Python Tools**: virtual environments, `pip`, optional Jupyter notebooks
 
 ### Weeks 3-6: Technical Practice Phase
 
 - **Language**: Python 3.10+ (3.11 recommended)
 - **Core Libraries**: `pandas`, `numpy`, `scikit-learn`
 - **Engineering Tools**: virtual environments, `requirements.txt`, basic logging, optional `pytest`
-- **LLM Options**: hosted API or local inference; Week 4 requires only one working path
+- **LLM Options**: Week 4 required work uses an offline/mock path; hosted API or local inference is optional
 
 ## Weekly Resources
 
 - [Week 1](week_01/README.md): Agent tools introduction
-- [Week 2](week_02/README.md): IDE and AI-assisted code practice
-- [Week 3](week_03/README.md): Environment and data processing
+- [Week 2](week_02/README.md): AI-assisted Python setup, running code, and debugging
+- [Week 3](week_03/README.md): Data processing and reproducible outputs
 - [Week 4](week_04/README.md): LLM fundamentals and API reliability
 - [Week 5](week_05/README.md): ML training loop
 - [Week 6](week_06/README.md): Capstone project
@@ -170,6 +183,6 @@ This course values evidence-based debugging: reproduce the issue, capture the de
 
 ---
 
-**Course Version**: v2.1 (6-Week Beginner Program)
-**Last Updated**: 2026-05-04
-**Major Changes**: Week 3 now focuses on data processing; Week 4 now covers LLM fundamentals and simplified API reliability; Week 6 is unified around the intelligent data analysis capstone.
+**Course Version**: v2.2 (6-Week Beginner Program)
+**Last Updated**: 2026-05-11
+**Major Changes**: Week 2 now includes AI-assisted Python learning and environment setup; Week 3 now focuses on data processing; Week 4 now covers LLM fundamentals and simplified API reliability; Week 6 is unified around the intelligent data analysis capstone.
