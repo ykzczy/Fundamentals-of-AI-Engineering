@@ -27,24 +27,28 @@ Required path:
 - [03 — Reading Code with AI Help](03_reading_code_with_ai.md)
 - [04 — Modifying Code with AI Help](04_modifying_code_with_ai.md)
 - [05 — Debugging Common Errors with AI](05_debugging_with_ai.md)
+- [Debugging Exercise Scripts](debugging_exercises/README.md)
+- [Sample Runtime Debugging Walkthrough](debugging_exercises/sample_runtime_debugging_walkthrough.md)
 
 Optional support:
 
 - [00 — AI Coding Tools Landscape](00_ai_coding_tools_landscape.md)
 - [Notebook — Python With AI Basics](01_python_with_ai_basics.ipynb)
 - [Notebook — Debugging With AI Lab](02_debugging_with_ai_lab.ipynb)
+- [Mixed Debugging Challenge](code_templates/debugging_practice.py)
 
 ## Recommended order
 
 1. Set up your IDE with AI integration.
 2. Read the AI Python prompt guide and practice tutor-style prompting.
 3. Complete the Python environment setup and verify pandas.
-4. Run `python run_template_examples.py`.
+4. Run normal code first with `python run_template_examples.py`.
 5. Use the Python basics notebook if you want extra practice with variables, lists, dictionaries, functions, imports, and errors.
 6. Read 02 to understand the AI-assisted workflow.
 7. Read 03 and practice explaining code with AI.
 8. Read 04 and practice modifying code with AI.
-9. Read 05 or use the debugging notebook to practice debugging with AI.
+9. Read 05 and the sample runtime walkthrough, then complete the remaining `debug_02_runtime.py` cases and `debug_03_logic.py`.
+10. Optional: use the debugging notebook for extra practice, then try the mixed challenge.
 
 Why this order works:
 
@@ -61,7 +65,7 @@ Why this order works:
     - What to verify: `python -c "import pandas as pd; print(pd.__version__)"` works.
 
 4. **Run code fourth**
-    - Running code is the fastest way to discover whether setup is real.
+    - Run normal code before debugging broken code.
     - What to verify: `python run_template_examples.py` prints function outputs.
 
 5. **Workflow fifth**
@@ -78,4 +82,5 @@ Why this order works:
 
 8. **Debugging eighth**
     - Errors are inevitable — learn to handle them.
-    - What to verify: you can use AI to understand and fix at least 2 errors.
+    - Start only after the normal-code checkpoint succeeds.
+    - What to verify: you can use AI to understand and fix one runtime error and one logic error.

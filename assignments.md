@@ -119,7 +119,10 @@ Use AI tools fluently to learn Python, set up a project environment, run simple 
 5. Run sample Python code using `run_template_examples.py` or the Week 2 notebooks.
 6. Ask AI to explain at least 5 functions or code blocks from `week_02/code_templates/`.
 7. Make 2-3 small modifications, such as changing a message, adding an input option, or adjusting a data transformation.
-8. Complete one debugging record using `debugging_practice.py`, `02_debugging_with_ai_lab.ipynb`, or another provided exercise.
+8. Complete at least two debugging records:
+   - one runtime error from `week_02/debugging_exercises/debug_02_runtime.py`
+   - one logic error from `week_02/debugging_exercises/debug_03_logic.py`
+9. Optional: complete one pandas/data debugging record from `week_02/debugging_exercises/debug_05_pandas_intro.py`.
 
 ### Deliverables
 
@@ -130,7 +133,7 @@ Use AI tools fluently to learn Python, set up a project environment, run simple 
 | `run_code_evidence.md` | Commands or notebook cells used, with at least 3 successful function outputs |
 | `report.md` | Code reading, modification, and debugging reflection |
 | `modified_code/` | Copies of modified template files |
-| `debugging_record.md` | Error, prompt, fix, and verification |
+| `debugging_record.md` | At least one runtime error and one logic error: error/output, prompt, fix, and verification |
 | `prompts.md` | Key prompts used |
 | `README.md` | What to run and what changed |
 

@@ -245,11 +245,50 @@ For even, use: number % 2 == 0
 
 ---
 
+## Recommended Debugging Practice Order
+
+## Before You Debug: Environment Checklist
+
+Debugging practice starts after environment setup. Before running broken code, verify that normal code runs:
+
+```bash
+cd week_02
+python --version
+python run_template_examples.py
+```
+
+Use this rule:
+
+- If `python --version` fails, you have an environment/path problem.
+- If `run_template_examples.py` fails, return to `06_python_environment_setup.md` or ask AI about the setup error.
+- If normal code runs but a debugging exercise fails, that is the intended Python bug to investigate.
+
+This separation matters: beginners should not confuse a broken environment with a broken program.
+
+Start with isolated exercises before the mixed challenge:
+
+1. `02_debugging_with_ai_lab.ipynb` - notebook cells for first exposure.
+2. `debugging_exercises/sample_runtime_debugging_walkthrough.md` - detailed AI coding tool sample.
+3. `debugging_exercises/debug_02_runtime.py` - required runtime-error practice.
+4. `debugging_exercises/debug_03_logic.py` - required logic-error practice.
+5. `debugging_exercises/debug_01_syntax.py` - optional syntax practice.
+6. `debugging_exercises/debug_04_data_lists.py` - optional list/dictionary practice for Week 3 readiness.
+7. `debugging_exercises/debug_05_pandas_intro.py` - optional pandas/data practice after environment setup.
+8. `code_templates/debugging_practice.py` - optional mixed challenge with many bugs in one file.
+
+Why this order works: isolated files let you run one category of problem at a time. The mixed challenge is useful after students already know how to capture errors, ask AI, apply fixes, and verify.
+
+Before doing the required runtime exercise, read the sample walkthrough:
+
+- [Sample Runtime Debugging Walkthrough](debugging_exercises/sample_runtime_debugging_walkthrough.md)
+
+It shows how to use browser AI, IDE AI, and Claude Code Learning-style prompts for the first `debug_02_runtime.py` bug. The remaining runtime and logic bugs are left for student practice.
+
 ## Hands-on Exercises
 
 ### Exercise 1: Fix syntax errors (10 minutes)
 
-1. Open `code_templates/debugging_practice.py`
+1. Open `debugging_exercises/debug_01_syntax.py`
 2. Run the code (see errors)
 3. For each error, ask AI:
    ```
@@ -261,23 +300,60 @@ For even, use: number % 2 == 0
 
 ### Exercise 2: Fix runtime errors (15 minutes)
 
-1. Open `code_templates/debugging_practice.py`
-2. Find functions that cause runtime errors
-3. Ask AI to explain each error
-4. Apply suggested fixes
-5. Test with various inputs
+1. Open `debugging_exercises/debug_02_runtime.py`
+2. Run it from `week_02/`:
+   ```bash
+   python debugging_exercises/debug_02_runtime.py
+   ```
+3. Fix one error at a time
+4. Ask AI to explain each error
+5. Apply suggested fixes
+6. Test with normal and edge-case inputs
 
 ### Exercise 3: Find logic errors (15 minutes)
 
+1. Open `debugging_exercises/debug_03_logic.py`
+2. Run it from `week_02/`:
+   ```bash
+   python debugging_exercises/debug_03_logic.py
+   ```
+3. Compare expected vs actual output
+4. Ask AI to explain each wrong result
+5. Apply suggested fixes
+6. Verify correct behavior
+
+### Exercise 4: Week 3 readiness debugging (optional)
+
+Use:
+
+```bash
+python debugging_exercises/debug_04_data_lists.py
+```
+
+This file practices list and dictionary bugs that resemble Week 3 data profile work.
+
+### Exercise 5: Pandas debugging preview (optional)
+
+Use this only after `python -c "import pandas as pd; print(pd.__version__)"` works:
+
+```bash
+python debugging_exercises/debug_05_pandas_intro.py
+```
+
+This file previews pandas issues such as missing columns, string numbers, and missing values.
+
+### Exercise 6: Mixed challenge (optional)
+
 1. Open `code_templates/debugging_practice.py`
-2. Find functions that run but give wrong results
-3. Ask AI:
+2. Fix the first syntax errors so the file can load.
+3. Continue fixing runtime and logic errors one at a time.
+4. Ask AI:
    ```
    This function should do X, but it does Y.
    Can you check the logic?
    ```
-4. Apply fixes
-5. Verify correct behavior
+5. Apply fixes
+6. Verify correct behavior
 
 ---
 
@@ -371,8 +447,14 @@ After fixing, test incrementally:
 
 Complete at least 2 debugging tasks:
 
-1. Fix a syntax or runtime error
-2. Find and fix a logic error
+1. Fix a runtime error from `debugging_exercises/debug_02_runtime.py`.
+2. Find and fix a logic error from `debugging_exercises/debug_03_logic.py`.
+
+Optional extra practice:
+
+- Fix one syntax error from `debugging_exercises/debug_01_syntax.py`.
+- Fix one pandas/data issue from `debugging_exercises/debug_05_pandas_intro.py`.
+- Attempt the mixed challenge in `code_templates/debugging_practice.py`.
 
 For each, document:
 - Error message (if any)
@@ -396,4 +478,5 @@ For each, document:
 ## References
 
 - `code_templates/debugging_practice.py`: Practice file with errors
+- `debugging_exercises/`: Isolated debugging scripts
 - Python error types: [Python docs](https://docs.python.org/3/tutorial/errors.html)

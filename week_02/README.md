@@ -154,7 +154,8 @@ All exercises use provided templates found in the `code_templates/` directory. S
 3. **Run Code Exercise**: Run template functions from a script or notebook and explain the output.
 4. **Code Exploration Exercise**: Use AI to understand a provided codebase and document its functionality.
 5. **Code Modification Exercise**: Implement specific changes to existing code with AI guidance.
-6. **Debugging Challenge**: Identify and fix bugs in provided code samples using AI assistance.
+6. **Debugging Challenge**: Fix one runtime error and one logic error using the isolated scripts in `debugging_exercises/`.
+7. **Mixed Debugging Challenge (Optional)**: Try `code_templates/debugging_practice.py` after the isolated exercises.
 
 Complete exercise instructions are available in this week's tutorial files:
 
@@ -165,12 +166,14 @@ Complete exercise instructions are available in this week's tutorial files:
 - [03_reading_code_with_ai.md](03_reading_code_with_ai.md)
 - [04_modifying_code_with_ai.md](04_modifying_code_with_ai.md)
 - [05_debugging_with_ai.md](05_debugging_with_ai.md)
+- [debugging_exercises/README.md](debugging_exercises/README.md)
 
 Optional support materials:
 
 - [00_ai_coding_tools_landscape.md](00_ai_coding_tools_landscape.md)
 - [01_python_with_ai_basics.ipynb](01_python_with_ai_basics.ipynb)
 - [02_debugging_with_ai_lab.ipynb](02_debugging_with_ai_lab.ipynb)
+- [code_templates/debugging_practice.py](code_templates/debugging_practice.py) - final mixed challenge
 
 ## Deliverables
 
@@ -211,7 +214,8 @@ A report documenting:
 - AI suggestions used and how they were implemented
 - Challenges encountered and how they were resolved
 - Before/after comparison of code quality and functionality
-- At least one syntax error, one runtime error, or one logic error debugged with AI
+- At least one runtime error and one logic error debugged with AI
+- Optional: one pandas/data debugging case
 
 Submit all deliverables via the course learning management system.
 
