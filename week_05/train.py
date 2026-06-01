@@ -11,7 +11,7 @@ A reproducible baseline classifier that demonstrates the complete ML training lo
 6. Save artifacts
 
 Usage:
-    python train.py --input data.csv --label_col label --seed 42
+    python train.py --input sample_iris.csv --label_col label --seed 42
 """
 
 import argparse

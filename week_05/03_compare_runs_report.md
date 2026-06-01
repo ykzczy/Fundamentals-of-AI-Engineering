@@ -28,7 +28,7 @@ Why it matters here (Week 5):
 ## Step 1: Run baseline
 
 ```bash
-python train.py --input data.csv --label_col label --seed 42 --max_iter 200
+python train.py --input sample_iris.csv --label_col label --seed 42 --max_iter 200
 ```
 
 ---
@@ -38,7 +38,7 @@ python train.py --input data.csv --label_col label --seed 42 --max_iter 200
 Change a single parameter:
 
 ```bash
-python train.py --input data.csv --label_col label --seed 42 --max_iter 1000
+python train.py --input sample_iris.csv --label_col label --seed 42 --max_iter 1000
 ```
 
 You now have two run folders under `artifacts/`.
@@ -47,11 +47,19 @@ You now have two run folders under `artifacts/`.
 
 ## Step 3: Compare the outputs
 
+Generate the standard comparison files:
+
+```bash
+python compare_runs.py --artifacts_dir artifacts --output_dir reports
+```
+
 Compare:
 
 - `metrics.json`
 - `val_report.txt`
 - training time
+- `reports/comparison_report.md`
+- `reports/summary.json`
 
 Ask:
 
@@ -66,7 +74,7 @@ Also ask:
 
 ---
 
-## Step 4: Write `report.md`
+## Step 4: Write your reflection
 
 A good Foundations Course report is short and structured:
 
@@ -130,7 +138,8 @@ Optional (recommended) addition:
 Goal:
 
 - Run **two** experiments that differ by exactly one change (e.g., `max_iter`).
-- Write a short `output/compare_runs/report.md` explaining:
+- Generate `reports/comparison_report.md` with `compare_runs.py`.
+- Add a short reflection section or separate note explaining:
   - what changed
   - what happened (metrics)
   - what you think caused it
@@ -138,7 +147,7 @@ Goal:
 
 Checkpoint:
 
-- `output/compare_runs/report.md` exists and mentions both experiments.
+- `reports/comparison_report.md` exists and mentions both experiments.
 
 ---
 

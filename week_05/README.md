@@ -36,6 +36,7 @@ Tutorials:
 - [01_training_loop.md](01_training_loop.md)
 - [02_reproducibility_package.md](02_reproducibility_package.md)
 - [03_compare_runs_report.md](03_compare_runs_report.md)
+- [Slides](../slides/week_05.md)
 
 Exercises are included at the end of each notebook.
 
@@ -69,7 +70,7 @@ flowchart TD
 
 ## Workshop / Implementation Plan
 
-- Implement `train.py`:
+- Use the provided `train.py` workshop script:
   - load data
   - split train/validation
   - train a baseline classifier
@@ -77,10 +78,24 @@ flowchart TD
   - save artifacts
 - Run 2 lightweight baseline experiments:
   - change one hyperparameter OR switch models OR change one feature choice
-- Write `report.md`:
+- Generate comparison reports under `reports/`:
   - what you changed
   - what happened
   - one next experiment idea
+
+Example starter commands:
+
+```bash
+python train.py --input sample_iris.csv --label_col label --seed 42 --max_iter 200
+python train.py --input sample_iris.csv --label_col label --seed 42 --max_iter 1000
+python compare_runs.py --artifacts_dir artifacts --output_dir reports
+```
+
+## Deliverables
+
+- At least two folders like `artifacts/run_.../`, each containing `config.json`, `metrics.json`, `val_report.txt`, and `model.joblib`.
+- A comparison report such as `reports/comparison_report.md`.
+- A short reflection explaining the one change you made, what happened, and one next experiment.
 
 Cross-validation, statistical significance testing, complex visualization, and multi-model systems are optional advanced work, not required for Week 5.
 

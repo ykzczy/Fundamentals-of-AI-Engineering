@@ -62,6 +62,24 @@ output/
   report.md
 ```
 
+## LLM Output to Report Mapping
+
+`src/llm_interpretation.py` asks the LLM for:
+
+- `summary`
+- `insights`
+- `recommendations`
+- `risk_notes`
+
+`src/report_builder.py` should map those fields into the final `report.json` like this:
+
+- `llm_interpretation.summary` <- `summary`
+- `llm_interpretation.insights` <- `insights`
+- `recommendations` <- `recommendations`
+- `risk_notes` <- `risk_notes`
+
+Keep the top-level report keys stable even if your chosen theme adds extra fields inside `llm_interpretation`.
+
 ## Required Final Evidence
 
 - The final run must call a real LLM.

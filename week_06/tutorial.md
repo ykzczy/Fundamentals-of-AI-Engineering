@@ -24,13 +24,17 @@ The default topic is a general CSV data analyzer. Recommended concrete themes ar
 - [Capstone template](capstone_template/)
 - [Pipeline design](01_pipeline_design.md)
 - [Sampling and compression](02_sampling_compression.md)
+- [Slides](../slides/week_06.md)
 - [Capstone requirements](../capstone.md)
+- [Customer feedback theme example](capstone_template/theme_examples/customer_feedback_schema.md)
+- [Product review theme example](capstone_template/theme_examples/product_review_schema.md)
 
 ## Useful References
 
 - [Tokens and context windows](../week_04/01_tokens_context.md)
 - [Prompt contracts](../week_04/02_prompt_contracts.md)
 - [Structured outputs and validation](../week_04/03_structured_outputs_validation.md)
+- [LLM client skeleton](../week_04/08_llm_client_skeleton.md)
 
 ## Recommended Order
 

@@ -22,6 +22,10 @@ def build_json_report(profile: dict, compressed: dict, llm_output: dict) -> dict
     """Combine profile, compression, and LLM output into final JSON.
 
     The final object should preserve REQUIRED_REPORT_KEYS.
+    Map LLM fields as:
+    - summary/insights -> llm_interpretation
+    - recommendations -> recommendations
+    - risk_notes -> risk_notes
     """
     # TODO: construct a stable report dict with all required top-level keys.
     raise NotImplementedError("TODO: implement build_json_report()")

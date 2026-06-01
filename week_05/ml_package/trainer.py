@@ -161,9 +161,9 @@ def train_model(
     model = LogisticRegression(max_iter=cfg.max_iter, random_state=cfg.random_state)
     clf = Pipeline(steps=[("preprocess", preprocessor), ("model", model)])
 
-    t0 = time.time()
+    t0 = time.perf_counter()
     clf.fit(X_train, y_train)
-    train_seconds = time.time() - t0
+    train_seconds = time.perf_counter() - t0
 
     return clf, train_seconds
 

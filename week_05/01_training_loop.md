@@ -136,7 +136,13 @@ What makes this “engineering” (not just a notebook experiment):
 ## How to run
 
 ```bash
-python train.py --input data.csv --label_col label --seed 42
+python train.py --input sample_iris.csv --label_col label --seed 42
+```
+
+If you want to create a fresh bundled sample file first:
+
+```bash
+python train.py --create_sample iris --input sample_iris.csv --label_col label --seed 42
 ```
 
 ---

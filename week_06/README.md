@@ -39,16 +39,24 @@ By the end of this week, you should be able to:
 Capstone-required:
 
 - [../capstone.md](../capstone.md)
+- [tutorial.md](tutorial.md)
 - [simplified_project.md](simplified_project.md)
 - [capstone_template/](capstone_template/)
 - [01_pipeline_design.md](01_pipeline_design.md)
 - [02_sampling_compression.md](02_sampling_compression.md)
+- [../slides/week_06.md](../slides/week_06.md)
+
+Theme examples:
+
+- [Customer feedback / support ticket schema](capstone_template/theme_examples/customer_feedback_schema.md)
+- [Product review schema](capstone_template/theme_examples/product_review_schema.md)
 
 Useful Week 4 references:
 
 - [../week_04/01_tokens_context.md](../week_04/01_tokens_context.md)
 - [../week_04/02_prompt_contracts.md](../week_04/02_prompt_contracts.md)
 - [../week_04/03_structured_outputs_validation.md](../week_04/03_structured_outputs_validation.md)
+- [../week_04/08_llm_client_skeleton.md](../week_04/08_llm_client_skeleton.md)
 
 Optional/advanced:
 
@@ -63,6 +71,8 @@ Target command after you complete the TODOs:
 ```bash
 python analyze.py --input ../data/sample_sales.csv --out output
 ```
+
+`sample_sales.csv` is a general analyzer sample. For the recommended feedback/review themes, use the theme examples above and the theme-aligned sample CSVs in `data/`.
 
 The template is not expected to pass this command before you implement the missing pieces.
 

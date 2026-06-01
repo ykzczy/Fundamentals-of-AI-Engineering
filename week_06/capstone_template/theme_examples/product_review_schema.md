@@ -10,6 +10,12 @@ review_id,product,rating,review_text,date,region
 
 Your dataset does not need exactly these names, but it should include review text or comments.
 
+Sample file:
+
+```bash
+python analyze.py --input ../data/sample_product_reviews.csv --out output
+```
+
 ## Prompt Adaptation
 
 Ask the LLM to focus on:

@@ -1,5 +1,7 @@
 # Foundational Course (Foundation) Overview & 8-Week Plan
 
+> Archive notice: `old_v1/` is kept for historical reference and optional deeper self-study. It is not the current v2.2 6-week classroom course. For current Week 5 and Week 6 instructions, use `week_05/` and `week_06/` at the repository root.
+
 ## Positioning
 
 **Foundational Course** is designed for learners who need to build GenAI/LLM engineering fundamentals from 0 to 1. The emphasis is on **concept intuition + Python hands-on practice + reproducible small project delivery**.

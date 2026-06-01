@@ -1,0 +1,7 @@
+review_id,product,rating,review_text,date,region
+R-2001,Starter Analytics,5,"The setup checklist helped our team publish the first report in one afternoon.",2026-05-01,US
+R-2002,Starter Analytics,3,"The charts are useful, but export formatting is inconsistent in PDF.",2026-05-02,UK
+R-2003,Team Insights,2,"Filtering is confusing and the app becomes slow with larger CSV files.",2026-05-03,CA
+R-2004,Team Insights,4,"The shared workspace is convenient. I want more examples for marketing data.",2026-05-04,US
+R-2005,AI Report Pack,1,"The summary sounded confident but missed several negative reviews.",2026-05-05,AU
+R-2006,AI Report Pack,5,"Great time saver for weekly product review summaries.",2026-05-06,SG

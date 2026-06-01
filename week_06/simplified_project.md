@@ -109,15 +109,19 @@ Keep the JSON top-level schema stable and make the Markdown readable for a nonte
 
 Default: use any CSV and build a general data analyzer.
 
+Bundled general sample: `data/sample_sales.csv`.
+
 Recommended option 1: **Customer Feedback / Support Ticket Analyzer**
 
 - Prioritize text columns such as `message`, `comment`, `ticket_text`, or `feedback`.
 - Ask the LLM for themes, urgent issues, customer risks, and recommended actions.
+- Bundled sample: `data/sample_customer_feedback.csv`.
 
 Recommended option 2: **Product Review Insight Reporter**
 
 - Prioritize text columns such as `review_text`, `title`, `pros`, or `cons`.
 - Ask the LLM for positive themes, negative themes, feature requests, and product risks.
+- Bundled sample: `data/sample_product_reviews.csv`.
 
 These are theme adaptations, not separate assignments. Keep the same report contract.
 
@@ -137,6 +141,13 @@ Your final `report.json` should preserve these top-level fields:
   "errors_or_warnings": []
 }
 ```
+
+Map the validated LLM response into that schema consistently:
+
+- `summary` and `insights` belong inside `llm_interpretation`.
+- `recommendations` becomes the top-level `recommendations` list.
+- `risk_notes` becomes the top-level `risk_notes` list.
+- Any parse failures, repair attempts, or missing-data cautions belong in `errors_or_warnings`.
 
 ## Target Command
 

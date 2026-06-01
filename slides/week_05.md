@@ -30,8 +30,8 @@ By the end of this week, you should be able to:
 
 ### Traditional Programming
 
-![h:280](images/concepts/traditional_programming.png)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of traditional computer applications.png)</div>
+![h:280](images/concepts/pipeline.svg)
+<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Course diagram</div>
 
 Human writes rules → computer follows them.
 
@@ -39,7 +39,7 @@ Human writes rules → computer follows them.
 
 # Machine Learning: The Key Difference
 
-![bg right:40% h:320](images/concepts/machine_learning.png)
+![bg right:40% h:320](../images/concepts/machine_learning.png)
 <div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Concept of machine learning.png)</div>
 
 ### Machine Learning
@@ -52,8 +52,8 @@ An **LLM** (Large Language Model) is a very large ML model trained on massive te
 
 # What is Training?
 
-![bg right:40% h:420](images/concepts/gradient_descent.gif)
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Wikimedia Commons (Gradient descent.gif)</div>
+![bg right:40% h:360](images/concepts/ai_workflow_cycle.svg)
+<div style="position: absolute; bottom: 20px; right: 20px; font-size: 12px; color: #666;">Source: Course diagram</div>
 
 **Training** = the process where a model learns from data by adjusting its internal parameters (weights).
 
@@ -123,7 +123,7 @@ Artifacts saved at each run:
 
 # The Loop: Step by Step
 
-![bg right:35% h:280](images/concepts/train_test_split.png)
+![bg right:35% h:280](images/concepts/train_test_split_new.svg)
 
 | Step | What you do | Why it matters |
 |------|------------|---------------|
@@ -139,7 +139,7 @@ Even for LLM work, this disciplined loop is the basis for evaluating prompt/mode
 
 # Overfitting: The Core Trap
 
-![h:280](images/concepts/overfitting.png)
+![h:260](images/concepts/benchmarking.svg)
 
 **Overfitting** = the model memorizes training data instead of learning general patterns.
 

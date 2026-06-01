@@ -7,6 +7,7 @@ AI Agent Coding Tool assistance and personal verification.
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from src.compression import compress_profile
@@ -35,9 +36,17 @@ def main() -> None:
 
     # TODO: build_profile should compute the required data profiling fields.
     profile = build_profile(df)
+    (output_dir / "profile.json").write_text(
+        json.dumps(profile, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
 
     # TODO: compress_profile should avoid sending the full CSV to the LLM.
     compressed = compress_profile(profile, df)
+    (output_dir / "compressed_input.json").write_text(
+        json.dumps(compressed, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
 
     # TODO: build_prompt should create a structured prompt for a real LLM.
     prompt = build_prompt(compressed)

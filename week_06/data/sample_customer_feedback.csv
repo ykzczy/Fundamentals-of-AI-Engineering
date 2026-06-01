@@ -1,0 +1,7 @@
+ticket_id,created_at,customer_segment,channel,message,rating,priority
+T-1001,2026-05-01,small_business,email,"Setup was easy, but the billing page did not explain the trial end date clearly.",4,medium
+T-1002,2026-05-02,enterprise,chat,"The dashboard is slow when filtering more than three months of data.",2,high
+T-1003,2026-05-03,student,email,"I like the templates, but I need a beginner walkthrough for exporting reports.",4,low
+T-1004,2026-05-04,enterprise,phone,"Two teammates could not log in after the password reset email expired.",1,urgent
+T-1005,2026-05-05,individual,chat,"The AI summary is helpful, but it missed one important comment in my CSV.",3,medium
+T-1006,2026-05-06,small_business,email,"Support replied quickly and solved my import error.",5,low

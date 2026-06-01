@@ -111,7 +111,7 @@ If you later run multiple experiments quickly, timestamps can collide. A simple 
   - Fix: save `config.json`.
 
 - **Pitfall: you can’t reproduce**
-  - Fix: make sure you pinned dependencies and recorded run commands in a `report.md`.
+  - Fix: make sure you pinned dependencies and recorded run commands in `reports/comparison_report.md` or your short reflection.
 
 - **Pitfall: you treat a single metric as truth**
   - Explanation: metrics are estimates from a finite validation sample.

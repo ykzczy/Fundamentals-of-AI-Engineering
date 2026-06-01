@@ -10,6 +10,12 @@ ticket_id,created_at,customer_segment,channel,message,rating
 
 Your dataset does not need exactly these names, but it should include at least one text column.
 
+Sample file:
+
+```bash
+python analyze.py --input ../data/sample_customer_feedback.csv --out output
+```
+
 ## Prompt Adaptation
 
 Ask the LLM to focus on:
