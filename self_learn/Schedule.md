@@ -3,6 +3,8 @@
 ## Overview
 This schedule organizes the AI Engineering Starter Tutorial into 6 weeks of structured teaching followed by 2 weeks of project work to consolidate all knowledge points.
 
+> Note: this self-learn schedule is an optional 8-week reference path. Its Week 5 and Week 6 topics do not match the current v2.2 6-week classroom course, where Week 5 is ML baselines and Week 6 is the CSV-to-LLM capstone.
+
 ### Quick View Schedule
 
 | Week | Theme | Key Topics | Learning Materials | Project Milestone |

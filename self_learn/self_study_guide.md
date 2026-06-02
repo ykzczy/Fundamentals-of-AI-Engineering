@@ -4,6 +4,8 @@
 **Duration:** 8 weeks (flexible pacing)  
 **Time Commitment:** 8-12 hours per week
 
+> Note: this self-study guide is an optional 8-week reference path. Its Week 5 and Week 6 topics do not match the current v2.2 6-week classroom course, where Week 5 is ML baselines and Week 6 is the CSV-to-LLM capstone.
+
 ---
 
 ## How to Use This Guide

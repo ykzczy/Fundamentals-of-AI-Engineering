@@ -17,21 +17,24 @@ This structure improves:
 
 ---
 
+
+**Lab notebook**: [01_pipeline_design.ipynb](./01_pipeline_design.ipynb) - Interactive coding practice
+
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on pipeline structure, artifacts, and basic AI engineering workflow:
+Self-learn is optional. If you want a refresher on pipeline structure, artifacts, and basic AI engineering workflow:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
 
 Why it matters here (Week 6):
 
-- The capstone becomes debuggable when you can isolate stages and inspect intermediate artifacts.
+- The project becomes debuggable when you can isolate stages and inspect intermediate artifacts.
 - Explicit stage contracts make it easier to re-run only what changed (faster iteration).
 
 ---
 
-## Suggested capstone stages
+## Suggested project stages
 
 For each stage, aim to make the contract explicit.
 
@@ -53,7 +56,7 @@ For each stage, aim to make the contract explicit.
 
 4. **LLM**
     - **Inputs**: prompt template + `output/compressed_input.json`
-    - **Outputs**: `output/llm_raw.txt` (or JSON) and `output/llm_validated.json`
+    - **Outputs**: `output/llm_prompt.txt` and `output/llm_raw_response.txt`; validated parsed output feeds the report stage
     - **Common pitfalls**: calling the model without saving the exact prompt/context; not handling timeouts/429s.
 
 5. **Report**
@@ -83,7 +86,7 @@ import json
 import pandas as pd
 
 
-class CapstoneRunner:
+class ProjectRunner:
     """
     Pipeline coordinator with stage isolation.
     """
@@ -133,13 +136,13 @@ class CapstoneRunner:
         Profile data and save results.
         """
         profile = {
-            "n_rows": len(df),
-            "n_cols": len(df.columns),
+            "row_count": len(df),
+            "column_count": len(df.columns),
             "columns": list(df.columns),
-            "missing": df.isna().sum().to_dict(),
+            "missing_values": df.isna().sum().to_dict(),
         }
         
-        artifact_path = self.output_dir / "02_profile.json"
+        artifact_path = self.output_dir / "profile.json"
         artifact_path.write_text(json.dumps(profile, indent=2))
         print(f"  → Saved: {artifact_path}")
         
@@ -153,13 +156,13 @@ class CapstoneRunner:
         
         compressed = {
             "profile_summary": {
-                "shape": [profile["n_rows"], profile["n_cols"]],
+                "dataset_shape": [profile["row_count"], profile["column_count"]],
                 "columns": profile["columns"],
             },
             "sample_rows": sample.to_dict(orient="records"),
         }
         
-        artifact_path = self.output_dir / "03_compressed.json"
+        artifact_path = self.output_dir / "compressed_input.json"
         artifact_path.write_text(json.dumps(compressed, indent=2))
         print(f"  → Saved: {artifact_path}")
         
@@ -169,20 +172,22 @@ class CapstoneRunner:
         """
         Call LLM with compressed input.
         """
-        # Placeholder - implement actual LLM call
+        # Debug-only placeholder. Final capstone submissions must call a real LLM.
         prompt = f"Analyze this data:\n{json.dumps(compressed, indent=2)}"
         
         # Save the prompt
-        (self.output_dir / "04_llm_prompt.txt").write_text(prompt)
+        (self.output_dir / "llm_prompt.txt").write_text(prompt)
         
-        # Simulate LLM response
+        # Simulate LLM response for local pipeline debugging only.
         llm_response = {
-            "analysis": "Example analysis",
+            "summary": "Example analysis",
             "insights": ["Insight 1", "Insight 2"],
+            "recommendations": ["Example next action"],
+            "risk_notes": ["Example uncertainty"],
         }
         
         # Save raw response
-        artifact_path = self.output_dir / "04_llm_raw.json"
+        artifact_path = self.output_dir / "llm_raw_response.txt"
         artifact_path.write_text(json.dumps(llm_response, indent=2))
         print(f"  → Saved: {artifact_path}")
         
@@ -193,30 +198,39 @@ class CapstoneRunner:
         Generate final report.
         """
         report = {
+            "metadata": {},
             "dataset_summary": {
-                "rows": profile["n_rows"],
-                "columns": profile["n_cols"],
+                "rows": profile["row_count"],
+                "columns": profile["column_count"],
             },
-            "llm_analysis": llm_output,
+            "data_quality": {},
+            "compression_summary": {},
+            "llm_interpretation": {
+                "summary": llm_output.get("summary", ""),
+                "insights": llm_output.get("insights", []),
+            },
+            "recommendations": llm_output.get("recommendations", []),
+            "risk_notes": llm_output.get("risk_notes", []),
+            "errors_or_warnings": [],
         }
         
         # JSON report
-        json_path = self.output_dir / "05_report.json"
+        json_path = self.output_dir / "report.json"
         json_path.write_text(json.dumps(report, indent=2))
         
         # Markdown report
         md_lines = [
             "# Data Analysis Report",
             "",
-            f"- Rows: {profile['n_rows']}",
-            f"- Columns: {profile['n_cols']}",
+            f"- Rows: {profile['row_count']}",
+            f"- Columns: {profile['column_count']}",
             "",
-            "## LLM Analysis",
+            "## LLM Interpretation",
             "",
-            llm_output.get("analysis", ""),
+            llm_output.get("summary", ""),
         ]
         
-        md_path = self.output_dir / "05_report.md"
+        md_path = self.output_dir / "report.md"
         md_path.write_text("\n".join(md_lines))
         
         print(f"  → Saved: {json_path}")
@@ -225,7 +239,7 @@ class CapstoneRunner:
 
 # Usage
 if __name__ == "__main__":
-    runner = CapstoneRunner(output_dir=Path("output"))
+    runner = ProjectRunner(output_dir=Path("output"))
     runner.run_all(input_csv=Path("data.csv"))
 ```
 
@@ -239,7 +253,7 @@ Because each stage saves artifacts, you can:
 
 ```python
 # Re-run only the LLM stage
-compressed = json.loads(Path("output/03_compressed.json").read_text())
+compressed = json.loads(Path("output/compressed_input.json").read_text())
 llm_output = runner.stage_llm(compressed)
 ```
 
@@ -248,7 +262,7 @@ llm_output = runner.stage_llm(compressed)
 Inspect the intermediate artifact:
 
 ```bash
-cat output/02_profile.json
+cat output/profile.json
 # Check if columns/missing values match expectations
 ```
 
@@ -269,23 +283,22 @@ llm_output = stage_llm(compressed)
 
 ## Artifact naming convention
 
-Use sequential prefixes for clarity:
+Use the same filenames as the capstone template so lessons and final project match:
 
-```
+```text
 output/
-  01_loaded.parquet      # Stage 1 output
-  02_profile.json        # Stage 2 output
-  03_compressed.json     # Stage 3 output
-  04_llm_prompt.txt      # Stage 4 input
-  04_llm_raw.json        # Stage 4 output
-  05_report.json         # Stage 5 output (final)
-  05_report.md           # Stage 5 output (final)
+  profile.json             # Stage 2 output
+  compressed_input.json    # Stage 3 output
+  llm_prompt.txt           # Stage 4 input
+  llm_raw_response.txt     # Stage 4 output
+  report.json              # Stage 5 output (final)
+  report.md                # Stage 5 output (final)
 ```
 
-**Why numbered prefixes help:**
-- Clear execution order
-- Easy to see "how far did the pipeline get?"
-- Natural sorting in file explorers
+**Why stable names help:**
+- They match `capstone_template/README.md`
+- Students can re-run one command and know which files to inspect
+- Reviewers can check the same output contract across projects
 
 ---
 

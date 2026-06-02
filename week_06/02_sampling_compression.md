@@ -13,9 +13,12 @@ Instead you send a compressed representation:
 
 ---
 
+
+**Lab notebook**: [02_sampling_compression.ipynb](./02_sampling_compression.ipynb) - Interactive coding practice
+
 ## Pre-study (Self-learn)
 
-Foundations Course assumes Self-learn is complete. If you need a refresher on context limits and AI engineering workflow:
+Self-learn is optional. If you want a refresher on context limits and AI engineering workflow:
 
 - [Pre-study index (Foundations Course → Self-learn)](../PRESTUDY.md)
 - [Self-learn — Chapter 3: AI Engineering Fundamentals](../self_learn/Chapters/3/Chapter3.md)
@@ -115,6 +118,34 @@ compressed["categorical_summaries"] = cat_summary
 - Reveals dominant categories
 - Shows cardinality (n_unique)
 - Identifies potential data quality issues (e.g., many "Unknown" values)
+
+---
+
+## Text-column compression for feedback/review themes
+
+For customer feedback, support tickets, or product reviews, one text column may carry most of the useful signal. Do not send every full message to the LLM. Instead:
+
+- detect likely text columns such as `message`, `comment`, `feedback`, `review_text`, `pros`, or `cons`
+- include a small deterministic sample of representative text rows
+- include short counts by rating, category, sentiment label, or priority if those columns exist
+- preserve a few edge cases such as very low ratings, urgent tickets, or unusually long comments
+- remove direct personal data before sending text to the LLM
+
+Example compact text summary:
+
+```python
+def compress_text_column(df: pd.DataFrame, text_col: str, sample_n: int = 8) -> dict:
+    sample = df[text_col].dropna().sample(
+        n=min(sample_n, df[text_col].dropna().shape[0]),
+        random_state=42,
+    )
+    return {
+        "text_column": text_col,
+        "non_empty_count": int(df[text_col].notna().sum()),
+        "sample_texts": sample.astype(str).str.slice(0, 300).tolist(),
+        "note": "Sampled deterministically and truncated to avoid sending the full dataset.",
+    }
+```
 
 ---
 
